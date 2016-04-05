@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>430</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Traveler
+--
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>270</y>
+      <w>210</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>User
+--
+-id: Long
+-name: String
+-surname: String
+-email: String
+-password: String
+-isValid: boolean
+-isDriver: boolean
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>170</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Place
+--
+-country: String
+-region:
+-town: String
+-comments: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>170</y>
+      <w>210</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Trip
+--
+-id: Long
+-startingPoint: Place
+-destination: place
+-numOfTravelers: int
+-travelers[numOfTravelers]: Traveler
+-driver: Driver
+-dateOfDeparture: Date
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>40</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>name
+--
+-id: Long
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
