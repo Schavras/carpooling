@@ -5,13 +5,13 @@
     <id>UMLClass</id>
     <coordinates>
       <x>630</x>
-      <y>350</y>
+      <y>330</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Traveler
 --
--pickUpNumber: int
+-code: int
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -19,9 +19,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>320</x>
-      <y>360</y>
+      <y>340</y>
       <w>210</w>
-      <h>160</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>User
 --
@@ -43,7 +43,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>930</x>
-      <y>210</y>
+      <y>190</y>
       <w>210</w>
       <h>100</h>
     </coordinates>
@@ -60,7 +60,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>890</x>
-      <y>350</y>
+      <y>330</y>
       <w>280</w>
       <h>160</h>
     </coordinates>
@@ -82,7 +82,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>630</x>
-      <y>440</y>
+      <y>420</y>
       <w>210</w>
       <h>60</h>
     </coordinates>
@@ -96,7 +96,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>400</y>
+      <y>380</y>
       <w>210</w>
       <h>90</h>
     </coordinates>
@@ -113,7 +113,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>560</x>
-      <y>130</y>
+      <y>110</y>
       <w>240</w>
       <h>60</h>
     </coordinates>
@@ -129,7 +129,7 @@
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>300</y>
+      <y>280</y>
       <w>130</w>
       <h>30</h>
     </coordinates>
@@ -140,7 +140,7 @@
     <id>Relation</id>
     <coordinates>
       <x>200</x>
-      <y>270</y>
+      <y>250</y>
       <w>140</w>
       <h>50</h>
     </coordinates>
@@ -154,7 +154,7 @@ m2=0..n
     <id>Relation</id>
     <coordinates>
       <x>200</x>
-      <y>440</y>
+      <y>420</y>
       <w>140</w>
       <h>30</h>
     </coordinates>
@@ -165,7 +165,7 @@ m2=0..n
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>260</y>
+      <y>240</y>
       <w>170</w>
       <h>30</h>
     </coordinates>
@@ -176,7 +176,7 @@ m2=0..n
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>440</y>
+      <y>420</y>
       <w>130</w>
       <h>60</h>
     </coordinates>
@@ -187,7 +187,7 @@ m2=0..n
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>370</y>
+      <y>350</y>
       <w>130</w>
       <h>70</h>
     </coordinates>
@@ -198,7 +198,7 @@ m2=0..n
     <id>UMLClass</id>
     <coordinates>
       <x>560</x>
-      <y>20</y>
+      <y>0</y>
       <w>210</w>
       <h>80</h>
     </coordinates>
@@ -214,7 +214,7 @@ m2=0..n
     <id>UMLClass</id>
     <coordinates>
       <x>300</x>
-      <y>60</y>
+      <y>40</y>
       <w>210</w>
       <h>60</h>
     </coordinates>
@@ -228,7 +228,7 @@ m2=0..n
     <id>UMLClass</id>
     <coordinates>
       <x>360</x>
-      <y>210</y>
+      <y>190</y>
       <w>210</w>
       <h>60</h>
     </coordinates>

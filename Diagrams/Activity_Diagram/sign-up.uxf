@@ -4,7 +4,7 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>0</y>
       <w>20</w>
       <h>20</h>
@@ -15,7 +15,7 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>170</x>
+      <x>230</x>
       <y>60</y>
       <w>100</w>
       <h>40</h>
@@ -27,7 +27,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>10</y>
       <w>30</w>
       <h>70</h>
@@ -38,7 +38,7 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>170</x>
+      <x>230</x>
       <y>290</y>
       <w>100</w>
       <h>40</h>
@@ -50,7 +50,7 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>170</x>
+      <x>230</x>
       <y>130</y>
       <w>100</w>
       <h>40</h>
@@ -62,7 +62,7 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>90</y>
       <w>30</w>
       <h>60</h>
@@ -73,7 +73,7 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>160</y>
       <w>30</w>
       <h>70</h>
@@ -84,7 +84,7 @@ email</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>200</x>
+      <x>260</x>
       <y>210</y>
       <w>40</w>
       <h>40</h>
@@ -96,7 +96,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>230</x>
+      <x>290</x>
       <y>140</y>
       <w>140</w>
       <h>120</h>
@@ -108,7 +108,7 @@ m2=ΥΠΑΡΧΕΙ ΗΔΗ</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>240</y>
       <w>30</w>
       <h>70</h>
@@ -120,7 +120,7 @@ m2=ΥΠΑΡΧΕΙ ΗΔΗ</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>500</y>
       <w>30</w>
       <h>60</h>
@@ -131,7 +131,7 @@ m2=ΥΠΑΡΧΕΙ ΗΔΗ</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>160</x>
+      <x>220</x>
       <y>450</y>
       <w>120</w>
       <h>60</h>
@@ -144,7 +144,7 @@ email
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>160</x>
+      <x>220</x>
       <y>540</y>
       <w>130</w>
       <h>50</h>
@@ -156,7 +156,7 @@ email
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>320</y>
       <w>30</w>
       <h>50</h>
@@ -167,7 +167,7 @@ email
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>200</x>
+      <x>260</x>
       <y>350</y>
       <w>40</w>
       <h>40</h>
@@ -179,7 +179,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>380</y>
       <w>150</w>
       <h>90</h>
@@ -191,7 +191,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>230</x>
+      <x>290</x>
       <y>300</y>
       <w>170</w>
       <h>100</h>
@@ -203,7 +203,7 @@ m2= ΕΛΕΙΠΗ ΣΤΟΙΧΕΙΑ</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>580</y>
       <w>30</w>
       <h>60</h>
@@ -214,7 +214,7 @@ m2= ΕΛΕΙΠΗ ΣΤΟΙΧΕΙΑ</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>210</x>
+      <x>270</x>
       <y>620</y>
       <w>20</w>
       <h>20</h>
