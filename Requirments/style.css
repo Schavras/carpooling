@@ -1,11 +1,18 @@
-
-
 .container{
 	width: 80%;
 	margin: 0px auto;
 	text-align: center;
+	background-color: white;
+	padding: 2%;
 }
 
 table,td,tr{
 	border: solid 1px;
+	text-align: left;
+}
+
+body{
+	background-color: #e9eaed;
+	margin: 0px;
+	padding: 0px;
 }
