@@ -4,24 +4,24 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>430</y>
+      <x>630</x>
+      <y>350</y>
       <w>210</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Traveler
 --
--
+-pickUpNumber: int
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>270</y>
+      <x>320</x>
+      <y>360</y>
       <w>210</w>
-      <h>150</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>User
 --
@@ -30,8 +30,11 @@
 -surname: String
 -email: String
 -password: String
+-age: int
+-creditNumber: int
 -isValid: boolean
 -isDriver: boolean
+-car: Car
 
 </panel_attributes>
     <additional_attributes/>
@@ -39,8 +42,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>170</y>
+      <x>930</x>
+      <y>210</y>
       <w>210</w>
       <h>100</h>
     </coordinates>
@@ -56,9 +59,9 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>170</y>
-      <w>210</w>
+      <x>890</x>
+      <y>350</y>
+      <w>280</w>
       <h>160</h>
     </coordinates>
     <panel_attributes>Trip
@@ -70,14 +73,148 @@
 -travelers[numOfTravelers]: Traveler
 -driver: Driver
 -dateOfDeparture: Date
+-totalPrice: double
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>40</y>
+      <x>630</x>
+      <y>440</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Driver
+--
+-car: Car
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>400</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Car
+--
+-manufacter: String
+-model: String
+-year: int
+-id: int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>130</y>
+      <w>240</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Rating
+--
+-rateNumber: int
+-comments&lt;Array&gt;: Comments
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>300</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>270</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=0..n
+</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>440</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>260</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>440</y>
+      <w>130</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>370</y>
+      <w>130</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>20</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Comment
+--
+-user: User
+-text: Sting
+-date: Date
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>60</y>
       <w>210</w>
       <h>60</h>
     </coordinates>
@@ -85,6 +222,20 @@
 --
 -id: Long
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>210</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Request
+--
+-trip: Trip
+-comment: String</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
