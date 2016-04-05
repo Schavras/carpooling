@@ -112,8 +112,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>220</y>
+      <x>70</x>
+      <y>210</y>
       <w>240</w>
       <h>60</h>
     </coordinates>
@@ -193,8 +193,8 @@ m2=1..1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>340</y>
+      <x>710</x>
+      <y>240</y>
       <w>210</w>
       <h>60</h>
     </coordinates>
@@ -220,6 +220,20 @@ m2=1..1</panel_attributes>
     <coordinates>
       <x>530</x>
       <y>630</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=1..1
+makes new &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>240</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
