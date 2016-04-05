@@ -16,3 +16,12 @@ body{
 	margin: 0px;
 	padding: 0px;
 }
+
+.full_width{
+	width: 100%;
+	max-width: 550px;
+}
+
+.ad{
+	/*width: 10%;*/
+}
