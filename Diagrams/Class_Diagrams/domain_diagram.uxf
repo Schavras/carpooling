@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>208</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>User
+--
+-id: Long
+-name: String
+-surname: String
+-email: String
+-password: String
+-age: int
+-creditNumber: int
+-isValid: boolean
+-isDriver: boolean
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>544</y>
+      <w>168</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Place
+--
+-country: String
+-region:
+-town: String
+-comments: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>392</y>
+      <w>256</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Trip
+--
+-id: Long
+-startingPoint: Place
+-destination: place
+-numOfPassengers: int
+
+-driver: Driver
+-dateOfDeparture: Date
+-totalPrice: double
+-isOpen: boolean
+-isCompleted: boolean
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>240</y>
+      <w>168</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Car
+--
+-manufacter: String
+-model: String
+-year: int
+-id: int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>96</y>
+      <w>192</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Rating
+--
+-rateNumber: int
+comment
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>272</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>264</y>
+      <w>168</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Request
+--
+-comment: String
+status:STATUS
+approvalCode:integer
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>536</y>
+      <w>152</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1..1
+m2=1..1</panel_attributes>
+    <additional_attributes>10.0;50.0;90.0;50.0;90.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>352</y>
+      <w>232</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+r1=driver
+m2=*
+makes new &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0;270.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>216</y>
+      <w>224</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*
+makes new &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;260.0;20.0;260.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>320</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+m1=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>136</y>
+      <w>72</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+r2=passenger</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>304</y>
+      <w>440</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+r1=driver
+m2=*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0;530.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>264</y>
+      <w>168</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Pickup
+--
+pickupTime
+place:String
+getoffTime
+cost
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>192</y>
+      <w>432</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*
+makes new &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;520.0;20.0;520.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>336</y>
+      <w>80</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+m1=*</panel_attributes>
+    <additional_attributes>80.0;10.0;80.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>104</y>
+      <w>128</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..1
+r2=driver</panel_attributes>
+    <additional_attributes>30.0;230.0;140.0;230.0;140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>
