@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>352</x>
+      <x>396</x>
       <y>154</y>
       <w>231</w>
       <h>209</h>
@@ -28,7 +28,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
+      <x>374</x>
       <y>616</y>
       <w>231</w>
       <h>110</h>
@@ -45,9 +45,9 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>737</x>
+      <x>781</x>
       <y>407</y>
-      <w>352</w>
+      <w>231</w>
       <h>231</h>
     </coordinates>
     <panel_attributes>Trip
@@ -56,7 +56,6 @@
 -startingPoint: Place
 -destination: place
 -numOfPassengers: int
-
 -driver: Driver
 -dateOfDeparture: Date
 -totalPrice: double
@@ -69,24 +68,24 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>44</x>
       <y>198</y>
       <w>231</w>
-      <h>99</h>
+      <h>121</h>
     </coordinates>
     <panel_attributes>Car
 --
 -manufacter: String
 -model: String
 -year: int
--id: int
+-id: String
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
+      <x>1045</x>
       <y>0</y>
       <w>264</w>
       <h>66</h>
@@ -103,7 +102,7 @@ comment
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
+      <x>264</x>
       <y>242</y>
       <w>154</w>
       <h>44</h>
@@ -116,7 +115,7 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>770</x>
+      <x>814</x>
       <y>231</y>
       <w>231</w>
       <h>88</h>
@@ -132,7 +131,7 @@ approvalCode:integer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
+      <x>594</x>
       <y>605</y>
       <w>209</w>
       <h>88</h>
@@ -145,7 +144,7 @@ m2=1..1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
+      <x>484</x>
       <y>352</y>
       <w>319</w>
       <h>176</h>
@@ -160,7 +159,7 @@ makes new &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
+      <x>616</x>
       <y>165</y>
       <w>308</w>
       <h>88</h>
@@ -174,7 +173,7 @@ makes new &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>847</x>
+      <x>891</x>
       <y>308</y>
       <w>33</w>
       <h>121</h>
@@ -187,7 +186,7 @@ m1=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1232</x>
+      <x>1276</x>
       <y>55</y>
       <w>99</w>
       <h>198</h>
@@ -201,22 +200,21 @@ r2=passenger</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>154</x>
-      <y>286</y>
+      <x>198</x>
+      <y>308</y>
       <w>605</w>
-      <h>297</h>
+      <h>275</h>
     </coordinates>
-    <panel_attributes>lt=-
+    <panel_attributes>lt=&lt;-
 m1=1
-r1=driver
 m2=*
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;240.0;530.0;240.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0;530.0;220.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1056</x>
+      <x>1100</x>
       <y>231</y>
       <w>231</w>
       <h>110</h>
@@ -233,7 +231,7 @@ cost
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
+      <x>616</x>
       <y>132</y>
       <w>594</w>
       <h>121</h>
@@ -247,20 +245,20 @@ makes new &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1078</x>
+      <x>1001</x>
       <y>330</y>
-      <w>110</w>
+      <w>231</w>
       <h>176</h>
     </coordinates>
     <panel_attributes>lt=-
 m2=1
 m1=*</panel_attributes>
-    <additional_attributes>80.0;10.0;80.0;130.0;10.0;130.0</additional_attributes>
+    <additional_attributes>190.0;10.0;190.0;130.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1254</x>
+      <x>1298</x>
       <y>11</y>
       <w>176</w>
       <h>286</h>
