@@ -119,74 +119,130 @@ public class user {
 		this.isDriver = false;
 	}
 
+
+
+	/**
+	 * @return the id
+	 */
 	public long getId() {
 		return id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public Email getEmail() {
-		return email;
-	}
-
-	public Password getPassword() {
-		return password;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public CreditCard getCredit() {
-		return credit;
-	}
-
-	public boolean isValid() {
-		return isValid;
-	}
-
-	public boolean isDriver() {
-		return isDriver;
-	}
-
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * @return the surname
+	 */
+	public String getSurname() {
+		return surname;
+	}
+
+	/**
+	 * @param surname the surname to set
+	 */
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
 
+	/**
+	 * @return the email
+	 */
+	public Email getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
 	public void setEmail(Email email) {
 		this.email = email;
 	}
 
+	/**
+	 * @return the password
+	 */
+	public Password getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
 	public void setPassword(Password password) {
 		this.password = password;
 	}
 
+	/**
+	 * @return the age
+	 */
+	public int getAge() {
+		return age;
+	}
+
+	/**
+	 * @param age the age to set
+	 */
 	public void setAge(int age) {
 		this.age = age;
 	}
 
+	/**
+	 * @return the credit
+	 */
+	public CreditCard getCredit() {
+		return credit;
+	}
+
+	/**
+	 * @param credit the credit to set
+	 */
 	public void setCredit(CreditCard credit) {
 		this.credit = credit;
 	}
 
+	/**
+	 * @return the isValid
+	 */
+	public boolean isValid() {
+		return isValid;
+	}
+
+	/**
+	 * @param isValid the isValid to set
+	 */
 	public void setValid(boolean isValid) {
 		this.isValid = isValid;
 	}
 
+	/**
+	 * @return the isDriver
+	 */
+	public boolean isDriver() {
+		return isDriver;
+	}
+
+	/**
+	 * @param isDriver the isDriver to set
+	 */
 	public void setDriver(boolean isDriver) {
 		this.isDriver = isDriver;
 	}
