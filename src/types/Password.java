@@ -10,29 +10,46 @@ import util.encryption.*;
 public class Password {
 	
 	/**
-	 * the encrypted password;
+	 * The encrypted password;
 	 */
 	String password;
 
 	/**
-	 * Standar Constractor
-	 */
+	* Standar Constractor
+	*/
 	public Password(String password){
 		setPassword(password);
 	}
 	
 	
+	/**
+	 * Default Constractor
+	 */
 	public Password() {
 		password = "";
 	}
 
-
+	/**
+	 * Return the decrypted Password
+	 * @return password
+	 */
 	public String getPassword() {
 		Decryption dec  =  new ReverseDecryption();
 		return dec.decrypt(password,0);
 	}
-
-
+	
+	/**
+	 * Returns the encrypted password
+	 * @return password
+	 */
+	public String getRawPassword(){
+		return password;
+	}
+	
+	/**
+	 * encrypts and set the password
+	 * @param password
+	 */
 	public void setPassword(String password) {
 		Encryption enc = new ReverseEncryption();
 		this.password = enc.encrypt(password, 0);

@@ -1,27 +1,50 @@
 package types;
 import util.encryption.*;
+
+/**
+ * @author      Stavros Zarpas
+ * @version     0.1             
+ * @since       30/04/2016
+ */
 public class CreditCard {
 	
-	
+	/**
+	 * The encrypted credit Number 
+	 */
 	private int cNumber;
+	
+	/**
+	 * The name of the bank
+	 */
 	private String bank;
 	
 	
 	
-	
+	/**
+	 * Default Constractor
+	 */
 	public CreditCard(){
 		cNumber = 0;
 		bank = "";
 		
 	}
 	
+	/**Constractor
+	 * 
+	 * @param cNumber
+	 * @param bank
+	 */
 	public CreditCard(int cNumber, String bank) {
 		super();
-		this.cNumber = cNumber;
+		setcNumber( cNumber);
 		this.bank = bank;
 	}
 	
 	
+	/**
+	 * Decrypt and return the Credit Number
+	 * @return decryptedCreditNumber
+	 */
 	public int getcNumber() {
 		Decryption dec  =  new ReverseDecryption();
 		return dec.decrypt(cNumber,0);
@@ -29,6 +52,11 @@ public class CreditCard {
 	public String getBank() {
 		return bank;
 	}
+	
+	/**
+	 * Encrypt and set credit number
+	 * @param cNumber
+	 */
 	public void setcNumber(int cNumber) {
 		Encryption enc = new ReverseEncryption();
 		this.cNumber = enc.encrypt(cNumber, 0);
