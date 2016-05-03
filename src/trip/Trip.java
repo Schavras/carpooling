@@ -11,10 +11,10 @@ import types.currency.Currency;
 import user.Driver;
 import user.User;
 /**
- * @author schavras
  *
  */
 public class Trip {
+	
 	
 	/**
 	 * the unique id of the trip
@@ -56,6 +56,17 @@ public class Trip {
 	 */
 	private boolean isCompleted;
 	
+	/**
+	 * array of the travelers
+	 */
+	private User[] travelers;
+	
+	/**
+	 *  The maximum number of wanted travelers
+	 */
+	private int maxTravelers;
+	
+	
 	
 	/**
 	 * @param id
@@ -66,9 +77,10 @@ public class Trip {
 	 * @param totalPrice
 	 * @param isOpen
 	 * @param isCompleted
+	 * @param maxTravelers 
 	 */
 	public Trip(long id, Place startingPoint, Place destination, Driver driver, Date dateOfDeparture, Currency totalPrice,
-			boolean isOpen, boolean isCompleted) {
+			boolean isOpen, boolean isCompleted, int maxTravelers) {
 		this.id = id;
 		this.startingPoint = startingPoint;
 		this.destination = destination;
@@ -77,12 +89,16 @@ public class Trip {
 		this.totalPrice = totalPrice;
 		this.isOpen = isOpen;
 		this.isCompleted = isCompleted;
+		this.maxTravelers=maxTravelers;
+		
+		
 	}
 
 	/**
 	 * 
 	 */
 	public Trip() {
+		
 	}
 
 	/**
