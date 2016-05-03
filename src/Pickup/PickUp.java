@@ -2,6 +2,8 @@ package Pickup;
 
 
 import java.util.Date;
+
+import place.Place;
 public class PickUp {
 
 		private String place;
@@ -12,6 +14,16 @@ public class PickUp {
 		
 		private double cost;
 
+		private static class place extends Place {
+	        private String adress;
+
+			public place(String country, String region, String town, String comment,String adress) {
+	            super(country,region,town,comment);
+	            this.adress=adress;
+	        }
+	    }
+		
+		
 		public String getPlace() {
 			return place;
 		}
