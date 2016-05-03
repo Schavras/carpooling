@@ -7,9 +7,9 @@ public class Car {
 	private String id;
 	
 	/**
-	 * The name of the manufacture of car
+	 * The name of the manufacturer of car
 	 */
-	private String manufacter;
+	private String manufacturer;
 	
 	/**
 	 * The name of the model
@@ -26,7 +26,7 @@ public class Car {
 	 */
 	public Car() {
 		id="";
-		manufacter= "";
+		manufacturer= "";
 		model = "";
 		year= 0;
 	}
@@ -38,9 +38,9 @@ public class Car {
 	 * @param model
 	 * @param year
 	 */
-	public Car(String id, String manufacter, String model, int year) {
+	public Car(String id, String manufacturer, String model, int year) {
 		this.id = id;
-		this.manufacter = manufacter;
+		this.manufacturer = manufacturer;
 		this.model = model;
 		this.year = year;
 	}
@@ -62,15 +62,15 @@ public class Car {
 	/**
 	 * @return the manufacter
 	 */
-	public String getManufacter() {
-		return manufacter;
+	public String getManufacturer() {
+		return manufacturer;
 	}
 
 	/**
 	 * @param manufacter the manufacter to set
 	 */
-	public void setManufacter(String manufacter) {
-		this.manufacter = manufacter;
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class Car {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((manufacter == null) ? 0 : manufacter.hashCode());
+		result = prime * result + ((manufacturer == null) ? 0 : manufacturer.hashCode());
 		result = prime * result + ((model == null) ? 0 : model.hashCode());
 		result = prime * result + year;
 		return result;
@@ -132,10 +132,10 @@ public class Car {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (manufacter == null) {
-			if (other.manufacter != null)
+		if (manufacturer == null) {
+			if (other.manufacturer != null)
 				return false;
-		} else if (!manufacter.equals(other.manufacter))
+		} else if (!manufacturer.equals(other.manufacturer))
 			return false;
 		if (model == null) {
 			if (other.model != null)
