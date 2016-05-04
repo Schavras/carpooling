@@ -47,12 +47,7 @@ public class Trip {
 	/**
 	 * Checks if the trip is still accepting requests
 	 */
-	private boolean isOpen;
-	
-	/**
-	 * checks if the trip is completed
-	 */
-	private boolean isCompleted;
+	private EnumTripStatus status;
 	
 	/**
 	 * array of the travelers
@@ -78,15 +73,13 @@ public class Trip {
 	 * @param isCompleted
 	 * @param maxTravelers 
 	 */
-	public Trip(long id, Place startingPoint, Place destination, Date dateOfDeparture, Currency totalPrice,
-			boolean isOpen, boolean isCompleted, int maxTravelers) {
+	public Trip(long id, Place startingPoint, Place destination, Date dateOfDeparture, Currency totalPrice, int maxTravelers) {
 		this.id = id;
 		this.startingPoint = startingPoint;
 		this.destination = destination;
 		this.dateOfDeparture = dateOfDeparture;
 		this.totalPrice = totalPrice;
-		this.isOpen = isOpen;
-		this.isCompleted = isCompleted;
+		status=EnumTripStatus.OPEN;
 		this.maxTravelers=maxTravelers;
 		
 		
@@ -151,20 +144,13 @@ public class Trip {
 		this.totalPrice = totalPrice;
 	}
 
-	public boolean isOpen() {
-		return isOpen;
+
+	public EnumTripStatus getStatus() {
+		return status;
 	}
 
-	public void setOpen(boolean isOpen) {
-		this.isOpen = isOpen;
-	}
-
-	public boolean isCompleted() {
-		return isCompleted;
-	}
-
-	public void setCompleted(boolean isCompleted) {
-		this.isCompleted = isCompleted;
+	public void setStatus(EnumTripStatus status) {
+		this.status = status;
 	}
 
 	public ArrayList<Traveller> getTravelers() {
@@ -190,10 +176,9 @@ public class Trip {
 		result = prime * result + ((dateOfDeparture == null) ? 0 : dateOfDeparture.hashCode());
 		result = prime * result + ((destination == null) ? 0 : destination.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + (isCompleted ? 1231 : 1237);
-		result = prime * result + (isOpen ? 1231 : 1237);
 		result = prime * result + maxTravelers;
 		result = prime * result + ((startingPoint == null) ? 0 : startingPoint.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((totalPrice == null) ? 0 : totalPrice.hashCode());
 		result = prime * result + ((travelers == null) ? 0 : travelers.hashCode());
 		return result;
@@ -220,16 +205,14 @@ public class Trip {
 			return false;
 		if (id != other.id)
 			return false;
-		if (isCompleted != other.isCompleted)
-			return false;
-		if (isOpen != other.isOpen)
-			return false;
 		if (maxTravelers != other.maxTravelers)
 			return false;
 		if (startingPoint == null) {
 			if (other.startingPoint != null)
 				return false;
 		} else if (!startingPoint.equals(other.startingPoint))
+			return false;
+		if (status != other.status)
 			return false;
 		if (totalPrice == null) {
 			if (other.totalPrice != null)
