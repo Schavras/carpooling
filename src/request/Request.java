@@ -13,7 +13,6 @@ public class Request {
 	
 	/**
 	 * 
-	 * @author Athanasia
 	 * the current request status
 	 */
 	 private EnumStatus status;
@@ -23,26 +22,23 @@ public class Request {
 		this.approvalCode = approvalCode;
 		this.status = status;
 	}
-
-	public int isAPProved(){
-		int stat;
-		switch (status) {
-        case APPROVED:
-            stat=1;
-            break;
-                
-        case DECLINED:
-        	stat=2;
-            break;
-                     
-        case PENDING:
-        	stat=3;
-            break;
-                    
-        default:
-        	stat=4;
-            break;
-    }
+	
+	public Request(){
+		comment="";
+		approvalCode=0;
+		status=EnumStatus.REJECTED;
+	}
+	
+	public boolean isApproved(){
+		return (status.equals(EnumStatus.APPROVED) )? true : false;
+	}
+	
+	public boolean isRejected(){
+		return (status.equals(EnumStatus.REJECTED) )? true : false;
+	}
+	
+	public boolean isPending(){
+		return (status.equals(EnumStatus.PENDING) )? true : false;
 	}
 	
 	@Override
