@@ -81,7 +81,7 @@ public class Trip {
 		this.totalPrice = totalPrice;
 		status=EnumTripStatus.OPEN;
 		this.maxTravelers=maxTravelers;
-		
+		travelers = new ArrayList<Traveller> ();
 		
 	}
 

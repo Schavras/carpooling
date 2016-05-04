@@ -32,8 +32,12 @@ public class Traveller {
 		 this.traveller=traveller;
 		 
 		 driver.addRequest(this);
-		 
+		  
 	 }
+
+	public Traveller() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Trip getTrip() {
 		return trip;

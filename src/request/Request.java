@@ -1,8 +1,6 @@
 package request;
 
-import place.AddressPlace;
-import trip.Trip;
-import user.User;
+
 
 public class Request {
 	/**

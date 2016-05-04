@@ -19,7 +19,7 @@ public class DriverRequestList {
 	
 	
 	public Traveller get(int i){
-		if ( i > 0 && i < requests.size()) return requests.get(i);
+		if ( i >= 0 && i < requests.size()) return requests.get(i);
 		return null;
 	}
 

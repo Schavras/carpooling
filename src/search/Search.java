@@ -2,15 +2,14 @@ package search;
 
 import java.util.ArrayList;
 
-import place.Place;
-import trip.Trip;
+import user.Driver;
 
 public class Search {
 	
-	private static ArrayList<Trip> results= new ArrayList<Trip>() ;
+	private static ArrayList<Driver> results= new ArrayList<Driver>() ;
 	
 		
-	public ArrayList<Trip> search(Place place){
+	public ArrayList<Driver> search(Driver driver){
 		return results;
 	}
 }
