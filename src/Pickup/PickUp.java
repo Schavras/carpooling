@@ -3,47 +3,47 @@ package Pickup;
 
 import java.util.Date;
 
-import place.AdressPlace;
+import place.AddressPlace;
 import place.Place;
 public class PickUp {
 
-		private AdressPlace place;
+		private AddressPlace place;
 		
-		private Date PickUpDateAndTime;
+		private Date pickUpDateAndTime;
 		
-		private Date GetOffDateAndTime;
+		private Date disembarkDateAndTime;
 		
 		private double cost;
 
-		public PickUp(AdressPlace place, Date pickUpDateAndTime, Date getOffDateAndTime, double cost) {
+		public PickUp(AddressPlace place, Date pickUpDateAndTime, Date getOffDateAndTime, double cost) {
 			this.place = place;
-			PickUpDateAndTime = pickUpDateAndTime;
-			GetOffDateAndTime = getOffDateAndTime;
+			pickUpDateAndTime = pickUpDateAndTime;
+			disembarkDateAndTime = getOffDateAndTime;
 			this.cost = cost;
 		}
 
-		public AdressPlace getPlace() {
+		public AddressPlace getPlace() {
 			return place;
 		}
 
-		public void setPlace(AdressPlace place) {
+		public void setPlace(AddressPlace place) {
 			this.place = place;
 		}
 
 		public Date getPickUpDateAndTime() {
-			return PickUpDateAndTime;
+			return pickUpDateAndTime;
 		}
 
 		public void setPickUpDateAndTime(Date pickUpDateAndTime) {
-			PickUpDateAndTime = pickUpDateAndTime;
+			pickUpDateAndTime = pickUpDateAndTime;
 		}
 
-		public Date getGetOffDateAndTime() {
-			return GetOffDateAndTime;
+		public Date getDisembarkDateAndTime() {
+			return disembarkDateAndTime;
 		}
 
-		public void setGetOffDateAndTime(Date getOffDateAndTime) {
-			GetOffDateAndTime = getOffDateAndTime;
+		public void setDisembarkDateAndTime(Date getOffDateAndTime) {
+			disembarkDateAndTime = getOffDateAndTime;
 		}
 
 		public double getCost() {
@@ -58,8 +58,8 @@ public class PickUp {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + ((GetOffDateAndTime == null) ? 0 : GetOffDateAndTime.hashCode());
-			result = prime * result + ((PickUpDateAndTime == null) ? 0 : PickUpDateAndTime.hashCode());
+			result = prime * result + ((disembarkDateAndTime == null) ? 0 : disembarkDateAndTime.hashCode());
+			result = prime * result + ((pickUpDateAndTime == null) ? 0 : pickUpDateAndTime.hashCode());
 			long temp;
 			temp = Double.doubleToLongBits(cost);
 			result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -76,15 +76,15 @@ public class PickUp {
 			if (getClass() != obj.getClass())
 				return false;
 			PickUp other = (PickUp) obj;
-			if (GetOffDateAndTime == null) {
-				if (other.GetOffDateAndTime != null)
+			if (disembarkDateAndTime == null) {
+				if (other.disembarkDateAndTime != null)
 					return false;
-			} else if (!GetOffDateAndTime.equals(other.GetOffDateAndTime))
+			} else if (!disembarkDateAndTime.equals(other.disembarkDateAndTime))
 				return false;
-			if (PickUpDateAndTime == null) {
-				if (other.PickUpDateAndTime != null)
+			if (pickUpDateAndTime == null) {
+				if (other.pickUpDateAndTime != null)
 					return false;
-			} else if (!PickUpDateAndTime.equals(other.PickUpDateAndTime))
+			} else if (!pickUpDateAndTime.equals(other.pickUpDateAndTime))
 				return false;
 			if (Double.doubleToLongBits(cost) != Double.doubleToLongBits(other.cost))
 				return false;
