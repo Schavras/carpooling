@@ -6,7 +6,7 @@ package place;
 /**
  * Extends Place, adding adress
  */
-public class AdressPlace extends Place{
+public class AddressPlace extends Place{
 	
 	/**
 	 * The road of the adress
@@ -23,12 +23,11 @@ public class AdressPlace extends Place{
 	 */
 	private int postCode;
 
-	public AdressPlace() {
-		super();
-		// TODO Auto-generated constructor stub
+	public AddressPlace() {
+	
 	}
 
-	public AdressPlace(String country, String region, String town, String comment, String road, int number,int postCode) {
+	public AddressPlace(String country, String region, String town, String comment, String road, int number,int postCode) {
 		super(country, region, town, comment);
 		this.road=road;
 		this.number=number;
@@ -77,7 +76,7 @@ public class AdressPlace extends Place{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AdressPlace other = (AdressPlace) obj;
+		AddressPlace other = (AddressPlace) obj;
 		if (number != other.number)
 			return false;
 		if (postCode != other.postCode)

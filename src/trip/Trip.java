@@ -4,12 +4,14 @@
 package trip;
 
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import place.Place;
 import types.currency.Currency;
-import user.Driver;
-import user.User;
+import user.Traveller;
+
+
 /**
  *
  */
@@ -31,11 +33,7 @@ public class Trip {
 	 */
 	private Place destination;
 	
-	/**
-	 * the Driver
-	 */
-	private Driver driver;
-	
+		
 	/**
 	 * the date of departure
 	 */
@@ -59,7 +57,7 @@ public class Trip {
 	/**
 	 * array of the travelers
 	 */
-	private User[] travelers;
+	private ArrayList<Traveller> travelers;
 	
 	/**
 	 *  The maximum number of wanted travelers
@@ -72,19 +70,19 @@ public class Trip {
 	 * @param id
 	 * @param startingPoint
 	 * @param destination
-	 * @param driver
+	 * @param user
+	 * @param car
 	 * @param dateOfDeparture
 	 * @param totalPrice
 	 * @param isOpen
 	 * @param isCompleted
 	 * @param maxTravelers 
 	 */
-	public Trip(long id, Place startingPoint, Place destination, Driver driver, Date dateOfDeparture, Currency totalPrice,
+	public Trip(long id, Place startingPoint, Place destination, Date dateOfDeparture, Currency totalPrice,
 			boolean isOpen, boolean isCompleted, int maxTravelers) {
 		this.id = id;
 		this.startingPoint = startingPoint;
 		this.destination = destination;
-		this.driver = driver;
 		this.dateOfDeparture = dateOfDeparture;
 		this.totalPrice = totalPrice;
 		this.isOpen = isOpen;
@@ -101,139 +99,106 @@ public class Trip {
 		
 	}
 
-	/**
-	 * @return the id
-	 */
+	
+	
+	
+	public boolean addTraveler(Traveller traveller){
+		if (travelers.size()+1 <= maxTravelers){
+			travelers.add(traveller);
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	public long getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the startingPoint
-	 */
 	public Place getStartingPoint() {
 		return startingPoint;
 	}
 
-	/**
-	 * @param startingPoint the startingPoint to set
-	 */
 	public void setStartingPoint(Place startingPoint) {
 		this.startingPoint = startingPoint;
 	}
 
-	/**
-	 * @return the destination
-	 */
 	public Place getDestination() {
 		return destination;
 	}
 
-	/**
-	 * @param destination the destination to set
-	 */
 	public void setDestination(Place destination) {
 		this.destination = destination;
 	}
 
-	/**
-	 * @return the driver
-	 */
-	public Driver getDriver() {
-		return driver;
-	}
-
-	/**
-	 * @param driver the driver to set
-	 */
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
-
-	/**
-	 * @return the dateOfDeparture
-	 */
 	public Date getDateOfDeparture() {
 		return dateOfDeparture;
 	}
 
-	/**
-	 * @param dateOfDeparture the dateOfDeparture to set
-	 */
 	public void setDateOfDeparture(Date dateOfDeparture) {
 		this.dateOfDeparture = dateOfDeparture;
 	}
 
-	/**
-	 * @return the totalPrice
-	 */
 	public Currency getTotalPrice() {
 		return totalPrice;
 	}
 
-	/**
-	 * @param totalPrice the totalPrice to set
-	 */
 	public void setTotalPrice(Currency totalPrice) {
 		this.totalPrice = totalPrice;
 	}
 
-	/**
-	 * @return the isOpen
-	 */
 	public boolean isOpen() {
 		return isOpen;
 	}
 
-	/**
-	 * @param isOpen the isOpen to set
-	 */
 	public void setOpen(boolean isOpen) {
 		this.isOpen = isOpen;
 	}
 
-	/**
-	 * @return the isCompleted
-	 */
 	public boolean isCompleted() {
 		return isCompleted;
 	}
 
-	/**
-	 * @param isCompleted the isCompleted to set
-	 */
 	public void setCompleted(boolean isCompleted) {
 		this.isCompleted = isCompleted;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
+	public ArrayList<Traveller> getTravelers() {
+		return travelers;
+	}
+
+	public void setTravelers(ArrayList<Traveller> travelers) {
+		this.travelers = travelers;
+	}
+
+	public int getMaxTravelers() {
+		return maxTravelers;
+	}
+
+	public void setMaxTravelers(int maxTravelers) {
+		this.maxTravelers = maxTravelers;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((dateOfDeparture == null) ? 0 : dateOfDeparture.hashCode());
 		result = prime * result + ((destination == null) ? 0 : destination.hashCode());
-		result = prime * result + ((driver == null) ? 0 : driver.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + (isCompleted ? 1231 : 1237);
 		result = prime * result + (isOpen ? 1231 : 1237);
+		result = prime * result + maxTravelers;
 		result = prime * result + ((startingPoint == null) ? 0 : startingPoint.hashCode());
 		result = prime * result + ((totalPrice == null) ? 0 : totalPrice.hashCode());
+		result = prime * result + ((travelers == null) ? 0 : travelers.hashCode());
 		return result;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -253,16 +218,13 @@ public class Trip {
 				return false;
 		} else if (!destination.equals(other.destination))
 			return false;
-		if (driver == null) {
-			if (other.driver != null)
-				return false;
-		} else if (!driver.equals(other.driver))
-			return false;
 		if (id != other.id)
 			return false;
 		if (isCompleted != other.isCompleted)
 			return false;
 		if (isOpen != other.isOpen)
+			return false;
+		if (maxTravelers != other.maxTravelers)
 			return false;
 		if (startingPoint == null) {
 			if (other.startingPoint != null)
@@ -274,9 +236,17 @@ public class Trip {
 				return false;
 		} else if (!totalPrice.equals(other.totalPrice))
 			return false;
+		if (travelers == null) {
+			if (other.travelers != null)
+				return false;
+		} else if (!travelers.equals(other.travelers))
+			return false;
 		return true;
 	}
 	
 	
+	
+	
+
 	
 }

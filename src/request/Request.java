@@ -1,5 +1,9 @@
 package request;
 
+import place.AddressPlace;
+import trip.Trip;
+import user.User;
+
 public class Request {
 	/**
 	 * the comment that the passenger sends to the driver
@@ -11,22 +15,20 @@ public class Request {
 	 */
 	private int approvalCode;
 	
-	/**
-	 * 
-	 * the current request status
-	 */
-	 private EnumStatus status;
+	private EnumStatus status;
 	 
-	public Request(String comment, int approvalCode, EnumStatus status) {
+	public Request(String comment) {
 		this.comment = comment;
-		this.approvalCode = approvalCode;
-		this.status = status;
+		this.status = EnumStatus.PENDING;
+		
 	}
 	
+	
+
 	public Request(){
 		comment="";
 		approvalCode=0;
-		status=EnumStatus.REJECTED;
+		status=EnumStatus.PENDING;
 	}
 	
 	public boolean isApproved(){
@@ -41,6 +43,52 @@ public class Request {
 		return (status.equals(EnumStatus.PENDING) )? true : false;
 	}
 	
+	
+	
+	//TODO des to teleftaio approval code
+	public  int nextApprovalCode() {
+		approvalCode++;
+		return approvalCode;
+	}
+
+
+
+	public String getComment() {
+		return comment;
+	}
+
+
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+
+
+	public int getApprovalCode() {
+		return approvalCode;
+	}
+
+
+
+	public void setApprovalCode(int approvalCode) {
+		this.approvalCode = approvalCode;
+	}
+
+
+
+	public EnumStatus getStatus() {
+		return status;
+	}
+
+
+
+	public void setStatus(EnumStatus status) {
+		this.status = status;
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -50,6 +98,8 @@ public class Request {
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -71,29 +121,10 @@ public class Request {
 			return false;
 		return true;
 	}
+	
+	
+	
 
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	public int getApprovalCode() {
-		return approvalCode;
-	}
-
-	public void setApprovalCode(int approvalCode) {
-		this.approvalCode = approvalCode;
-	}
-
-	public EnumStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(EnumStatus status) {
-		this.status = status;
-	}
+	
 	 
 }

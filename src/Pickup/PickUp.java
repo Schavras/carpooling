@@ -35,15 +35,15 @@ public class PickUp {
 		}
 
 		public void setPickUpDateAndTime(Date pickUpDateAndTime) {
-			pickUpDateAndTime = pickUpDateAndTime;
+			this.pickUpDateAndTime = pickUpDateAndTime;
 		}
 
 		public Date getDisembarkDateAndTime() {
 			return disembarkDateAndTime;
 		}
 
-		public void setDisembarkDateAndTime(Date getOffDateAndTime) {
-			disembarkDateAndTime = getOffDateAndTime;
+		public void setDisembarkDateAndTime(Date disembarkDateAndTime) {
+			this.disembarkDateAndTime = disembarkDateAndTime;
 		}
 
 		public double getCost() {
