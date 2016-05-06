@@ -71,5 +71,11 @@ public class Traveller {
 		this.request = request;
 	}
 
+	@Override
+	public String toString() {
+		return "Traveller [trip=" + trip + ", traveller=" + traveller + ", address=" + address + ", request=" + request
+				+ "]";
+	}
+	
 	
 }

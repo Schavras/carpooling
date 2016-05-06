@@ -44,7 +44,7 @@ public class Driver{
 		requests.get(i).getRequest().setStatus(EnumStatus.APPROVED);
 		requests.get(i).getRequest().setApprovalCode(requests.get(i).getRequest().nextApprovalCode());
 		trip.addTraveler(requests.get(i));
-		//requests.remove(i);
+	//	requests.remove(i);
 		
 	}
 	
@@ -52,7 +52,7 @@ public class Driver{
 	
 	public void declineRequest(int i){
 		requests.get(i).getRequest().setStatus(EnumStatus.REJECTED);
-		requests.remove(i);
+		//requests.remove(i);
 		
 	}
 

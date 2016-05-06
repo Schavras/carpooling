@@ -19,31 +19,36 @@ import place.Place;
 
 public class driverTest {
 
-@Test
-public void testConstactor(){
+	@Test
+	public void testConstactor(){
+		
+		Driver dr = new Driver(new User(),new Car(),new Trip());
+		
+	}
 	
-	Driver dr = new Driver(new User(),new Car(),new Trip());
+	@Test
+	public void testAddRequest(){
+		Driver dr = new Driver(new User(),new Car(),new Trip());
+		dr.addRequest(new Traveller());
+	}
 	
-}
-
-@Test
-public void testAddRequest(){
-	Driver dr = new Driver(new User(),new Car(),new Trip());
-	dr.addRequest(new Traveller());
-}
-
-@Test 
-public void testApproveRequest(){
-	Driver dr = new Driver(new User(),new Car(),new Trip(0, new Place(), new Place(), new Date(), new Currency(0,CurrencyNamesEnum.EURO), 3));
-	Traveller tr = new Traveller(new User(), dr, new AddressPlace(),"abc"); 
-	dr.addRequest(tr);
-	dr.approveRequest(0);
-	Assert.assertEquals(EnumStatus.APPROVED,dr.getRequests().get(0).getRequest().getStatus());
+	@Test 
+	public void testApproveRequest(){
+		Driver dr = new Driver(new User(),new Car(),new Trip(0, new Place(), new Place(), new Date(), new Currency(0,CurrencyNamesEnum.EURO), 3));
+		Traveller tr = new Traveller(new User(), dr, new AddressPlace(),"abc"); 
+		Assert.assertEquals(1, dr.getRequests().getRequests().size());
+		dr.approveRequest(0);
+		Assert.assertEquals(EnumStatus.APPROVED,dr.getRequests().get(0).getRequest().getStatus());
+		
+	}
 	
+	@Test 
+	public void testDeclineRequest(){
+		Driver dr = new Driver(new User(),new Car(),new Trip(0, new Place(), new Place(), new Date(), new Currency(0,CurrencyNamesEnum.EURO), 3));
+		Traveller tr = new Traveller(new User(), dr, new AddressPlace(),"abc"); 
+		Assert.assertEquals(1, dr.getRequests().getRequests().size());
+		dr.declineRequest(0);
+		Assert.assertEquals(EnumStatus.REJECTED,dr.getRequests().get(0).getRequest().getStatus());
+		
+	}
 }
-
-}
-
-
-	
-
