@@ -8,11 +8,13 @@ public class RatingsSummaryTest {
 
 	@Test
 	public void Constractor() {
+		@SuppressWarnings("unused")
 		RatingsSummary test = new RatingsSummary() ;
 	}
 	
 	@Test
 	public void RatingTest(){
+		@SuppressWarnings("unused")
 		Rating temp = new Rating(5,"abc");
 	}
 	

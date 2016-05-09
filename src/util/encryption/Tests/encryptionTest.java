@@ -18,6 +18,7 @@ public class encryptionTest {
 
 	@Test
 	public void testDefault() {
+		@SuppressWarnings("unused")
 		Encryption testObject = new ReverseEncryption();
 	}
 	

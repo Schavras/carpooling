@@ -4,7 +4,6 @@ package Pickup;
 import java.util.Date;
 
 import place.AddressPlace;
-import place.Place;
 public class PickUp {
 
 		private AddressPlace place;
@@ -17,7 +16,7 @@ public class PickUp {
 
 		public PickUp(AddressPlace place, Date pickUpDateAndTime, Date getOffDateAndTime, double cost) {
 			this.place = place;
-			pickUpDateAndTime = pickUpDateAndTime;
+			this.pickUpDateAndTime = pickUpDateAndTime;
 			disembarkDateAndTime = getOffDateAndTime;
 			this.cost = cost;
 		}

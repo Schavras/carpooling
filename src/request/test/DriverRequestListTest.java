@@ -1,7 +1,5 @@
 package request.test;
 import request.DriverRequestList;
-import request.EnumStatus;
-import request.Request;
 import user.Traveller;
 
 import java.util.ArrayList;
@@ -14,6 +12,7 @@ public class DriverRequestListTest {
 
 	@Test
 	public void DefaultConstractorTest(){
+		@SuppressWarnings("unused")
 		DriverRequestList test = new DriverRequestList();
 	}
 	
@@ -22,7 +21,9 @@ public class DriverRequestListTest {
 		ArrayList<Traveller> trav = new ArrayList<Traveller>();
 		trav.add(new Traveller());
 		trav.add(new Traveller());
+		@SuppressWarnings("unused")
 		DriverRequestList test = new DriverRequestList(trav);
+		
 	}
 	
 	@Test
