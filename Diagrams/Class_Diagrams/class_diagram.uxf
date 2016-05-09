@@ -1,272 +1,584 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.1.0">
-  <zoom_level>11</zoom_level>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>352</x>
-      <y>253</y>
-      <w>231</w>
-      <h>209</h>
-    </coordinates>
-    <panel_attributes>User
---
--id: Long
--name: String
--surname: String
--email: String
--password: String
--age: int
--creditNumber: int
--isValid: boolean
--isDriver: boolean
-
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>330</x>
-      <y>715</y>
-      <w>231</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>Place
---
--country: String
--region:
--town: String
--comments: String
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>737</x>
-      <y>506</y>
-      <w>231</w>
-      <h>231</h>
-    </coordinates>
-    <panel_attributes>Trip
---
--id: Long
--startingPoint: Place
--destination: place
--numOfPassengers: int
--driver: Driver
--dateOfDeparture: Date
--totalPrice: double
--isOpen: boolean
--isCompleted: boolean
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>297</y>
-      <w>231</w>
-      <h>121</h>
+      <y>144</y>
+      <w>168</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Car
+Package::Car
 --
--manufacter: String
+-id: String
+-manunfacturer: String
 -model: String
 -year: int
--id: String
+--
++hashCode(): int
++equals(obj: Object): boolean
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
-      <y>99</y>
-      <w>264</w>
-      <h>66</h>
+      <x>184</x>
+      <y>616</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Loader
+Package::data.loader
+--
+
+--
++load()
++loadTrips(): ArrayList&lt;Driver&gt;
++loadUsers(): ArrayList&lt;User&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>752</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>MemoryLoader
+Package::data.loader
+--
+
+--
++load()
++loadTrips(): ArrayList&lt;Driver&gt;
++loadUsers(): ArrayList&lt;User&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>256</x>
+      <y>712</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>192</y>
+      <w>168</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>PickUp
+Package::PickUp
+--
+-place: AddressPlace
+-pickUpDateAndTime: Date
+-disembarkDateAndTime: Date
+-cost: double
+--
++hashCode(): int
++equals(obj: Object): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>624</y>
+      <w>168</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Place
+Package::place
+--
+-country: String
+-region: String
+-town: String
+-comment: String
+--
++hashcode(): int
++equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>776</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>AddressPlace
+Package::place
+--
+-road: String
+-number: int
+-postCode: int
+--
++hashcode(): int
++equals(obj: Object): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>736</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>72</y>
+      <w>192</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>RatingsSummary
+Package::rating
+--
+-ratings: ArrayList&lt;Rating&gt;
+-average: double
+-size: int
+--
++hashcode(): int
++equals(obj: Object): boolean
++getByRating(rating: Rating): Rating
++getByIndex(index: int): Rating
++isEmpty(): boolean
++updateAverage()
++remove(index int)
++remove(rating Rating)
++add(rating Rating)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>296</y>
+      <w>168</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>DriverRatings
+Package::rating
+--
+-trip: Trip
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>256</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>376</y>
+      <w>168</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>Rating
+Package::rating
 --
--rateNumber: int
-comment
-
-
-</panel_attributes>
+-number: int 
+-comment: String
+--
++hashcode(): int
++equals(obj: Object): boolean</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>220</x>
-      <y>341</y>
-      <w>154</w>
-      <h>44</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=1
-m2=*</panel_attributes>
-    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>770</x>
-      <y>330</y>
-      <w>231</w>
+      <x>1240</x>
+      <y>384</y>
+      <w>168</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>DriverRequestList
+Package::request
+--
+-requests: ArrayList&lt;Traveller&gt;
+--
++hashCode(): int
++equals(obj: Object): boolean
++remove(i: int)
++add(req: Traveller)
++get(i: int): Traveller
++hashCode(): int
++equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>536</y>
+      <w>168</w>
       <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+EnumStatus
+Package::request
+--
++APPROVED
++REJECTED
++PENDING
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>640</y>
+      <w>168</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Request
+Package::request
 --
 -comment: String
-status:STATUS
-approvalCode:integer
-</panel_attributes>
+-approvalCode: int
+-status:EnumStatus
+--
++hashCode(): int
++equals(obj: Object): boolean
++isApproved(): boolean
++isRejected(): boolean
++isPending(): boolean
++nextApprovalCode(): int</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>550</x>
-      <y>704</y>
-      <w>209</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=1..1
-m2=1..1</panel_attributes>
-    <additional_attributes>10.0;50.0;90.0;50.0;90.0;10.0;170.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>440</x>
-      <y>451</y>
-      <w>319</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=1
-r1=driver
-m2=*
-makes new &gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;130.0;270.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>572</x>
-      <y>264</y>
-      <w>308</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=1
-m2=*
-makes new &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;260.0;20.0;260.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>847</x>
-      <y>407</y>
-      <w>33</w>
-      <h>121</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m2=1
-m1=*</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1232</x>
-      <y>154</y>
-      <w>99</w>
-      <h>198</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=1
-m2=1
-r2=passenger</panel_attributes>
-    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>154</x>
-      <y>407</y>
-      <w>605</w>
-      <h>275</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1
-m2=*
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;220.0;530.0;220.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1056</x>
-      <y>330</y>
-      <w>231</w>
-      <h>110</h>
+      <x>1544</x>
+      <y>72</y>
+      <w>208</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>Pickup
+    <panel_attributes>Search
+Package::search
 --
-pickupTime
-place:String
-getoffTime
-cost
+-results: ArrayList&lt;Driver&gt;
+--
++search(driver: Driver)ArrayList&lt;Driver&gt;
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1896</x>
+      <y>472</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+EnumTripStatus
+Package::Trip
+--
++OPEN
++CLOSED
++COMPLETED
++CANCELED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1896</x>
+      <y>592</y>
+      <w>216</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Trip
+Package::trip
+--
+-id: Long {composite}
+-startingPoint: Place
+-destination: Place
+-dateOfDeparture: Date
+-totalPrice: Currency
+-status: EnumTripStatus
+-travelers: ArrayList&lt;Traveller&gt;
+-maxTravelers: int
+--
++addTraveler(traveller: Traveller):boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2256</x>
+      <y>64</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Password
+Package::types
+--
+-password: String
+--
++getPassword(): String
++hashcode(): int
++equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2256</x>
+      <y>176</y>
+      <w>168</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Email
+Package::types
+--
+-fullEmailAdress: String
+--
++hashcode(): int
++equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2256</x>
+      <y>280</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>CreditCard
+Package::types
+--
+-cNumber: int
+-bank: String
+--
++hashcode(): int
++equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2560</x>
+      <y>496</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+Package::types.currency
+--
++EURO
++DOLLAR
+-abbreviation: String
+-sign: char
+-conversionRate: float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2936</x>
+      <y>0</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>User
+Package::user
+--
+#id: Long 
+#name: String	
+#surname: String
+#email: Email
+#password: Password
+#age: int
+#credit: CreditCard
+#isValid: boolean
+#isDriver: boolean
+--
++hashCode(): int
++equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2560</x>
+      <y>624</y>
+      <w>168</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Currency
+Package::types.currency
+--
+-value: float
+-cName: CurrencyNamesEnum
+--
++currencyChange(newCurrency: CurrencyNamesEnum)
++hashcode(): int
++equals(obj: Object): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2936</x>
+      <y>160</y>
+      <w>168</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Traveller
+Package::user
+--
+-trip: Trip
+-traveller: User
+-address: AddressPlace
+-request: Request
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2936</x>
+      <y>264</y>
+      <w>168</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Driver
+Package::user
+--
+-user: User
+-car: Car
+-request: DriverRequestList
+-trip: Trip
+--
++hashCode(): int
++equals(obj: Object): boolean
++addRequest(req: Traveller)
++approveRequest(i: int)
++declineRequest(i: in)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3296</x>
+      <y>232</y>
+      <w>168</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Encryption
+Package::util.encryption
+--
++encrypt(toEncrypt: String,seed: int): String
++encrypt(toEncrypt: iny,seed: int): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3304</x>
+      <y>392</y>
+      <w>168</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ReverseEncryption
+Package::util.encryption
+--
++encrypt(toEncrypt: String,seed: int): String
++encrypt(toEncrypt: iny,seed: int): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3304</x>
+      <y>504</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Decryption
+Package::util.encryption
+--
++decrypt(toEncrypt: String,seed: int): String
++decrypt(toEncrypt: iny,seed: int): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3304</x>
+      <y>648</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>ReverseDecryption
+Package::util.encryption
+--
++decrypt(toEncrypt: String,seed: int): String
++decrypt(toEncrypt: iny,seed: int): int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
-      <y>231</y>
-      <w>594</w>
-      <h>121</h>
+      <x>3376</x>
+      <y>312</y>
+      <w>24</w>
+      <h>96</h>
     </coordinates>
-    <panel_attributes>lt=-
-m1=1
-m2=*
-makes new &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;520.0;20.0;520.0;90.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>957</x>
-      <y>429</y>
-      <w>231</w>
-      <h>176</h>
+      <x>3376</x>
+      <y>592</y>
+      <w>24</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>lt=-
-m2=1
-m1=*</panel_attributes>
-    <additional_attributes>190.0;10.0;190.0;130.0;10.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1254</x>
-      <y>110</y>
-      <w>176</w>
-      <h>286</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=1
-m2=0..1
-r2=driver</panel_attributes>
-    <additional_attributes>30.0;230.0;140.0;230.0;140.0;20.0;10.0;20.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>

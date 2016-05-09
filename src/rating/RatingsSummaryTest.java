@@ -108,7 +108,7 @@ public class RatingsSummaryTest {
 		
 		Rating temp3 = new Rating(1,"dfg");
 		test.add(temp3);
-		Assert.assertEquals("5,6667", String.format("%.4f",test.getAverage()));
+		Assert.assertEquals("5.6667", String.format("%.4f",test.getAverage()));
 		
 		test.remove(1);
 		Assert.assertEquals(Double.doubleToLongBits(3),Double.doubleToLongBits(test.getAverage()));
