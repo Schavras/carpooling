@@ -35,8 +35,8 @@ public class driverTest {
 	@Test 
 	public void testApproveRequest(){
 		Driver dr = new Driver(new User(),new Car(),new Trip(0, new Place(), new Place(), new Date(), new Currency(0,CurrencyNamesEnum.EURO), 3)); 
+		@SuppressWarnings("unused")
 		Traveller tr = new Traveller(new User(), dr, new AddressPlace(), "");
-		//dr.addRequest(tr);
 		Assert.assertEquals(1, dr.getRequests().getRequests().size());
 		dr.approveRequest(0);
 		Assert.assertEquals(EnumStatus.APPROVED,dr.getRequests().get(0).getRequest().getStatus());
@@ -46,6 +46,7 @@ public class driverTest {
 	@Test 
 	public void testDeclineRequest(){
 		Driver dr = new Driver(new User(),new Car(),new Trip(0, new Place(), new Place(), new Date(), new Currency(0,CurrencyNamesEnum.EURO), 3));
+		@SuppressWarnings("unused")
 		Traveller tr = new Traveller(new User(), dr, new AddressPlace(), "");
 		Assert.assertEquals(1, dr.getRequests().getRequests().size());
 		dr.declineRequest(0);

@@ -36,10 +36,19 @@ public class Driver{
 		this.trip= trip;
 	}
 	
+	/**
+	 * Add new request as new Traveller object
+	 * @param req
+	 */
 	public void addRequest(Traveller req){
 		requests.add(req);
 	}
-
+	
+	/**
+	 * Approve the i pending request, by changing it status, generate and settin new 
+	 * approval code, and add the traveller in the trip's list
+	 * @param i
+	 */
 	public void approveRequest(int i){
 		requests.get(i).getRequest().setStatus(EnumStatus.APPROVED);
 		requests.get(i).getRequest().setApprovalCode(requests.get(i).getRequest().nextApprovalCode());
@@ -49,11 +58,14 @@ public class Driver{
 	}
 	
 	
-	
+	/**
+	 * Reject the i pending request, by setting it;s status to REJECTED, and 
+	 * removing it from pending requests
+	 * @param i
+	 */
 	public void declineRequest(int i){
 		requests.get(i).getRequest().setStatus(EnumStatus.REJECTED);
-		requests.remove(i);
-		
+		requests.remove(i);		
 	}
 
 	public User getUser() {
