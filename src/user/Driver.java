@@ -52,7 +52,7 @@ public class Driver{
 	
 	public void declineRequest(int i){
 		requests.get(i).getRequest().setStatus(EnumStatus.REJECTED);
-		//requests.remove(i);
+		requests.remove(i);
 		
 	}
 
