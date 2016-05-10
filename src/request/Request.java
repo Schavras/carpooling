@@ -120,16 +120,5 @@ public class Request {
 		return true;
 	}
 
-
-
-	@Override
-	public String toString() {
-		return "Request [comment=" + comment + ", approvalCode=" + approvalCode + ", status=" + status + "]";
-	}
-	
-	
-	
-
-	
-	 
+ 
 }
