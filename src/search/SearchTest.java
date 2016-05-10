@@ -32,9 +32,9 @@ public class SearchTest {
 		ArrayList<Driver> searchResult;
 		
 		searchResult=Search.searchByPlace(placeToSearch, datas);
-		Assert.assertEquals(searchResult.size(), 2);
-		Assert.assertSame(searchResult.get(0), driver1);
-		Assert.assertSame(searchResult.get(1), driver3);
+		Assert.assertEquals(2 , searchResult.size());
+		Assert.assertSame( driver1, searchResult.get(0));
+		Assert.assertSame(driver3 , searchResult.get(1));
 		
 	}
 	
@@ -53,11 +53,11 @@ public class SearchTest {
 		
 		Driver driverToSearch = new Driver(new User(), new Car(), new Trip(0, new Place(), place, new Date(), new Currency(6.0f, CurrencyNamesEnum.EURO), 2));
 		
-		ArrayList<Driver> searchResult;
+		ArrayList<Driver> searchResult1;
 		
-		searchResult=Search.searchByDriver(driverToSearch, datas);
-		Assert.assertEquals(searchResult.size(), 1);
-		Assert.assertSame(searchResult.get(0), driver3);
+		searchResult1=Search.searchByDriver(driverToSearch, datas);
+		Assert.assertEquals(1, searchResult1.size());
+		Assert.assertSame(searchResult1.get(0), driver3);
 		
 		
 	}

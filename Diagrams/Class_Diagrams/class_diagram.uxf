@@ -351,7 +351,8 @@ Package::user
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
--password</panel_attributes>
+-password
+</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;190.0;50.0;190.0;80.0</additional_attributes>
   </element>
   <element>
