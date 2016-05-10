@@ -36,6 +36,13 @@ public class Driver{
 		this.trip= trip;
 	}
 	
+	public Driver() {
+		user = new User();
+		car = new Car();
+		requests = new DriverRequestList();
+		trip = new Trip();
+	}
+
 	/**
 	 * Add new request as new Traveller object
 	 * @param req
@@ -142,15 +149,4 @@ public class Driver{
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

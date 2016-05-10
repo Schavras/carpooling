@@ -28,23 +28,19 @@ public class RatingsSummary {
 	}
 	
 	public void remove(Rating rating){
-		try{
+		if(size>0){
 			ratings.remove(rating);
 			size--;
 			updateAverage();
-		}catch(IndexOutOfBoundsException e){
-			System.err.println("Ratings Summary: IndexOutOfBoundsException: " + e.getMessage());
 		}
 		
 	}
 	
 	public void remove(int index){
-		try{
+		if(size>0){
 			ratings.remove(index);
 			size--;
 			updateAverage();
-		}catch(IndexOutOfBoundsException e){
-			System.err.println("Ratings Summary: IndexOutOfBoundsException: " + e.getMessage());
 		}
 		
 	}
@@ -66,7 +62,7 @@ public class RatingsSummary {
 	}
 	
 	public boolean isEmpty(){
-		return  (size == 0 && ratings.isEmpty() ) ?  true : false;
+		return  (ratings.isEmpty() ) ?  true : false;
 		
 	}
 	
@@ -81,7 +77,6 @@ public class RatingsSummary {
 				return ratings.get(i);
 			}
 		}
-		System.out.println("null");
 		return null;
 	}
 
@@ -129,16 +124,6 @@ public class RatingsSummary {
 	public int getSize() {
 		return size;
 	}
-
-
-
-	/**
-	 * @param size the size to set
-	 */
-	public void setSize(int size) {
-		this.size = size;
-	}
-
 
 
 	/* (non-Javadoc)

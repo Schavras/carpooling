@@ -51,10 +51,7 @@ public class User {
 	 */
 	boolean isValid;
 	
-	/**
-	 *true if the user is driver 
-	 */
-	boolean isDriver;
+	
 
 	/**
 	 * Full Constractor
@@ -66,11 +63,9 @@ public class User {
 	 * @param age
 	 * @param credit
 	 * @param isValid
-	 * @param isDriver
 	 */
 	public User(long id, String name, String surname, Email email,
-			Password password, int age, CreditCard credit, boolean isValid,
-			boolean isDriver) {
+			Password password, int age, CreditCard credit, boolean isValid) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
@@ -79,7 +74,7 @@ public class User {
 		this.age = age;
 		this.credit = credit;
 		this.isValid = isValid;
-		this.isDriver = isDriver;
+
 	}
 
 	/**
@@ -94,10 +89,10 @@ public class User {
 		this.age = 0;
 		this.credit = new CreditCard();
 		this.isValid = false;
-		this.isDriver = false;
 	}
 
 	/**
+	 * Minimum constructor
 	 * @param id
 	 * @param name
 	 * @param surname
@@ -116,7 +111,6 @@ public class User {
 		
 		this.credit = new CreditCard();
 		this.age = 0;
-		this.isDriver = false;
 	}
 
 
@@ -233,19 +227,7 @@ public class User {
 		this.isValid = isValid;
 	}
 
-	/**
-	 * @return the isDriver
-	 */
-	public boolean isDriver() {
-		return isDriver;
-	}
-
-	/**
-	 * @param isDriver the isDriver to set
-	 */
-	public void setDriver(boolean isDriver) {
-		this.isDriver = isDriver;
-	}
+	
 
 	@Override
 	public int hashCode() {
@@ -255,7 +237,6 @@ public class User {
 		result = prime * result + ((credit == null) ? 0 : credit.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + (isDriver ? 1231 : 1237);
 		result = prime * result + (isValid ? 1231 : 1237);
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result
@@ -286,8 +267,6 @@ public class User {
 		} else if (!email.equals(other.email))
 			return false;
 		if (id != other.id)
-			return false;
-		if (isDriver != other.isDriver)
 			return false;
 		if (isValid != other.isValid)
 			return false;
