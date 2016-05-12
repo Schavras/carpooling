@@ -16,6 +16,11 @@ public class Car {
 	 */
 	private String model;
 	
+	@Override
+	public String toString() {
+		return "Car [id=" + id + ", manufacturer=" + manufacturer + ", model=" + model + ", year=" + year + "]";
+	}
+
 	/**
 	 * The year of model
 	 */

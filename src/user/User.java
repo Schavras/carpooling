@@ -287,6 +287,11 @@ public class User {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", surname=" + surname + ", age=" + age + "] \n";
+	}
 	
 	
 	
