@@ -18,7 +18,7 @@ public class CurrencyTest {
 	public void testCurrencyChange() {
 		 Currency testObj = new Currency(2.0f ,CurrencyNamesEnum.EURO);
 		 testObj.currencyChange(CurrencyNamesEnum.DOLLAR);
-		Assert.assertEquals("2.2894", String.format("%.4f", testObj.getValue()) );
+		Assert.assertEquals("2,2894", String.format("%.4f", testObj.getValue()) );
 		
 	}
 	
