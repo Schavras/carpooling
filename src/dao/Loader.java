@@ -1,4 +1,4 @@
-package data.loader;
+package dao;
 
 public interface Loader {
 	

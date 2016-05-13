@@ -1,7 +1,7 @@
 /**
  * 
  */
-package place;
+package domain;
 
 /**
  * @author schavras

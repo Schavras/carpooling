@@ -1,18 +1,19 @@
-package data.loader;
+package memorydao;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import car.Car;
-import place.Place;
-import trip.Trip;
+import dao.Loader;
+import domain.Car;
+import domain.Place;
+import domain.Trip;
 import types.CreditCard;
 import types.Email;
 import types.Password;
 import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
-import user.Driver;
-import user.User;
+import domain.User;
+import domain.Driver;
 
 public class MemoryLoader implements Loader {
 	

@@ -1,12 +1,8 @@
 /**
  * 
  */
-package user;
+package domain;
 
-import car.Car;
-import request.DriverRequestList;
-import request.EnumStatus;
-import trip.Trip;
 
 /**
  *

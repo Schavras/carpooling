@@ -1,9 +1,7 @@
-package pickup;
+package domain;
 
 
 import java.util.Date;
-
-import place.AddressPlace;
 public class PickUp {
 
 		private AddressPlace place;

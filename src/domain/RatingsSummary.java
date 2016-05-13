@@ -1,4 +1,4 @@
-package rating;
+package domain;
 
 import java.util.ArrayList;
 

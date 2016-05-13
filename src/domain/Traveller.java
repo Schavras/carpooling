@@ -1,8 +1,5 @@
-package user;
+package domain;
 
-import place.AddressPlace;
-import request.Request;
-import trip.Trip;
 
 public class Traveller {
 	

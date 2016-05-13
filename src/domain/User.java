@@ -1,4 +1,4 @@
-package user;
+package domain;
 
 import types.CreditCard;
 import types.Email;

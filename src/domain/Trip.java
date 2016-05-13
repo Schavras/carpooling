@@ -1,15 +1,14 @@
 /**
  * 
  */
-package trip;
+package domain;
 
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import place.Place;
 import types.currency.Currency;
-import user.Traveller;
+
 
 
 /**

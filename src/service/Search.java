@@ -1,9 +1,9 @@
-package search;
+package service;
 
 import java.util.ArrayList;
 
-import place.Place;
-import user.Driver;
+import domain.Driver;
+import domain.Place;
 
 public class Search {
 	

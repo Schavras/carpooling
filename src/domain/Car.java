@@ -1,4 +1,4 @@
-package car;
+package domain;
 
 public class Car {
 	/**

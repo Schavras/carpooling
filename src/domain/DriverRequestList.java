@@ -1,8 +1,6 @@
-package request;
+package domain;
 
 import java.util.ArrayList;
-
-import user.Traveller;
 
 
 public class DriverRequestList {

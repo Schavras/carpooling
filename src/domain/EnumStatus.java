@@ -1,4 +1,4 @@
-package request;
+package domain;
 
 public enum EnumStatus{
  
