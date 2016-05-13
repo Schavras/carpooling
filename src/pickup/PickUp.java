@@ -1,4 +1,4 @@
-package Pickup;
+package pickup;
 
 
 import java.util.Date;

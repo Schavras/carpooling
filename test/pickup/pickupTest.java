@@ -1,8 +1,10 @@
 package pickup;
 
 import java.util.Date;
+
 import org.junit.Test;
-import Pickup.PickUp;
+
+import pickup.PickUp;
 import place.AddressPlace;
 
 
