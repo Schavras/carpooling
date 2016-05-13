@@ -13,7 +13,7 @@ import junit.framework.Assert;
 import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
 import domain.Traveller;
-
+@SuppressWarnings({ "unused", "deprecation" })
 public class TripTest {
 
 	@Test

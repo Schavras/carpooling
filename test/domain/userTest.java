@@ -7,7 +7,7 @@ import types.CreditCard;
 import types.Email;
 import types.Password;
 import domain.User;
-
+@SuppressWarnings("unused")
 public class userTest {
 	
 
@@ -15,7 +15,6 @@ public class userTest {
 
 	@Test
 	public void testDeafult() {
-		@SuppressWarnings("unused")
 		User user = new User();
 	}
 	
@@ -24,7 +23,6 @@ public class userTest {
 		Password pass = new Password("abc");
 		Email email = new Email("def");
 		CreditCard cd = new CreditCard(5,"gh");
-		@SuppressWarnings("unused")
 		User user = new User(1,"abc","dfg", email , pass , 5 , cd , true  );
 		
 	}
@@ -33,7 +31,6 @@ public class userTest {
 	public void testMinConstractor(){
 		Password pass = new Password("abc");
 		Email email = new Email("def");
-		@SuppressWarnings("unused")
 		User user = new User(0, "a", "b", email, pass, true);
 		
 	}
@@ -67,7 +64,6 @@ public class userTest {
 		Password pass = new Password("abc");
 		Email email = new Email("def");
 		CreditCard cd = new CreditCard(5,"gh");
-		@SuppressWarnings("unused")
 		User user = new User(1,"abc","dfg", email , pass , 5 , cd , true  );
 		
 		int hash = user.hashCode();

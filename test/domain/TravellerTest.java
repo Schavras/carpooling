@@ -9,18 +9,16 @@ import junit.framework.Assert;
 import domain.Driver;
 import domain.Traveller;
 import domain.User;
-
+@SuppressWarnings({ "unused", "deprecation" })
 public class TravellerTest {
 	
 	@Test
 	public void testDefault(){
-		@SuppressWarnings("unused")
 		Traveller traveler = new Traveller();
 	}
 	
 	@Test
 	public void testConstructor(){
-		@SuppressWarnings("unused")
 		Traveller traveler = new Traveller(new User(),new Driver(),new AddressPlace(), "abc");
 	}
 	
@@ -48,7 +46,6 @@ public class TravellerTest {
 		traveler.hashCode();
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Test
 	public void testEquals(){
 		Traveller traveler = new Traveller(new User(),new Driver(),new AddressPlace(), "abc");

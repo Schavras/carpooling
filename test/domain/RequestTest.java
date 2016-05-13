@@ -6,7 +6,7 @@ import domain.EnumStatus;
 import domain.EnumTripStatus;
 import domain.Request;
 
-
+@SuppressWarnings("unused")
 public class RequestTest {
 
 @Test

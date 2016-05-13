@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import domain.Car;
 
+@SuppressWarnings("unused")
 public class carTest {
 	
 	@Test
