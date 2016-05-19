@@ -7,9 +7,7 @@ import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
-import domain.EnumTripStatus;
-import domain.Place;
-import domain.Trip;
+
 import junit.framework.Assert;
 import types.CreditCard;
 import types.Email;

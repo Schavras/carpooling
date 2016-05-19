@@ -1,29 +1,30 @@
 package service;
 
+import java.sql.Driver;
 import java.util.ArrayList;
 
-import domain.Driver;
 import domain.Place;
+import domain.Trip;
 
 public class Search {
 	
-	private static ArrayList<Driver> results ;
+	private static ArrayList<Trip> results ;
 	
 		
-	public static ArrayList<Driver> searchByPlace(Place place, ArrayList<Driver> trips){
-		results =  new ArrayList<Driver>() ;
+	public static ArrayList<Trip> searchByPlace(Place place, ArrayList<Trip> trips){
+		results =  new ArrayList<Trip>() ;
 		for (int i =0 ; i < trips.size();i++){
-			if(trips.get(i).getTrip().getDestination().equals(place)){
+			if(trips.get(i).getDestination().equals(place)){
 				results.add(trips.get(i));
 			}
 		}
 		return results;
 	}
 	
-	public static ArrayList<Driver> searchByDriver(Driver driver, ArrayList<Driver> trips){
-		results =  new ArrayList<Driver>() ; 
+	public static ArrayList<Trip> searchByDriver(Driver driver, ArrayList<Trip> trips){
+		results =  new ArrayList<Trip>() ; 
 		for (int i =0 ; i < trips.size();i++){
-			if(trips.get(i).equals(driver)){
+			if(trips.get(i).getDriver().equals(driver)){
 				results.add(trips.get(i));
 			}
 		}
