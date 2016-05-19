@@ -13,6 +13,8 @@ public class PickUp {
 		private double cost;
 		
 		private User traveler;
+		
+		private RatingsSummary ratings;
 
 		public PickUp(AddressPlace place, Date pickUpDateAndTime, Date getOffDateAndTime, double cost , User traveler) {
 			this.place = place;
@@ -20,6 +22,7 @@ public class PickUp {
 			disembarkDateAndTime = getOffDateAndTime;
 			this.cost = cost;
 			this.traveler = traveler;
+			RatingsSummary ratings=new RatingsSummary();
 		}
 
 		public User getTraveler() {

@@ -115,22 +115,47 @@ public class Trip {
 	public boolean acceptRequest(Request req){
 		if(travelers.size() < maxTravelers){
 			travelers.add(req.getUser());
+			
 			pickups.add(createPickup(req));
+			pendingRequest.remove(req);
 			return true;
 		}
 		return false;
 		
 	}
 	
+	public User getDriver() {
+		return driver;
+	}
+
+	public void setDriver(User driver) {
+		this.driver = driver;
+	}
+
+	public ArrayList<Request> getPendingRequest() {
+		return pendingRequest;
+	}
+
+	public void setPendingRequest(ArrayList<Request> pendingRequest) {
+		this.pendingRequest = pendingRequest;
+	}
+
+	public ArrayList<PickUp> getPickups() {
+		return pickups;
+	}
+
+	public void setPickups(ArrayList<PickUp> pickups) {
+		this.pickups = pickups;
+	}
+
 	private PickUp createPickup(Request req) {
 		PickUp temp = new PickUp(req.getPlace(), req.getPickUpDateAndTime(), dateOfDeparture, 0 , req.getUser());
-		pickups.add(temp);
 		return temp;
 
 	}
 
 	public boolean rejectRequest(Request req){
-		travelers.remove(req);
+		pendingRequest.remove(req);
 		return true;
 	}
 	
