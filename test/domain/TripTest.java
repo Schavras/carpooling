@@ -23,15 +23,16 @@ public class TripTest {
 	
 	@Test
 	public void Constructor(){
-		Trip trip = new Trip(1, new Place(), new Place(), new Date(), new Currency(5, CurrencyNamesEnum.EURO), 5);
+		User user = new User();
+		Trip trip = new Trip(1, new Place(), new Place(), new Date(), new Currency(5, CurrencyNamesEnum.EURO), 5, user);
 		
 	}
 	
 	@Test
-	public void addTravelerTest(){
-		Trip trip = new Trip(1, new Place(), new Place(), new Date(), new Currency(5, CurrencyNamesEnum.EURO), 1);
-		Assert.assertTrue(trip.addTraveler(new Traveller()));
-		Assert.assertFalse(trip.addTraveler(new Traveller()));
+	public void addRequestTest(){
+		User user = new User();
+		Trip trip = new Trip(1, new Place(), new Place(), new Date(), new Currency(5, CurrencyNamesEnum.EURO), 1, null);
+		
 	}
 	
 	@Test

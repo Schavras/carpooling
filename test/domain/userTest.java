@@ -1,16 +1,27 @@
 package domain;
 
 
+import java.util.Date;
+
+import junit.framework.Assert;
+
 import org.junit.Test;
 
 import types.CreditCard;
 import types.Email;
 import types.Password;
+import types.currency.Currency;
+import types.currency.CurrencyNamesEnum;
 import domain.User;
 @SuppressWarnings("unused")
 public class userTest {
 	
-
+	@Test
+	public void testNewTrip(){
+		User user = new User();
+		user.newTrip(1, new Place(), new Place(), new Date(), new Currency(5, CurrencyNamesEnum.EURO), 5, user);
+		Assert.assertEquals(new Trip(1, new Place(), new Place(), new Date(), new Currency(5, CurrencyNamesEnum.EURO), 5, user),user.getOwnedTrips().get(0));
+	}	
 	
 
 	@Test

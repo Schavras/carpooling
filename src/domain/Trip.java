@@ -51,16 +51,27 @@ public class Trip {
 	/**
 	 * array of the travelers
 	 */
-	private ArrayList<Traveller> travelers;
+	private ArrayList<User> travelers;
 	
 	/**
 	 *  The maximum number of wanted travelers
 	 */
 	private int maxTravelers;
 	
-	
+	/**
+	 * The driver of the trip
+	 */
+	private User driver;
 	
 	/**
+	 * List of request to be approved or rejected
+	 */
+	private ArrayList<Request> pendingRequest;
+	
+	private ArrayList<PickUp> pickups;
+	
+	/**
+	 * Constructor
 	 * @param id
 	 * @param startingPoint
 	 * @param destination
@@ -71,8 +82,9 @@ public class Trip {
 	 * @param isOpen
 	 * @param isCompleted
 	 * @param maxTravelers 
+	 * @param driver
 	 */
-	public Trip(long id, Place startingPoint, Place destination, Date dateOfDeparture, Currency totalPrice, int maxTravelers) {
+	public Trip(long id, Place startingPoint, Place destination, Date dateOfDeparture, Currency totalPrice, int maxTravelers, User Driver) {
 		this.id = id;
 		this.startingPoint = startingPoint;
 		this.destination = destination;
@@ -80,7 +92,10 @@ public class Trip {
 		this.totalPrice = totalPrice;
 		status=EnumTripStatus.OPEN;
 		this.maxTravelers=maxTravelers;
-		travelers = new ArrayList<Traveller> ();
+		travelers = new ArrayList<User> ();
+		this.driver= driver;
+		pendingRequest = new ArrayList<Request>();
+		pickups= new ArrayList<PickUp>();
 		
 	}
 
@@ -91,18 +106,34 @@ public class Trip {
 		
 	}
 
+	public void addRequest(Request req){
+		pendingRequest.add(req);
+	}
 	
 	
 	
-	public boolean addTraveler(Traveller traveller){
-		if (travelers.size()+1 <= maxTravelers){
-			travelers.add(traveller);
+	public boolean acceptRequest(Request req){
+		if(travelers.size() < maxTravelers){
+			travelers.add(req.getUser());
+			pickups.add(createPickup(req));
 			return true;
-		}else{
-			return false;
 		}
+		return false;
+		
+	}
+	
+	private PickUp createPickup(Request req) {
+		PickUp temp = new PickUp(req.getPlace(), req.getPickUpDateAndTime(), dateOfDeparture, 0 , req.getUser());
+		pickups.add(temp);
+		return temp;
+
 	}
 
+	public boolean rejectRequest(Request req){
+		travelers.remove(req);
+		return true;
+	}
+	
 	public long getId() {
 		return id;
 	}
@@ -152,11 +183,11 @@ public class Trip {
 		this.status = status;
 	}
 
-	public ArrayList<Traveller> getTravelers() {
+	public ArrayList<User> getTravelers() {
 		return travelers;
 	}
 
-	public void setTravelers(ArrayList<Traveller> travelers) {
+	public void setTravelers(ArrayList<User> travelers) {
 		this.travelers = travelers;
 	}
 
@@ -172,14 +203,23 @@ public class Trip {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((dateOfDeparture == null) ? 0 : dateOfDeparture.hashCode());
-		result = prime * result + ((destination == null) ? 0 : destination.hashCode());
+		result = prime * result
+				+ ((dateOfDeparture == null) ? 0 : dateOfDeparture.hashCode());
+		result = prime * result
+				+ ((destination == null) ? 0 : destination.hashCode());
+		result = prime * result + ((driver == null) ? 0 : driver.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + maxTravelers;
-		result = prime * result + ((startingPoint == null) ? 0 : startingPoint.hashCode());
+		result = prime * result
+				+ ((pendingRequest == null) ? 0 : pendingRequest.hashCode());
+		result = prime * result + ((pickups == null) ? 0 : pickups.hashCode());
+		result = prime * result
+				+ ((startingPoint == null) ? 0 : startingPoint.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		result = prime * result + ((totalPrice == null) ? 0 : totalPrice.hashCode());
-		result = prime * result + ((travelers == null) ? 0 : travelers.hashCode());
+		result = prime * result
+				+ ((totalPrice == null) ? 0 : totalPrice.hashCode());
+		result = prime * result
+				+ ((travelers == null) ? 0 : travelers.hashCode());
 		return result;
 	}
 
@@ -202,9 +242,24 @@ public class Trip {
 				return false;
 		} else if (!destination.equals(other.destination))
 			return false;
+		if (driver == null) {
+			if (other.driver != null)
+				return false;
+		} else if (!driver.equals(other.driver))
+			return false;
 		if (id != other.id)
 			return false;
 		if (maxTravelers != other.maxTravelers)
+			return false;
+		if (pendingRequest == null) {
+			if (other.pendingRequest != null)
+				return false;
+		} else if (!pendingRequest.equals(other.pendingRequest))
+			return false;
+		if (pickups == null) {
+			if (other.pickups != null)
+				return false;
+		} else if (!pickups.equals(other.pickups))
 			return false;
 		if (startingPoint == null) {
 			if (other.startingPoint != null)

@@ -1,8 +1,12 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 import types.CreditCard;
 import types.Email;
 import types.Password;
+import types.currency.Currency;
 /**
  * @author      Stavros Zarpas
  * @version     0.1             
@@ -51,7 +55,9 @@ public class User {
 	 */
 	boolean isValid;
 	
-	
+	 ArrayList<Trip> ownedTrips;
+	 
+	 ArrayList<Request> requests;
 
 	/**
 	 * Full Constractor
@@ -74,6 +80,8 @@ public class User {
 		this.age = age;
 		this.credit = credit;
 		this.isValid = isValid;
+		ownedTrips = new ArrayList<Trip>();
+		requests = new ArrayList<Request>();
 
 	}
 
@@ -89,6 +97,24 @@ public class User {
 		this.age = 0;
 		this.credit = new CreditCard();
 		this.isValid = false;
+		ownedTrips = new ArrayList<Trip>();
+		requests = new ArrayList<Request>();
+	}
+
+	public ArrayList<Trip> getOwnedTrips() {
+		return ownedTrips;
+	}
+
+	public void setOwnedTrips(ArrayList<Trip> ownedTrips) {
+		this.ownedTrips = ownedTrips;
+	}
+
+	public ArrayList<Request> getRequests() {
+		return requests;
+	}
+
+	public void setRequests(ArrayList<Request> requests) {
+		this.requests = requests;
 	}
 
 	/**
@@ -113,7 +139,18 @@ public class User {
 		this.age = 0;
 	}
 
-
+	/**
+	 *create a trip and driver is the user
+	 */
+	public void newTrip(long id, Place startingPoint, Place destination, Date dateOfDeparture, Currency totalPrice, int maxTravelers,User driver){
+		
+		ownedTrips.add( new Trip(id,startingPoint,destination,dateOfDeparture,totalPrice,maxTravelers,this));
+		
+	}
+	
+	public void newRequest(String comment , Trip trip , Date date, AddressPlace place){
+		requests.add(new Request(comment, date, place, this));
+	}
 
 	/**
 	 * @return the id
@@ -240,7 +277,11 @@ public class User {
 		result = prime * result + (isValid ? 1231 : 1237);
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result
+				+ ((ownedTrips == null) ? 0 : ownedTrips.hashCode());
+		result = prime * result
 				+ ((password == null) ? 0 : password.hashCode());
+		result = prime * result
+				+ ((requests == null) ? 0 : requests.hashCode());
 		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
 		return result;
 	}
@@ -275,10 +316,20 @@ public class User {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (ownedTrips == null) {
+			if (other.ownedTrips != null)
+				return false;
+		} else if (!ownedTrips.equals(other.ownedTrips))
+			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
+			return false;
+		if (requests == null) {
+			if (other.requests != null)
+				return false;
+		} else if (!requests.equals(other.requests))
 			return false;
 		if (surname == null) {
 			if (other.surname != null)

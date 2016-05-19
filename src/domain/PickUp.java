@@ -11,12 +11,23 @@ public class PickUp {
 		private Date disembarkDateAndTime;
 		
 		private double cost;
+		
+		private User traveler;
 
-		public PickUp(AddressPlace place, Date pickUpDateAndTime, Date getOffDateAndTime, double cost) {
+		public PickUp(AddressPlace place, Date pickUpDateAndTime, Date getOffDateAndTime, double cost , User traveler) {
 			this.place = place;
 			this.pickUpDateAndTime = pickUpDateAndTime;
 			disembarkDateAndTime = getOffDateAndTime;
 			this.cost = cost;
+			this.traveler = traveler;
+		}
+
+		public User getTraveler() {
+			return traveler;
+		}
+
+		public void setTraveler(User traveler) {
+			this.traveler = traveler;
 		}
 
 		public AddressPlace getPlace() {
@@ -55,12 +66,20 @@ public class PickUp {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + ((disembarkDateAndTime == null) ? 0 : disembarkDateAndTime.hashCode());
-			result = prime * result + ((pickUpDateAndTime == null) ? 0 : pickUpDateAndTime.hashCode());
 			long temp;
 			temp = Double.doubleToLongBits(cost);
 			result = prime * result + (int) (temp ^ (temp >>> 32));
+			result = prime
+					* result
+					+ ((disembarkDateAndTime == null) ? 0
+							: disembarkDateAndTime.hashCode());
+			result = prime
+					* result
+					+ ((pickUpDateAndTime == null) ? 0 : pickUpDateAndTime
+							.hashCode());
 			result = prime * result + ((place == null) ? 0 : place.hashCode());
+			result = prime * result
+					+ ((traveler == null) ? 0 : traveler.hashCode());
 			return result;
 		}
 
@@ -73,6 +92,9 @@ public class PickUp {
 			if (getClass() != obj.getClass())
 				return false;
 			PickUp other = (PickUp) obj;
+			if (Double.doubleToLongBits(cost) != Double
+					.doubleToLongBits(other.cost))
+				return false;
 			if (disembarkDateAndTime == null) {
 				if (other.disembarkDateAndTime != null)
 					return false;
@@ -83,12 +105,15 @@ public class PickUp {
 					return false;
 			} else if (!pickUpDateAndTime.equals(other.pickUpDateAndTime))
 				return false;
-			if (Double.doubleToLongBits(cost) != Double.doubleToLongBits(other.cost))
-				return false;
 			if (place == null) {
 				if (other.place != null)
 					return false;
 			} else if (!place.equals(other.place))
+				return false;
+			if (traveler == null) {
+				if (other.traveler != null)
+					return false;
+			} else if (!traveler.equals(other.traveler))
 				return false;
 			return true;
 		}

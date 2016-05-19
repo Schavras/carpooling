@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Date;
+
 
 
 
@@ -14,11 +16,21 @@ public class Request {
 	 */
 	private int approvalCode;
 	
+	private AddressPlace place;
+	
+	private Date pickUpDateAndTime;
+	
+	private User user;
+	
 	private EnumStatus status;
 	 
-	public Request(String comment) {
+	public Request(String comment, Date pickUpDateAndTime, AddressPlace place, User user ) {
 		this.comment = comment;
 		this.status = EnumStatus.PENDING;
+		this.pickUpDateAndTime = pickUpDateAndTime;
+		this.place = place;
+		this.user = user;
+		
 		
 	}
 	
@@ -49,8 +61,22 @@ public class Request {
 		approvalCode++;
 		return approvalCode;
 	}
-
-
+	
+	public Date getPickUpDateAndTime(){
+		return pickUpDateAndTime;
+	}
+	
+	public void setPickUpDateAndTime(Date pickUpDateAndTime){
+		this.pickUpDateAndTime=pickUpDateAndTime;
+	}
+	
+	public AddressPlace getPlace(){
+		return place;
+	}
+	
+	public void setPlace(AddressPlace place){
+		this.place=place;
+	}
 
 	public String getComment() {
 		return comment;
@@ -86,40 +112,12 @@ public class Request {
 		this.status = status;
 	}
 
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + approvalCode;
-		result = prime * result + ((comment == null) ? 0 : comment.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		return result;
+	public User getUser(){
+		return user;
 	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Request other = (Request) obj;
-		if (approvalCode != other.approvalCode)
-			return false;
-		if (comment == null) {
-			if (other.comment != null)
-				return false;
-		} else if (!comment.equals(other.comment))
-			return false;
-		if (status != other.status)
-			return false;
-		return true;
+	
+	public void setUser(User user){
+		this.user=user;
 	}
-
  
 }
