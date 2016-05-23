@@ -32,6 +32,7 @@ public class SignUpServiceImp {
 		try{
 			tempCcNumber = Integer.parseInt(ccnumber);
 		}catch( NumberFormatException e){
+			System.out.println(e);
 			return false;
 		}
 		CreditCard cc = new CreditCard(tempCcNumber, ccBank);
@@ -45,7 +46,6 @@ public class SignUpServiceImp {
 	}
 
 	private boolean userExist(String email) {
-		System.out.println(email);
 		if ( userDao.getByEmail(email) != null){
 			return true;
 		}

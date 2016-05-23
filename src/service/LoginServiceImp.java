@@ -3,6 +3,10 @@ package service;
 import dao.UserDAO;
 import domain.User;
 
+/**
+ * The impelentation of {@link LoginService} interface
+ *
+ */
 public class LoginServiceImp implements LoginService  {
 	
 	public static User ACTIVE_USER = null;
@@ -12,9 +16,8 @@ public class LoginServiceImp implements LoginService  {
 
 	
 	/**
-	 * 
+	 * Implementation of {@link LoginService#login(String, String)}
 	 */
-	@Override
 	public boolean login(String email, String password){
 		user = userDao.getByEmail(email);
 		if (user== null){

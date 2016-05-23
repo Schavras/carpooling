@@ -13,7 +13,7 @@ public class UserMemoryDAO implements UserDAO  {
 
 	@Override
 	public boolean newUser(User new_user) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
 		return false;
 	}
 
