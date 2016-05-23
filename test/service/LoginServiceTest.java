@@ -3,17 +3,11 @@
  */
 package service;
 
-import static org.junit.Assert.*;
 import memorydao.UserMemoryDAOStub;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import types.CreditCard;
-import types.Email;
-import types.Password;
-import domain.User;
 
 /**
  * @author Σταύρος
@@ -64,6 +58,15 @@ public class LoginServiceTest {
 		Assert.assertFalse(result);;
 		
 	}
+	
+	@Test
+	public void userNotValid(){
+		email = "invalid@email.com";
+		password = "klmr420";
+		result = lg.login(email, password );
+		Assert.assertFalse(result);
+	}
+
 	
 	@Test
 	public void SuccessLoginTest(){

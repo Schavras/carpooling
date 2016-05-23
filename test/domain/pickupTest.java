@@ -7,7 +7,10 @@ import org.junit.Test;
 import domain.AddressPlace;
 import domain.PickUp;
 
+//TODO test gia pickup!
 
+
+/*
 public class pickupTest {
 	
 	@Test
@@ -46,4 +49,7 @@ public class pickupTest {
 		
 		pu.hashCode();
 	}
+	
+	
 }
+*/
