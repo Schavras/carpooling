@@ -4,8 +4,11 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JPasswordField;
+
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -52,12 +55,14 @@ public class LoginUI extends JPanel {
 		passwordField.setBounds(130, 82, 114, 19);
 		add(passwordField);
 		
+		JPanel signup = new SignUpUI();
+		MainUI.scenes.add(signup, "signup");
+		
 		JButton btnSignUp = new JButton("Sign Up");
 		btnSignUp.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				su = new SignUpUI();
-				MainUI.scenes.add(su);
+				MainUI.cl.show(MainUI.scenes, "signup");
 				
 			}
 		});

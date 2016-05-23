@@ -6,13 +6,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.awt.CardLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainUI {
 
- static JFrame frmCarpooling;
- 	
-  	static JPanel scenes = new JPanel(new CardLayout(0, 0));
- 
+	static JFrame frmCarpooling;
+ 	static JPanel scenes = new JPanel();
+  	static CardLayout cl = new CardLayout();
+  	
 	/**
 	 * Launch the application.
 	 */
@@ -41,14 +43,19 @@ public class MainUI {
 	 */
 	private void initialize() {
 		frmCarpooling = new JFrame();
-		
 		frmCarpooling.setTitle("CarPooling ");
 		frmCarpooling.setBounds(100, 100, 567, 431);
 		frmCarpooling.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmCarpooling.getContentPane().setLayout(new CardLayout(0, 0));
-		
+		scenes.setLayout(cl);
+				
 		JPanel login = new LoginUI();
-		scenes.add(login);
+		
+		
+		
+		scenes.add(login,"login");
+		
+		cl.show(scenes, "login");
+		
 		frmCarpooling.getContentPane().add(scenes);
 	}
 
