@@ -51,7 +51,6 @@ public class MainUI {
 		JPanel login = new LoginUI();
 		
 		
-		
 		scenes.add(login,"login");
 		
 		cl.show(scenes, "login");
