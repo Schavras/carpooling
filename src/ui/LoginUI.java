@@ -4,11 +4,8 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
-
 import java.awt.Font;
-
 import javax.swing.JPasswordField;
-
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -29,6 +26,17 @@ public class LoginUI extends JPanel {
 		setBackground(new Color(204, 255, 255));
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addMouseListener(new MouseAdapter() {
+			/**
+			 * Attempt to login
+			 * Checks if there is user with this email and password
+			 * Calls {@link service.LoginServiceImp#login(String email, String email) login(string,string)}
+			 */
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO leitourgia sto koumpi login
+			}
+		});
 		btnLogin.setBounds(35, 120, 117, 25);
 		
 		emailTF = new JTextField();

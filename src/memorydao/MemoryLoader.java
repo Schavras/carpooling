@@ -1,9 +1,10 @@
 package memorydao;
 
 import java.util.ArrayList;
+
 import java.util.Date;
 
-import dao.Loader;
+
 import domain.Car;
 import domain.Place;
 import domain.Trip;
@@ -13,7 +14,23 @@ import types.Password;
 import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
 import domain.User;
-import domain.Driver;
+
+/*
+ * 
+ * 
+ * 
+ * 
+ * 			---------------------
+ *         //TODO TO BE DELETED //
+ * 			----------------------
+ * 		
+ * 			
+ * 
+ * 
+ * 
+ * 
+ */
+
 
 public class MemoryLoader implements Loader {
 	
