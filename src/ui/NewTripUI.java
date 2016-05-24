@@ -1,15 +1,10 @@
 package ui;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JPanel;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class NewTripUI extends JPanel{
 
@@ -26,14 +21,15 @@ public class NewTripUI extends JPanel{
 	private JTextField Town;
 	private JTextField TownB;
 	private JTextField Comment;
-	private JTextField CommentB;	
+	private JTextField CommentB;
+	private JTextField StartingPoint;	
 	private JTextField day;
 	private JTextField month;
 	private JTextField year;
 	private JTextField price;
-	private JTextField not;
 	
 	
+	private JOptionPane DateOfDeparture;
 	/**
 	 * Create the panel.
 	 */
@@ -97,10 +93,6 @@ public class NewTripUI extends JPanel{
 		JLabel lblPrice = new JLabel("Price");
 		lblPrice.setBounds(10, 260, 120, 14);
 		add(lblPrice);
-		
-		JLabel lblNot = new JLabel("Number of Travellers");
-		lblNot.setBounds(10, 280, 120, 14);
-		add(lblNot);
 		
 		
 		
@@ -187,12 +179,6 @@ public class NewTripUI extends JPanel{
 		price.setToolTipText("Insert price");
 		add(price);
 		price.setColumns(20);
-		
-		not = new JTextField();
-		not.setBounds(130, 280, 45, 20);
-		not.setToolTipText("Insert the available number of travellers");
-		add(not);
-		not.setColumns(20);
 		
 		
 		
