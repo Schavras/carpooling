@@ -3,7 +3,6 @@ package memorydao;
 import java.util.ArrayList;
 import java.util.List;
 
-//import com.mgiandia.library.domain.Borrower;
 
 import dao.UserDAO;
 import domain.Place;
