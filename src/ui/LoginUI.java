@@ -4,19 +4,27 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JPasswordField;
+
+import ui.presenters.LoginPresenter;
+import ui.views.LoginView;
+
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class LoginUI extends JPanel {
+public class LoginUI extends DefaultJPanel implements LoginView{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7054777390854307971L;
 	private JTextField emailTF;
 	private JPasswordField passwordField;
+	
+	private LoginPresenter presenter;
 	
 	SignUpUI su;
 	/**
@@ -35,6 +43,7 @@ public class LoginUI extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// TODO leitourgia sto koumpi login
+				presenter.login(getEmail(), getPassword());
 			}
 		});
 		btnLogin.setBounds(35, 120, 117, 25);
@@ -77,6 +86,32 @@ public class LoginUI extends JPanel {
 		});
 		btnSignUp.setBounds(169, 120, 117, 25);
 		add(btnSignUp);
+		
+	}
+
+	
+	@Override
+	public void setLoginPresenter(LoginPresenter presenter) {
+		 this.presenter = presenter;
+		
+	}
+	@Override
+	public String getEmail() {
+		return emailTF.getText();
+	}
+	@Override
+	public void setEmail(String email) {
+		emailTF.setText(email);
+		
+	}
+	@SuppressWarnings("deprecation")
+	@Override
+	public String getPassword() {
+		return passwordField.getText();
+	}
+	@Override
+	public void setPassword(String password) {
+		passwordField.setText(password);
 		
 	}
 }

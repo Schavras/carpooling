@@ -9,4 +9,11 @@ public interface LoginView extends View{
 	 */
 	void setLoginPresenter(LoginPresenter presenter);
 	
+	String getEmail();
+	
+	void setEmail(String email);
+	
+	String getPassword();
+	
+	void setPassword(String password);
 }
