@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import java.util.Date;
 
-
+import dao.LoaderDAO;
 import domain.Car;
 import domain.Place;
 import domain.Trip;
@@ -32,10 +32,10 @@ import domain.User;
  */
 
 
-public class MemoryLoader implements Loader {
+public class MemoryLoader implements LoaderDAO {
 	
 	static ArrayList<User> users ;
-	static ArrayList<Driver> trips ;
+	static ArrayList<Trip> trips ;
 	
 	protected  MemoryLoader() {
 		
@@ -43,10 +43,9 @@ public class MemoryLoader implements Loader {
 	
 	public void initialize(){
 		 users = new ArrayList<User>();
-		 trips = new ArrayList<Driver>();
+		 trips = new ArrayList<Trip>();
 	}
 	
-	@Override
 	public void load() {
 		loadUsers();
 		loadTrips();
@@ -54,7 +53,6 @@ public class MemoryLoader implements Loader {
 
 	
 
-	@Override
 	public void loadUsers() {
 		users.add(new User(0, "Stavros", "Zarpas", new Email("stavros.z@hotmail.com"), new Password("klmr420"), 21, new CreditCard(420420420, "Eurobank"), true));
 		users.add(new User(1, "Nikos", "Papastamatakis", new Email("nikos.papastamatakis@gmail.com"), new Password("vaggelis"), 20, new CreditCard(420420421, "pireos"), true));
@@ -66,18 +64,17 @@ public class MemoryLoader implements Loader {
 	}
 	
 	@SuppressWarnings("deprecation")
-	@Override
 	public void loadTrips() {
-		trips.add(new Driver(users.get(0), new Car("idx231","TOYOTA","COROLA",1990), new Trip(0, new Place("Greece", "Attiki", "athens"), new Place("Greece", "Makedonia","Thessaoniki"), new Date(2016, 4, 20), new Currency(425.5f, CurrencyNamesEnum.EURO), 3)));
-		trips.add(new Driver(users.get(1), new Car("asd123","cintroen","saxo",2010), new Trip(1, new Place("Greece", "Attiki", "athens"), new Place("Greece", "Makedonia","Thessaoniki"), new Date(2016, 4, 20), new Currency(420.5f, CurrencyNamesEnum.EURO), 3)));
-		trips.add(new Driver(users.get(2), new Car("asd1312","asd","COROLA",1990), new Trip(2, new Place("Greece", "axaia", "patra"), new Place("Greece", "Makedonia","Thessaoniki"), new Date(2016, 4, 20), new Currency(425.5f, CurrencyNamesEnum.EURO), 3)));
+		trips.add(new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,users.get(1)));
+		trips.add(new Trip(0200,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 21),new Currency(425.5f, CurrencyNamesEnum.EURO),4,users.get(2)));
+		trips.add(new Trip(0300,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,users.get(3)));
 	}
 
 	public static ArrayList<User> getUsers() {
 		return users;
 	}
 
-	public static ArrayList<Driver> getTrips() {
+	public static ArrayList<Trip> getTrips() {
 		return trips;
 	}
 	

@@ -15,25 +15,20 @@ public class UserMemoryDAO implements UserDAO  {
 	@Override
 	public User getByEmail(String email) {
 		
-		// User ni=new User();
-		 int k=-1;
-		// users.add(ni);
+
 		 for (int i = 0; i<users.size(); i++){
-			 k=users.indexOf(email);
-			 
+			 if(users.get(i).getEmail().equals(email)){
+				 return users.get(i);
+			 } 	
 		 }
-		 if(k == -1){
-			 System.out.println("User not found");
-			 return null;
-		 }else{
-			 return users.get(k);
-		 }
+		 return null;
 	}
+
 
 	@Override
 	public boolean newUser(User new_user) {
-		
 		return users.add(new_user);
+		
 		}
 
 }
