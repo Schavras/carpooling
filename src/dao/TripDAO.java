@@ -1,4 +1,4 @@
-<<<<<<< .mine
+
 package dao;
 
 import java.util.ArrayList;
@@ -20,15 +20,3 @@ public interface TripDAO {
 	public ArrayList<Trip> findByDestination(String country, String region, String town);
 	
 }
-=======
-package dao;
-
-import domain.Place;
-import domain.Trip;
-
-//TODO add javadoc
-public interface TripDAO {
-	
-	public Trip findByPlace(Place place);
-}
->>>>>>> .r152
