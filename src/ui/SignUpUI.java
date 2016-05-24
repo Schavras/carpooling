@@ -5,14 +5,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import ui.presenters.SignUpPresenter;
+import ui.views.SignUpView;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class SignUpUI extends JPanel {
+public class SignUpUI extends DefaultJPanel implements SignUpView {
 	/**
 	 * 
 	 */
@@ -20,7 +23,7 @@ public class SignUpUI extends JPanel {
 	private JTextField name;
 	private JTextField surname;
 	private JTextField email;
-	private JPasswordField password;
+	private JTextField password;
 	private JTextField age;
 	private JTextField ccnumber;
 	private JTextField ccbank;
@@ -30,6 +33,8 @@ public class SignUpUI extends JPanel {
 	 */
 
 	NewTripUI nt;
+	
+	private SignUpPresenter presenter;
 	
 	public SignUpUI() {
 		setLayout(null);
@@ -87,7 +92,7 @@ public class SignUpUI extends JPanel {
 		email.setBounds(76, 51, 150, 20);
 		add(email);
 		
-		password = new JPasswordField();
+		password = new JTextField();
 		password.setColumns(10);
 		password.setBounds(76, 76, 150, 20);
 		add(password);
@@ -120,7 +125,7 @@ public class SignUpUI extends JPanel {
 		
 		//THIS IS TEMPORARYYYYYYYYYYYY
 		JPanel newTrip = new NewTripUI();
-		MainUI.scenes.add(newTrip, "newTrip");
+	//	MainUI.scenes.add(newTrip, "newTrip");
 		
 		JButton btnNewTrip = new JButton("New Trip");
 		btnNewTrip.addMouseListener(new MouseAdapter() {
@@ -132,6 +137,12 @@ public class SignUpUI extends JPanel {
 		});
 		btnNewTrip.setBounds(10, 250, 89, 23);
 		add(btnNewTrip);
+		
+	}
+
+	@Override
+	public void setSignUpPresenter(SignUpPresenter presenter) {
+		 this.presenter = presenter;
 		
 	}
 }
