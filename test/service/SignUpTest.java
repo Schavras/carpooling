@@ -9,7 +9,7 @@ import org.junit.Test;
 public class SignUpTest {
 
 	UserMemoryDAOStub mem;
-	SignUpServiceImp su;
+	SignUpService su;
 	
 	long id;
 	String name;
