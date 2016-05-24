@@ -32,7 +32,6 @@ public class SignUpServiceImp {
 		try{
 			tempCcNumber = Integer.parseInt(ccnumber);
 		}catch( NumberFormatException e){
-			System.out.println(e);
 			return false;
 		}
 		CreditCard cc = new CreditCard(tempCcNumber, ccBank);

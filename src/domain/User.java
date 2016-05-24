@@ -8,9 +8,7 @@ import types.Email;
 import types.Password;
 import types.currency.Currency;
 /**
- * @author      Stavros Zarpas
- * @version     0.1             
- * @since       30/04/2016
+ * The basic user of the application
  */
 public class User {
 	
@@ -32,11 +30,13 @@ public class User {
 	
 	/**
 	 * the email adress of user
+	 * @see types.Email Email
 	 */
 	Email email;
 	
 	/**
 	 * Encrypted password
+	 * @see types.Password Password
 	 */
 	Password password;
 	
@@ -46,7 +46,8 @@ public class User {
 	int age;
 	
 	/**
-	 * 
+	 * The credit card of the user
+	 * @see types.CreditCard Credit Card
 	 */
 	CreditCard credit;
 	

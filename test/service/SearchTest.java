@@ -9,7 +9,6 @@ import org.junit.Test;
 import domain.Car;
 import domain.Place;
 import domain.Trip;
-import service.Search;
 import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
 import domain.User;
