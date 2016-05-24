@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import ui.presenters.LoginPresenter;
+
 import java.awt.CardLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -14,6 +16,7 @@ public class MainUI {
 	static JFrame frmCarpooling;
  	static JPanel scenes = new JPanel();
   	static CardLayout cl = new CardLayout();
+  	LoginPresenter lgpresenter;
   	
 	/**
 	 * Launch the application.
@@ -47,7 +50,7 @@ public class MainUI {
 		frmCarpooling.setBounds(100, 100, 567, 431);
 		frmCarpooling.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		scenes.setLayout(cl);
-				
+		/*		
 		JPanel login = new LoginUI();
 		
 		
@@ -56,6 +59,12 @@ public class MainUI {
 		cl.show(scenes, "login");
 		
 		frmCarpooling.getContentPane().add(scenes);
+		*/
+		
+		LoginUI login = new LoginUI();
+		lgpresenter = new LoginPresenter(login);
+		lgpresenter.start();
+		
 	}
 
 }

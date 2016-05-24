@@ -10,6 +10,7 @@ import java.awt.Font;
 import javax.swing.JPasswordField;
 
 import ui.presenters.LoginPresenter;
+import ui.presenters.SignUpPresenter;
 import ui.views.LoginView;
 
 import java.awt.Color;
@@ -73,14 +74,15 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 		add(passwordField);
 		
 		
-		JPanel signup = new SignUpUI();
-		MainUI.scenes.add(signup, "signup");
+	
 		
 		JButton btnSignUp = new JButton("Sign Up");
 		btnSignUp.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MainUI.cl.show(MainUI.scenes, "signup");
+				SignUpUI signup = new SignUpUI();
+				SignUpPresenter presenter = new SignUpPresenter(signup);
+				presenter.start();
 				
 			}
 		});

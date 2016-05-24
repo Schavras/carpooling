@@ -7,7 +7,7 @@ import types.Email;
 import types.Password;
 import types.CreditCard;
 
-public class SignUpServiceImp {
+public class SignUpServiceImp implements SignUpService {
 	
 	private UserDAO userDao;
 
@@ -20,6 +20,10 @@ public class SignUpServiceImp {
 		userDao = new UserMemoryDAO();
 	}
 	
+	/* (non-Javadoc)
+	 * @see service.SignUpService#newUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, java.lang.String)
+	 */
+	@Override
 	public boolean newUser(String name, String surname, String email, String password, int age, String ccnumber, String ccBank){
 	
 		if (userExist(email)){

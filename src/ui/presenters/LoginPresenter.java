@@ -1,11 +1,13 @@
 package ui.presenters;
 
+import memorydao.UserMemoryDAOStub;
 import service.LoginService;
+import service.LoginServiceImp;
 import ui.views.LoginView;
 
 public class LoginPresenter {
 	private LoginView view;
-	private LoginService login;
+	private LoginService login= new LoginServiceImp(new UserMemoryDAOStub());
 	
 	public LoginPresenter(LoginView view){
 		this.view=view;
