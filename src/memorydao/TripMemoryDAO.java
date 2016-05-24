@@ -27,6 +27,7 @@ public class TripMemoryDAO implements TripDAO {
 		return the_trips;
 	}
 	
+	
 	public User findByDriver(Email mail){
 		for (int i = 0; i<users.size(); i++){
 			if(users.get(i).getEmail().equals(mail)){
@@ -35,6 +36,6 @@ public class TripMemoryDAO implements TripDAO {
 		 }
 		return null;
 	}
-	}
+}
 	
 
