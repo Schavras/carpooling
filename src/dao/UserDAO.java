@@ -18,7 +18,7 @@ public interface UserDAO {
 	/**
 	 * Adds a new {@link domain.User user} into users list
 	 * @param new_user The new user
-	 * @return True if the email didn't use in previous register and false if it used
+	 * @return {@code true} if adding was successfull, {@code false} otherwise
 	 */	
 	public boolean newUser(User new_user);
 	
