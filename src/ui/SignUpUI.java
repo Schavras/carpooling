@@ -27,6 +27,9 @@ public class SignUpUI extends JPanel {
 	/**
 	 * Create the panel.
 	 */
+
+	NewTripUI nt;
+	
 	public SignUpUI() {
 		setLayout(null);
 		
@@ -113,6 +116,21 @@ public class SignUpUI extends JPanel {
 		});
 		btnSignUp.setBounds(10, 218, 89, 23);
 		add(btnSignUp);
+		
+		//THIS IS TEMPORARYYYYYYYYYYYY
+		JPanel newTrip = new NewTripUI();
+		MainUI.scenes.add(newTrip, "newTrip");
+		
+		JButton btnNewTrip = new JButton("New Trip");
+		btnNewTrip.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MainUI.cl.show(MainUI.scenes, "newTrip");
+				
+			}
+		});
+		btnNewTrip.setBounds(10, 250, 89, 23);
+		add(btnNewTrip);
 		
 	}
 }

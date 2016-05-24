@@ -63,6 +63,7 @@ public class LoginUI extends JPanel {
 		passwordField.setBounds(130, 82, 114, 19);
 		add(passwordField);
 		
+		
 		JPanel signup = new SignUpUI();
 		MainUI.scenes.add(signup, "signup");
 		
@@ -77,7 +78,5 @@ public class LoginUI extends JPanel {
 		btnSignUp.setBounds(169, 120, 117, 25);
 		add(btnSignUp);
 		
-		
-
 	}
 }
