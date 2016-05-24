@@ -138,6 +138,16 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 		btnNewTrip.setBounds(10, 250, 89, 23);
 		add(btnNewTrip);
 		
+		JButton btnBack = new JButton("Back");
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				close();
+			}
+		});
+		btnBack.setBounds(110, 218, 89, 23);
+		add(btnBack);
+		
 	}
 
 	@Override
@@ -145,4 +155,6 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 		 this.presenter = presenter;
 		
 	}
+	
+	
 }

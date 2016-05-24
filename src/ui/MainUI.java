@@ -8,8 +8,6 @@ import javax.swing.JPanel;
 import ui.presenters.LoginPresenter;
 
 import java.awt.CardLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class MainUI {
 
@@ -25,6 +23,7 @@ public class MainUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					@SuppressWarnings("unused")
 					MainUI window = new MainUI();
 					MainUI.frmCarpooling.setVisible(true);
 				} catch (Exception e) {
@@ -64,7 +63,7 @@ public class MainUI {
 		LoginUI login = new LoginUI();
 		lgpresenter = new LoginPresenter(login);
 		lgpresenter.start();
-		
+		MainUI.frmCarpooling.getContentPane().add(MainUI.scenes);
 	}
 
 }
