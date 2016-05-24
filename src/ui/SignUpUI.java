@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -19,7 +20,7 @@ public class SignUpUI extends JPanel {
 	private JTextField name;
 	private JTextField surname;
 	private JTextField email;
-	private JTextField password;
+	private JPasswordField password;
 	private JTextField age;
 	private JTextField ccnumber;
 	private JTextField ccbank;
@@ -86,7 +87,7 @@ public class SignUpUI extends JPanel {
 		email.setBounds(76, 51, 150, 20);
 		add(email);
 		
-		password = new JTextField();
+		password = new JPasswordField();
 		password.setColumns(10);
 		password.setBounds(76, 76, 150, 20);
 		add(password);
