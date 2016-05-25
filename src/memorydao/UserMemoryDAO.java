@@ -15,7 +15,7 @@ public class UserMemoryDAO implements UserDAO  {
 	
 	protected static ArrayList<User> users = new ArrayList<User>();
 	 
-	
+	 
 	@Override
 	public User getByEmail(String email) {
 		

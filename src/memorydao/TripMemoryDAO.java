@@ -19,7 +19,7 @@ public class TripMemoryDAO implements TripDAO {
 		ArrayList<Trip> the_trips = new ArrayList<Trip>(); 
 		
 		for (int i = 0; i<trips.size(); i++){
-			if(trips.get(i).getDestination().equals(the_place)){
+			if(trips.get(i).getDestination().equals(the_place)){ 
 				the_trips.add(trips.get(i));
 			}
 		 }

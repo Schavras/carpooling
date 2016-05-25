@@ -14,13 +14,13 @@ import types.Password;
 
 
 
-
+//TODO xwris kamia antapokrish pao email kai ena teleutaio ts listas
 public class UserDAOTest {
 	
-	private UserMemoryDAO sample;
+	private UserMemoryDAO sample; 
 	
 	 @Before 
-	 public void loadBase() {                
+	 public void loadBaseTest() {                
 	    	MemoryInitializer base = new MemoryInitializer();
 	    	base.initialize();
 	        sample = new UserMemoryDAO();  
@@ -28,7 +28,7 @@ public class UserDAOTest {
 	    }
 	 
 	 @Test
-	 public void addNewUser(){
+	 public void addNewUserTest(){
 		 User fresh=new User(12,"Nikos","Papas", new Email("nikospapass@"), new Password("123321"), 21, new CreditCard(123456789, "Pireus"),true);
 		 sample.newUser(fresh);
 		 Assert.assertEquals("Nikos", fresh.getName());
@@ -36,7 +36,7 @@ public class UserDAOTest {
 	 }
 
 	 @Test
-	 public void findByEmail(){
+	 public void findByEmailTest(){
 		 User fresh=new User(12,"Nikos","Papas", new Email("nikospapass@"), new Password("123321"), 21, new CreditCard(123456789, "Pireus"),true);
 		 sample.newUser(fresh);
 		 sample.getByEmail("nikospapass@");
