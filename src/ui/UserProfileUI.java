@@ -123,6 +123,16 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		 this.presenter = presenter;
 		
 	}
+	@Override
+	public void setSurname(String surname) {
+		// TODO ilipoiisi
+		
+	}
+	@Override
+	public void setEmail(String email) {
+		// TODO ilipoiisi
+		
+	}
 	
 	
 	
