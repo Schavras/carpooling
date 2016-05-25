@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 import domain.Trip;
 import domain.User;
-import types.Email;
-
 
 public interface TripDAO {
 	
@@ -26,7 +24,7 @@ public interface TripDAO {
 	 * @param mail
 	 * @return the user which belong the email
 	 */
-	public User findByDriver(Email mail);
+	public User findByDriver(String mail);
 	
 	/**
 	 * Add a trip to the data

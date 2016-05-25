@@ -1,7 +1,7 @@
 package dao;
 
-//TODO initializer
-public interface LoaderDAO {
+
+public interface InitializerDAO {
 
 	public void initialize();
 	
@@ -9,6 +9,6 @@ public interface LoaderDAO {
 	
 	public void loadUsers();
 	
-	
+	public void loadTrips();
 	
 }
