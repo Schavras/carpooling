@@ -33,9 +33,9 @@ public class TripDAOTest {
 	 public void findDestination(){
 		 User fresh=new User(12,"Nikos","Papas", new Email("nikospapass@"), new Password("123321"), 21, new CreditCard(123456789, "Pireus"),true);
 		 @SuppressWarnings("deprecation")
-		Trip destin=new Trip(0000,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaloniki"),new Date(2016, 6, 17),new Currency(444.5f, CurrencyNamesEnum.EURO),3,fresh);
-		 sample.findByDestination("Greece", "Makedonia","Thessaloniki");
-		 Assert.assertEquals(new Place("Greece", "Makedonia","Thessaloniki"), destin.getDestination());
+		Trip destin=new Trip(0000,new Place("Greece", "Attiki", "athens"),new Place("Greece","Makedonia","Thessaloniki"),new Date(2016, 6, 17),new Currency(444.5f, CurrencyNamesEnum.EURO),3,fresh);
+		 sample.findByDestination("Greece","Makedonia","Thessaloniki");
+		 Assert.assertEquals(new Place("Greece","Makedonia","Thessaloniki"), destin.getDestination());
 		 
 	 }
 	 
