@@ -26,7 +26,7 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 	private JTextField emailTF;
 	private JPasswordField passwordField;
 	
-	private LoginPresenter presenter;
+	private LoginPresenter presenter; 
 	boolean succededlogin;
 	JLabel loginErrorMsg;
 	
@@ -67,7 +67,7 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 		passwordLabel.setBounds(35, 84, 70, 15);
 		setLayout(null);
 		add(emailLabel);
-		add(passwordLabel);
+		add(passwordLabel); 
 		add(emailTF);
 		add(btnLogin);
 		add(title);
@@ -83,11 +83,12 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 		btnSignUp.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				SignUpUI signup = new SignUpUI();
-				SignUpPresenter presenter = new SignUpPresenter(signup);
-				presenter.start();
+				startSignUpUi();
+				
 				
 			}
+
+			
 		});
 		btnSignUp.setBounds(169, 120, 117, 25);
 		add(btnSignUp);
@@ -145,5 +146,13 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 			presenter.start();
 		}
 	}
+	
+	private void startSignUpUi() {
+		SignUpUI signup = new SignUpUI();
+		SignUpPresenter presenter = new SignUpPresenter(signup);
+		presenter.start();
+		
+	}
+	
 	
 }

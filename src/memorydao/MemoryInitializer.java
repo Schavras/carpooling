@@ -34,8 +34,8 @@ import domain.User;
 
 public class MemoryInitializer implements LoaderDAO {
 
-	protected  MemoryInitializer() {
-		
+	public  MemoryInitializer() {
+		load();
 	}
 	
 	public void initialize(){

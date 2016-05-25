@@ -11,7 +11,7 @@ import domain.User;
 public class LoginServiceImp implements LoginService  {
 	
 	public static User ACTIVE_USER = null;
-	private UserDAO userDao;
+	private UserDAO userDao; 
 	private User user;
 	
 
@@ -23,7 +23,7 @@ public class LoginServiceImp implements LoginService  {
 		user = userDao.getByEmail(email);
 		if (user== null){
 			return false;
-		}
+		} 
 		if(! user.getPassword().getPassword().equals(password)){
 		 return false;
 		}
@@ -38,6 +38,10 @@ public class LoginServiceImp implements LoginService  {
 	public LoginServiceImp(UserDAO mem){
 		this.userDao = mem;
 		
+	}
+	
+	public User getActiveUser(){
+		return ACTIVE_USER;
 	}
 	
 	

@@ -24,6 +24,7 @@ import javax.swing.JMenu;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import service.LoginServiceImp;
 import ui.presenters.SignUpPresenter;
 import ui.presenters.UserProfilePresenter;
 import ui.views.ProfileView;
@@ -39,12 +40,12 @@ import javax.swing.DefaultComboBoxModel;
 public class UserProfileUI extends DefaultJPanel implements ProfileView{
 	
 	private UserProfilePresenter presenter;
-	
+	 
 	public UserProfileUI(){
 		setLayout(null);
 		setBackground(new Color(204, 255, 255));
 		
-		JLabel lblNewLabel = new JLabel("Athanasia Karagianni");
+		JLabel lblNewLabel = new JLabel(LoginServiceImp.ACTIVE_USER.getName());
 		lblNewLabel.setBounds(38, 168, 131, 14);
 		add(lblNewLabel);
 		

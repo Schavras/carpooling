@@ -13,5 +13,7 @@ public interface View {
      * Close the view
      */
     void close();
+    
+    void back();
 
 }

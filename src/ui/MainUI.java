@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import memorydao.MemoryInitializer;
 import ui.presenters.LoginPresenter;
 
 import java.awt.CardLayout;
@@ -29,7 +30,7 @@ public class MainUI {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
+ 			}
 		});
 	}
 
@@ -38,6 +39,7 @@ public class MainUI {
 	 */
 	public MainUI() {
 		initialize();
+		MemoryInitializer init = new MemoryInitializer();
 	}
 
 	/**

@@ -20,8 +20,6 @@ public class UserProfilePresenter {
 		view.open();
 	}
 	
-	public void signup(){
-		
-	}
+
 	
 }

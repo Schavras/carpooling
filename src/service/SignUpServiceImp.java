@@ -16,7 +16,7 @@ public class SignUpServiceImp implements SignUpService {
 		userDao = dao;
 	}
 	
-	
+	 
 	public SignUpServiceImp(){
 		userDao = new UserMemoryDAO();
 	}
@@ -44,7 +44,6 @@ public class SignUpServiceImp implements SignUpService {
 		CreditCard cc = new CreditCard(tempCcNumber, ccBank);
 		
 		User new_user = new User(0, name, surname, tempEmail, tempPassword, age, cc, false);
-		System.out.println("neos");
 		userDao.newUser(new_user);	
 				
 		return true;

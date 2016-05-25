@@ -18,8 +18,9 @@ public class DefaultJPanel extends JPanel implements View {
 	private static final long serialVersionUID = 3476395543957132870L;
 	
 	public DefaultJPanel(){
-		this.setBounds(100, 100, 567, 431);
+		this.setBounds(100, 100, 550, 450);
 	}
+	
 	/**
 	 * Called to show the next scene. 
 	 * The JPanel, which is gonna show, is added into 
@@ -39,6 +40,11 @@ public class DefaultJPanel extends JPanel implements View {
 	 */
 	@Override
 	public void close() {
+		MainUI.scenes.remove(this);
+		MainUI.cl.previous(MainUI.scenes);
+	}
+	
+	public void back(){
 		MainUI.cl.previous(MainUI.scenes);
 	}
 

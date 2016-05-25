@@ -1,5 +1,6 @@
 package ui.presenters;
 
+import memorydao.UserMemoryDAO;
 import memorydao.UserMemoryDAOStub;
 import service.LoginServiceImp;
 import service.interfaces.LoginService;
@@ -8,7 +9,7 @@ import ui.views.LoginView;
 public class LoginPresenter {
 	private LoginView view;
 	//TODO change to real DAO
-	private LoginService login= new LoginServiceImp(new UserMemoryDAOStub());
+	private LoginService login= new LoginServiceImp(new UserMemoryDAO());
 	
 	public LoginPresenter(LoginView view){
 		this.view=view;
@@ -27,3 +28,4 @@ public class LoginPresenter {
 		return login.login(email, password);
 	}
 }
+  
