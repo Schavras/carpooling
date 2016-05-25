@@ -88,6 +88,8 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 		btnSignUp.setBounds(169, 120, 117, 25);
 		add(btnSignUp);
 		
+		
+		
 	}
 
 	

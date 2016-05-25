@@ -123,20 +123,7 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 		btnSignUp.setBounds(10, 218, 89, 23);
 		add(btnSignUp);
 		
-		//THIS IS TEMPORARYYYYYYYYYYYY
-		JPanel newTrip = new NewTripUI();
-	//	MainUI.scenes.add(newTrip, "newTrip");
 		
-		JButton btnNewTrip = new JButton("New Trip");
-		btnNewTrip.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				MainUI.cl.show(MainUI.scenes, "newTrip");
-				
-			}
-		});
-		btnNewTrip.setBounds(10, 250, 89, 23);
-		add(btnNewTrip);
 		
 		JButton btnBack = new JButton("Back");
 		btnBack.addMouseListener(new MouseAdapter() {
@@ -147,6 +134,17 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 		});
 		btnBack.setBounds(110, 218, 89, 23);
 		add(btnBack);
+		
+		
+		JButton btnProfile = new JButton("Profile");
+		btnProfile.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		btnProfile.setBounds(190, 190, 117, 25);
+		add(btnProfile);
 		
 	}
 

@@ -2,6 +2,7 @@ package ui;
 
 import javax.swing.JPanel;
 
+import ui.presenters.ProfilePresenter;
 import ui.views.View;
 
 public class DefaultJPanel extends JPanel implements View {
@@ -19,6 +20,11 @@ public class DefaultJPanel extends JPanel implements View {
 	public void close() {
 		
 		MainUI.cl.previous(MainUI.scenes);
+	}
+
+	public void setProfilePresenter(ProfilePresenter presenter) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

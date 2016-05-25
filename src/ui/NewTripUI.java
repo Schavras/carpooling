@@ -1,12 +1,20 @@
 package ui;
 
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+import javax.swing.JSpinner;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JButton;
 
-public class NewTripUI extends JPanel{
+public class NewTripUI extends DefaultJPanel{
 
 	/**
 	 * 
@@ -21,15 +29,11 @@ public class NewTripUI extends JPanel{
 	private JTextField Town;
 	private JTextField TownB;
 	private JTextField Comment;
-	private JTextField CommentB;
-	private JTextField StartingPoint;	
-	private JTextField day;
-	private JTextField month;
-	private JTextField year;
+	private JTextField CommentB;	
 	private JTextField price;
+	private final JSpinner spinner = new JSpinner();
 	
 	
-	private JOptionPane DateOfDeparture;
 	/**
 	 * Create the panel.
 	 */
@@ -94,6 +98,10 @@ public class NewTripUI extends JPanel{
 		lblPrice.setBounds(10, 260, 120, 14);
 		add(lblPrice);
 		
+		JLabel lblTravellers = new JLabel("Travellers");
+		lblTravellers.setBounds(10, 280, 120, 14);
+		add(lblTravellers);
+		
 		
 		
 		Place = new JTextField();
@@ -156,32 +164,55 @@ public class NewTripUI extends JPanel{
 		add(CommentB);
 		CommentB.setColumns(20);
 		
-		day = new JTextField();
-		day.setBounds(125, 240, 50, 20);
-		day.setToolTipText("Insert day");
-		add(day);
-		day.setColumns(20);
-		
-		month = new JTextField();
-		month.setBounds(180, 240, 50, 20);
-		month.setToolTipText("Insert month");
-		add(month);
-		month.setColumns(20);
-		
-		year = new JTextField();
-		year.setBounds(235, 240, 50, 20);
-		year.setToolTipText("Insert year");
-		add(year);
-		year.setColumns(20);
-		
 		price = new JTextField();
 		price.setBounds(125, 260, 50, 20);
 		price.setToolTipText("Insert price");
 		add(price);
 		price.setColumns(20);
 		
+		JSpinner dayspinner = new JSpinner();
+		dayspinner.setModel(new SpinnerNumberModel(1, 1, 31, 1));
+		dayspinner.setBounds(125, 241, 50, 20);
+		dayspinner.setToolTipText("Trip's Day");
+		add(dayspinner);
+		
+		JSpinner monthspinner = new JSpinner();
+		monthspinner.setModel(new SpinnerNumberModel(1, 1, 12, 1));
+		monthspinner.setBounds(174, 241, 50, 20);
+		monthspinner.setToolTipText("Trip's Month");
+		add(monthspinner);
+		
+		JSpinner yearspinner = new JSpinner();
+		yearspinner.setModel(new SpinnerNumberModel(new Integer(2016), new Integer(2016), null, new Integer(1)));
+		yearspinner.setBounds(223, 241, 50, 20);
+		yearspinner.setToolTipText("Trip's Year");
+		add(yearspinner);
+		
+		JComboBox Currency = new JComboBox();
+		Currency.setModel(new DefaultComboBoxModel(new String[] {"Euros", "Dollars"}));
+		Currency.setMaximumRowCount(2);
+		Currency.setBounds(174, 260, 67, 20);
+		add(Currency);
+		spinner.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
+		spinner.setBounds(125, 280, 50, 20);
+		add(spinner);
+		
+		JButton btnNext = new JButton("Next");
+		btnNext.setBounds(351, 243, 89, 23);
+		add(btnNext);
+		
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				close();
+			}
+		});
+		btnBack.setBounds(351, 270, 89, 23);
+		add(btnBack);
+		
 		
 		
 	}
-		
 }
