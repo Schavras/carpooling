@@ -1,5 +1,6 @@
 package ui.presenters;
 
+import memorydao.UserMemoryDAO;
 import memorydao.UserMemoryDAOStub;
 import service.SignUpServiceImp;
 import service.interfaces.SignUpService;
@@ -8,7 +9,7 @@ import ui.views.SignUpView;
 public class SignUpPresenter {
 	private SignUpView view;
 	//TODO change to real dao
-	private SignUpService su = new SignUpServiceImp(new UserMemoryDAOStub());
+	private SignUpService su = new SignUpServiceImp(new UserMemoryDAO());
 	
 	public SignUpPresenter(SignUpView view){
 		this.view = view;
