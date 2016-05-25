@@ -23,9 +23,8 @@ public class TripDAOTest {
 	
 	 @Before 
 	 public void loadBase() {                
-	    	MemoryLoader base = new MemoryLoader();
+	    	MemoryInitializer base = new MemoryInitializer();
 	    	base.initialize();
-	    	base.load();
 	        sample = new TripMemoryDAO();  
 	        
 	    }
