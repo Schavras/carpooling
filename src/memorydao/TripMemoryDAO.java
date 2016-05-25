@@ -7,8 +7,7 @@ import dao.TripDAO;
 import domain.Place;
 import domain.Trip;
 import domain.User;
-import types.Email;
-
+ 
 public class TripMemoryDAO implements TripDAO {
 	
 	protected static ArrayList<Trip> trips = new ArrayList<Trip>();
@@ -20,27 +19,27 @@ public class TripMemoryDAO implements TripDAO {
 		for (int i = 0; i<trips.size(); i++){
 			if(trips.get(i).getDestination().equals(the_place)){ 
 				the_trips.add(trips.get(i));
-			}
-		 }
+			} 
+		 } 
 		return the_trips;
 	}
 	
 	
-	public User findByDriver(Email mail){
+	public User findByDriver(String mail){
 		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
 			if(UserMemoryDAO.users.get(i).getEmail().getFullEmailAdress().equals(mail)){
 				return UserMemoryDAO.users.get(i);
 			}
 		 }
 		return null;
+	} 
+	
+	
+	public boolean addNewTrip(Trip new_trip){ 
+		return trips.add(new_trip); 
 	}
-	
-	
-	public boolean addNewTrip(Trip new_trip){
-		//TODO to be commit 
-		return true;
-	}
-	
+
+	 
 }
 	
 

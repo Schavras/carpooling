@@ -1,11 +1,8 @@
 package memorydao;
 
-import java.util.ArrayList;
-
 import java.util.Date;
 
-import dao.LoaderDAO;
-import domain.Car;
+import dao.InitializerDAO;
 import domain.Place;
 import domain.Trip;
 import types.CreditCard;
@@ -32,7 +29,7 @@ import domain.User;
  */
 
 
-public class MemoryInitializer implements LoaderDAO {
+public class MemoryInitializer implements InitializerDAO {
 
 	public  MemoryInitializer() {
 		load();
@@ -46,8 +43,8 @@ public class MemoryInitializer implements LoaderDAO {
 		loadUsers();
 		loadTrips();
 	}
-
-	
+   
+	  
 
 	public void loadUsers() {
 		
@@ -66,8 +63,6 @@ public class MemoryInitializer implements LoaderDAO {
 		TripMemoryDAO.trips.add(new Trip(0200,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 21),new Currency(425.5f, CurrencyNamesEnum.EURO),4,UserMemoryDAO.users.get(2)));
 		TripMemoryDAO.trips.add(new Trip(0300,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
 	}
-
-	
 	
 
 }
