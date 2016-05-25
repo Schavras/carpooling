@@ -1,10 +1,7 @@
 package ui;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -34,6 +31,7 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 
 	NewTripUI nt;
 	
+	@SuppressWarnings("unused")
 	private SignUpPresenter presenter;
 	
 	public SignUpUI() {
@@ -116,7 +114,8 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 		btnSignUp.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO neos user me ta stoixeia apo panw
+				
+				signup();
 				
 			}
 		});
@@ -143,7 +142,7 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 				
 			}
 		});
-		btnProfile.setBounds(190, 190, 117, 25);
+		btnProfile.setBounds(10, 269, 117, 25);
 		add(btnProfile);
 		
 	}
@@ -151,7 +150,52 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 	@Override
 	public void setSignUpPresenter(SignUpPresenter presenter) {
 		 this.presenter = presenter;
-		
+	}
+	
+	 public void signup(){
+		presenter.signup(
+				getName(),
+				getSurname(),
+				getEmail(),
+				getPassword(),
+				getAge(),
+				getCreditNumber(),
+				getCreditBank()
+				);
+	}
+
+	 public String getName() {
+		return name.getText();
+	}
+	 
+	 
+	@Override
+	public String getSurname() {
+		return surname.getText();
+	}
+
+	@Override
+	public String getEmail() {
+		return email.getText();
+	}
+
+	@Override
+	public String getPassword() {
+		return password.getText();
+	}
+
+	@Override
+	public String getAge() {
+		return age.getText();
+	}
+
+	@Override
+	public String getCreditNumber() {
+		return ccnumber.getText();
+	}
+	
+	public String getCreditBank(){
+		return ccbank.getText();
 	}
 	
 	

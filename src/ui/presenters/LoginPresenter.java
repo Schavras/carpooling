@@ -1,12 +1,13 @@
 package ui.presenters;
 
 import memorydao.UserMemoryDAOStub;
-import service.LoginService;
 import service.LoginServiceImp;
+import service.interfaces.LoginService;
 import ui.views.LoginView;
 
 public class LoginPresenter {
 	private LoginView view;
+	//TODO change to real DAO
 	private LoginService login= new LoginServiceImp(new UserMemoryDAOStub());
 	
 	public LoginPresenter(LoginView view){
@@ -22,7 +23,7 @@ public class LoginPresenter {
 		view.open();
 	}
 	
-	public void login(String email, String password){
-		login.login(email, password);
+	public boolean login(String email, String password){
+		return login.login(email, password);
 	}
 }

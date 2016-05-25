@@ -1,26 +1,32 @@
 package ui;
 
 import java.awt.Color;
+
 import javax.swing.JPopupMenu;
+
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 import javax.swing.JSlider;
 import javax.swing.JPanel;
 import javax.swing.JInternalFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JSplitPane;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.FlowLayout;
+
 import javax.swing.Box;
 import javax.swing.JPasswordField;
 import javax.swing.JMenu;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import ui.presenters.ProfilePresenter;
 import ui.presenters.SignUpPresenter;
+import ui.presenters.UserProfilePresenter;
+import ui.views.ProfileView;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -30,8 +36,10 @@ import javax.swing.JTextPane;
 import javax.swing.DefaultComboBoxModel;
 
 
-public class UserProfileUI extends DefaultJPanel{
-
+public class UserProfileUI extends DefaultJPanel implements ProfileView{
+	
+	private UserProfilePresenter presenter;
+	
 	public UserProfileUI(){
 		setLayout(null);
 		setBackground(new Color(204, 255, 255));
@@ -109,11 +117,12 @@ public class UserProfileUI extends DefaultJPanel{
 			}
 		});
 	}
-	
 	@Override
-	public void setProfilePresenter(ProfilePresenter presenter) {
+	public void setUserProfilePresenter(UserProfilePresenter presenter) {
 		 this.presenter = presenter;
 		
 	}
+	
+	
 	
 }

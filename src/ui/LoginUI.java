@@ -8,8 +8,10 @@ import java.awt.Font;
 
 import javax.swing.JPasswordField;
 
+import service.LoginServiceImp;
 import ui.presenters.LoginPresenter;
 import ui.presenters.SignUpPresenter;
+import ui.presenters.UserProfilePresenter;
 import ui.views.LoginView;
 
 import java.awt.Color;
@@ -25,6 +27,8 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 	private JPasswordField passwordField;
 	
 	private LoginPresenter presenter;
+	boolean succededlogin;
+	JLabel loginErrorMsg;
 	
 	SignUpUI su;
 	/**
@@ -42,8 +46,8 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 			 */
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO leitourgia sto koumpi login
-				presenter.login(getEmail(), getPassword());
+				
+				login();
 			}
 		});
 		btnLogin.setBounds(35, 120, 117, 25);
@@ -88,6 +92,12 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 		btnSignUp.setBounds(169, 120, 117, 25);
 		add(btnSignUp);
 		
+		loginErrorMsg = new JLabel("");
+		loginErrorMsg.setForeground(Color.RED);
+		loginErrorMsg.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		loginErrorMsg.setBounds(35, 166, 269, 32);
+		add(loginErrorMsg);
+		
 		
 		
 	}
@@ -115,6 +125,25 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 	@Override
 	public void setPassword(String password) {
 		passwordField.setText(password);
-		
 	}
+
+
+	@Override
+	public void setLoginError(String error) {
+		 loginErrorMsg.setText(error);
+	}
+
+	public void login(){
+		succededlogin= presenter.login(getEmail(), getPassword());
+		if(!succededlogin){
+			setLoginError("Wrong email or password.");
+		}else{
+			//TODO anoigei to profil scene
+			//System.out.println(LoginServiceImp.ACTIVE_USER);
+			UserProfileUI signup = new UserProfileUI();
+			UserProfilePresenter presenter = new UserProfilePresenter(signup);
+			presenter.start();
+		}
+	}
+	
 }

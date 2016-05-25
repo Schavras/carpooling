@@ -1,5 +1,6 @@
 package service;
 
+import service.interfaces.LoginService;
 import dao.UserDAO;
 import domain.User;
 
@@ -30,6 +31,7 @@ public class LoginServiceImp implements LoginService  {
 		if (!user.isValid()){
 			return false;
 		}
+		ACTIVE_USER = user;
 		return true;
 	}
 	

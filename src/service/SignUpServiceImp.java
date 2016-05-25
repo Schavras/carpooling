@@ -3,6 +3,7 @@ package service;
 import memorydao.UserMemoryDAO;
 import dao.UserDAO;
 import domain.User;
+import service.interfaces.SignUpService;
 import types.Email;
 import types.Password;
 import types.CreditCard;
@@ -11,7 +12,7 @@ public class SignUpServiceImp implements SignUpService {
 	
 	private UserDAO userDao;
 
-	protected SignUpServiceImp(UserDAO dao){
+	public SignUpServiceImp(UserDAO dao){
 		userDao = dao;
 	}
 	
@@ -19,6 +20,8 @@ public class SignUpServiceImp implements SignUpService {
 	public SignUpServiceImp(){
 		userDao = new UserMemoryDAO();
 	}
+	
+	
 	
 	/* (non-Javadoc)
 	 * @see service.SignUpService#newUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, java.lang.String)
@@ -41,7 +44,7 @@ public class SignUpServiceImp implements SignUpService {
 		CreditCard cc = new CreditCard(tempCcNumber, ccBank);
 		
 		User new_user = new User(0, name, surname, tempEmail, tempPassword, age, cc, false);
-		
+		System.out.println("neos");
 		userDao.newUser(new_user);	
 				
 		return true;

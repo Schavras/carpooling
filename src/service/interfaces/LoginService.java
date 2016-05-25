@@ -1,4 +1,6 @@
-package service;
+package service.interfaces;
+
+import service.LoginServiceImp;
 
 /**
  *The interface of class {@link LoginServiceImp}

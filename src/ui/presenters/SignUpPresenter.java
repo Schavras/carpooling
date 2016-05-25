@@ -1,11 +1,14 @@
 package ui.presenters;
 
-import service.SignUpService;
+import memorydao.UserMemoryDAOStub;
+import service.SignUpServiceImp;
+import service.interfaces.SignUpService;
 import ui.views.SignUpView;
 
 public class SignUpPresenter {
 	private SignUpView view;
-	private SignUpService su;
+	//TODO change to real dao
+	private SignUpService su = new SignUpServiceImp(new UserMemoryDAOStub());
 	
 	public SignUpPresenter(SignUpView view){
 		this.view = view;
@@ -20,8 +23,8 @@ public class SignUpPresenter {
 		view.open();
 	}
 	
-	public void signup(){
-		
+	public void signup(String name, String surname, String email, String password, String age, String ccnumber, String ccBank){
+		su.newUser(name, surname, email, password, Integer.parseInt(age), ccnumber, ccBank);
 	}
 	
 }

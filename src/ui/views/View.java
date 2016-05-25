@@ -5,7 +5,7 @@ package ui.views;
  */
 public interface View {
     /**
-     * Open the view
+     * Open the view, and display it's content
      */
     void open();
     
