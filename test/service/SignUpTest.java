@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import service.interfaces.SignUpService;
+
 public class SignUpTest {
 
 	UserMemoryDAOStub mem;
