@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 
 public class apples {
@@ -26,3 +26,4 @@ public class apples {
 		
 	}
 }
+*/

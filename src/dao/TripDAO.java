@@ -28,4 +28,12 @@ public interface TripDAO {
 	 */
 	public User findByDriver(Email mail);
 	
+	/**
+	 * Add a trip to the data
+	 * @param new_trip
+	 * @return true if it succeeds
+	 */
+	public boolean addNewTrip(Trip new_trip);
+	
+	
 }
