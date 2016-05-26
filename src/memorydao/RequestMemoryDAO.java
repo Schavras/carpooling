@@ -1,6 +1,6 @@
 package memorydao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import dao.RequestDAO;
 import domain.Request;
@@ -9,26 +9,26 @@ import domain.User;
 
 public class RequestMemoryDAO implements RequestDAO {
 
+	protected static ArrayList<Request> requests = new ArrayList<Request>();
+	
 	@Override
 	public boolean addRequest(Request req) {
-		
-		return false;
+		return requests.add(req);
 	}
 
 	@Override
 	public boolean removeRequest(Request req) {
-		// TODO Auto-generated method stub
-		return false;
+		return requests.remove(req);
 	}
 
 	@Override
-	public List<Request> getRequestsByTrip(Trip trip) {
+	public ArrayList<Request> getRequestsByTrip(Trip trip) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Request> getRequestsByUser(User user) {
+	public ArrayList<Request> getRequestsByUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
