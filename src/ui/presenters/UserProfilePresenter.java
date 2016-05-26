@@ -1,5 +1,6 @@
 package ui.presenters;
 
+import service.LoginServiceImp;
 import service.ProfileService;
 import ui.views.ProfileView;
 
@@ -20,6 +21,19 @@ public class UserProfilePresenter {
 		view.open();
 	}
 	
+	public String getName(){
+		return LoginServiceImp.ACTIVE_USER.getName();
+	}
+	
+	public String getSurname(){
+		return LoginServiceImp.ACTIVE_USER.getSurname();
+	}
+	
+	public String getEmail(){
+		return LoginServiceImp.ACTIVE_USER.getEmail().getFullEmailAdress();
+	}
+	
+			
 
 	
 }
