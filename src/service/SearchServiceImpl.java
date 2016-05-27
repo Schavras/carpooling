@@ -19,7 +19,7 @@ public class SearchServiceImpl implements SearchService {
 	 * Constractor of search service.
 	 * @param trips Type of DAO object.
 	 */
-	public SearchServiceImpl(TripDAO trips) {
+	protected SearchServiceImpl(TripDAO trips) {
 		this.trips = trips;
 	}
 	
@@ -31,11 +31,14 @@ public class SearchServiceImpl implements SearchService {
 		trips = new TripMemoryDAO();
 	}
 
+	public void setDAO(TripDAO dao){
+		trips = dao	;
+	}
 
 
 	@Override
 	public ArrayList<Trip> searchByPlace(String country, String region, String town) {
-		 results = new ArrayList<Trip>();
+		results = new ArrayList<Trip>();
 		Place place = new Place(country, region, town);
 		results =  trips.findByDestination(place);
 		return results;

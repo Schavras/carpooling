@@ -35,7 +35,11 @@ public class TripMemoryDAOStub implements TripDAO{
 	@Override
 	public ArrayList<Trip> findByDestination(String country, String region,
 			String town) {
+		
 		ArrayList<Trip> result = new ArrayList<Trip>();
+		if(country.equals("wrong")){
+			return result;
+		}
 		result.add(trips.get(0));
 		result.add(trips.get(1));
 		result.add(trips.get(4));
@@ -46,6 +50,9 @@ public class TripMemoryDAOStub implements TripDAO{
 	@Override
 	public ArrayList<Trip> findByDestination(Place place) {
 		ArrayList<Trip> result = new ArrayList<Trip>();
+		if(place.getCountry().equals("wrong")){
+			return result;
+		}
 		result.add(trips.get(0));
 		result.add(trips.get(1));
 		result.add(trips.get(4));

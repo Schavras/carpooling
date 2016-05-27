@@ -27,6 +27,9 @@ public class UserMemoryDAOStub implements UserDAO  {
 			return users.get(1);
 		}else if(email.equals("new@email")){
 			return newUser;
+		}else if (email.equals("some@email")){
+			
+			return get(2);
 		}else{
 			return null;
 		}

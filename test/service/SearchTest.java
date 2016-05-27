@@ -1,7 +1,5 @@
 package service;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import dao.TripDAO;
-import domain.Car;
 import domain.Place;
 import domain.Trip;
 import service.interfaces.SearchService;
@@ -49,6 +46,12 @@ public class SearchTest {
 		Assert.assertEquals("first", results.get(0).getDriver().getName());
 		Assert.assertEquals("forth", results.get(2).getDriver().getName());
 		Assert.assertEquals(expectedTrip,testTrip);
+	}
+	
+	@Test
+	public void searchByPlaceNoResults(){
+		results= search.searchByPlace("wrong", "wrong", "wrong");
+		Assert.assertEquals(0, results.size());
 	}
 	
 	

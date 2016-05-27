@@ -2,7 +2,6 @@ package ui.presenters;
 
 import dao.UserDAO;
 import memorydao.UserMemoryDAO;
-import memorydao.UserMemoryDAOStub;
 import service.LoginServiceImp;
 import service.interfaces.LoginService;
 import ui.views.LoginView;

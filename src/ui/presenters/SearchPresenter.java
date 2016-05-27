@@ -3,6 +3,7 @@ package ui.presenters;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.TripDAO;
 import domain.Trip;
 import service.SearchServiceImpl;
 import service.interfaces.SearchService;
@@ -12,17 +13,23 @@ public class SearchPresenter {
 	
 	private SearchView view;
 	private SearchService search;
-	ArrayList<String> results;
-	ArrayList<Trip> TripResults;
+	String[] results;
+	ArrayList<Trip> tripResults;
 	
 	
 	/**
 	 * 
 	 */
 	public SearchPresenter(SearchView view) {
-		results = new ArrayList<String>();
-		TripResults = new ArrayList<Trip>();
+		tripResults = new ArrayList<Trip>();
 		setSearch(new SearchServiceImpl());
+	} 
+	
+	protected SearchPresenter(SearchView view, TripDAO dao){
+		tripResults = new ArrayList<Trip>();
+		SearchServiceImpl src  = new SearchServiceImpl();
+		src.setDAO(dao);
+		setSearch(src);
 	}
 	
 	public void setSearch(SearchService search){
@@ -34,16 +41,23 @@ public class SearchPresenter {
 		view.open();
 	}
 	
-	
-	public ArrayList<String> updateList(String country, String region, String town){
-		TripResults = search.searchByPlace(country, region, town);
+	public String[] updateList(String country, String region, String town){
+		tripResults = search.searchByPlace(country, region, town);
 		
-		for (int i = 0 ; i < TripResults.size() ; i++){
-			results.add(StringCreator(TripResults.get(i), i));
+		if(tripResults.isEmpty()){
+			results = new String[1];
+			results[0] = "No results.";
+			return results; 
+		}
+		results = new String[tripResults.size()];
+		for (int i = 0 ; i < tripResults.size() ; i++){
+			results[i]=(StringCreator(tripResults.get(i), i));
 		}
 		
-		return results;
+		
+		return results; 
 	}
+	
 	
 	
 	private String StringCreator(Trip trip, int index){

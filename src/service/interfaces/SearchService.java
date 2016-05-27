@@ -1,8 +1,6 @@
 package service.interfaces;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import domain.Trip;
 
 
