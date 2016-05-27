@@ -34,7 +34,7 @@ public class MemoryInitializer implements InitializerDAO {
 	public  MemoryInitializer() {
 		load();
 	}
-	
+	 
 	public void initialize(){
 		 load();
 	}

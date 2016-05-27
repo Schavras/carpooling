@@ -13,7 +13,7 @@ import types.Password;
 
 
 
-public class UserDAOTest {
+public class UserDAOTest { 
 	
 	private UserMemoryDAO sample;  
 	
