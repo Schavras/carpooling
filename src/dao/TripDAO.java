@@ -2,7 +2,7 @@
 package dao;
 
 import java.util.ArrayList;
-
+import domain.Place;
 import domain.Trip;
 import domain.User;
 
@@ -11,13 +11,21 @@ public interface TripDAO {
 	
 
 	/**
-	 * Find all the trips with same destination and add this into a array
+	 * Find all the trips with same destination and add this into a array.
 	 * @param country
 	 * @param region
 	 * @param town
 	 * @return A array list which contains the trips with the same destination
 	 */
 	public ArrayList<Trip> findByDestination(String country, String region, String town);
+	
+	/**
+	 * Find all the trips with same destination as Place and add this into a array.
+	 * @param place, a {@link Place} object.
+	 * @return A array list which contains the trips with the same destination
+	 */
+	public ArrayList<Trip> findByDestination(Place place);
+	
 	
 	/**
 	 * Find the driver by his email

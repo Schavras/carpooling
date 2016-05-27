@@ -1,5 +1,7 @@
 package ui.views;
 
+import ui.presenters.SearchPresenter;
+
 
 //TODO add javadoc
 public interface SearchView extends View{
@@ -13,5 +15,7 @@ public interface SearchView extends View{
 	void updateList(/* TODO tha doume ti thelei san orisma*/);
 	
 	void sentRequest(/* TODO tha doume ti thelei san orisma*/);
+
+	void setSeachPresenter(SearchPresenter searchPresenter);
 	
 }

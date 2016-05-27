@@ -3,6 +3,7 @@ package service;
 import memorydao.UserMemoryDAO;
 import dao.UserDAO;
 import domain.User;
+import service.interfaces.EmailProvider;
 import service.interfaces.SignUpService;
 import types.Email;
 import types.Password;
@@ -11,14 +12,17 @@ import types.CreditCard;
 public class SignUpServiceImp implements SignUpService {
 	
 	private UserDAO userDao;
-
+	private EmailProvider emailProvider;
+	
 	public SignUpServiceImp(UserDAO dao){
 		userDao = dao;
+		emailProvider = new FakeEmailProvider();
 	}
 	
 	 
 	public SignUpServiceImp(){
 		userDao = new UserMemoryDAO();
+		emailProvider = new FakeEmailProvider();
 	}
 	
 	
@@ -44,8 +48,12 @@ public class SignUpServiceImp implements SignUpService {
 		CreditCard cc = new CreditCard(tempCcNumber, ccBank);
 		
 		//TODO change status to false
-		User new_user = new User(0, name, surname, tempEmail, tempPassword, age, cc, true);
+		User new_user = new User(0, name, surname, tempEmail, tempPassword, age, cc, false);
 		userDao.newUser(new_user);	
+		
+		
+		
+		emailProvider.sentActivationEmail(new_user);
 				
 		return true;
 		

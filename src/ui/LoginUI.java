@@ -134,13 +134,12 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 		 loginErrorMsg.setText(error);
 	}
 
+	
 	public void login(){
 		succededlogin= presenter.login(getEmail(), getPassword());
 		if(!succededlogin){
 			setLoginError("Wrong email or password.");
 		}else{
-			//TODO anoigei to profil scene
-			//System.out.println(LoginServiceImp.ACTIVE_USER);
 			UserProfileUI signup = new UserProfileUI();
 			UserProfilePresenter presenter = new UserProfilePresenter(signup);
 			presenter.start();

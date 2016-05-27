@@ -3,6 +3,10 @@
  */
 package types.currency;
 
+import java.util.spi.CurrencyNameProvider;
+
+import org.omg.CORBA.portable.ValueBase;
+
 /**
  * @author schavras
  *
@@ -69,6 +73,9 @@ public class Currency {
 	
 	}
 
+	public String print(){
+		return value + " "+ cName.getSign();
+	}
 
 
 	/* (non-Javadoc)

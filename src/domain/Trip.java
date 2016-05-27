@@ -84,7 +84,7 @@ public class Trip {
 	 * @param maxTravelers 
 	 * @param driver
 	 */
-	public Trip(long id, Place startingPoint, Place destination, Date dateOfDeparture, Currency totalPrice, int maxTravelers, User Driver) {
+	public Trip(long id, Place startingPoint, Place destination, Date dateOfDeparture, Currency totalPrice, int maxTravelers, User driver) {
 		this.id = id;
 		this.startingPoint = startingPoint;
 		this.destination = destination;

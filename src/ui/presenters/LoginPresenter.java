@@ -9,10 +9,11 @@ import ui.views.LoginView;
 public class LoginPresenter {
 	private LoginView view;
 	//TODO change to real DAO
-	private LoginService login= new LoginServiceImp(new UserMemoryDAO());
+	private LoginService login;
 	
 	public LoginPresenter(LoginView view){
 		this.view=view;
+		login= new LoginServiceImp(new UserMemoryDAO());
 	}
 	
 	public void setLogin(LoginService login){
