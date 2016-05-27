@@ -1,14 +1,21 @@
 package ui;
 
 import java.awt.Color;
+import java.awt.Component;
 
 import memorydao.MemoryInitializer;
+import ui.presenters.SearchPresenter;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+import domain.Trip;
+
 import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.JCheckBox;
@@ -18,23 +25,38 @@ import javax.swing.JTabbedPane;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JEditorPane;
 import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.JProgressBar;
 import javax.swing.AbstractListModel;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.DefaultListModel;
 import java.awt.ScrollPane;
 import java.awt.Canvas;
 import java.awt.TextArea;
 import java.awt.Point;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
+import javax.swing.ListSelectionModel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import javax.swing.SwingConstants;
 
 public class SearchUI extends DefaultJPanel{
 	private JTextField txtCountry;
 	private JTextField txtRegion;
 	private JTextField txtTown;
+	private JList<Trip> resultJList;
+	private DefaultListModel resultModel;
+	private JButton btnAdd;
+	private SearchPresenter presenter;
+	private JPanel contentPane;
+	
 	public SearchUI() {
 		setLayout(null);
 		setBackground(new Color(204, 255, 255));
@@ -97,14 +119,42 @@ public class SearchUI extends DefaultJPanel{
 		lblSearchResults.setBounds(277, 35, 137, 29);
 		add(lblSearchResults);
 		
-		JCheckBoxMenuItem chckbxmntmNewCheckItem = new JCheckBoxMenuItem("Trip no1");
-		chckbxmntmNewCheckItem.setForeground(new Color(204, 51, 102));
-		chckbxmntmNewCheckItem.setBounds(247, 104, 167, 22);
-		add(chckbxmntmNewCheckItem);
+		resultJList = new <Trip> JList();
+		resultJList.setBounds(239, 75, 200, 313);
+		resultJList.setModel(resultModel);
+		resultJList.setCellRenderer(new DefaultListCellRenderer() {
+			
+            public Component getListCellRendererComponent(JList list,
+                    Object value, int index, boolean isSelected, boolean cellHasFocus) {
+               
+                Trip resultTrip = (Trip) value;
+                String line = String.valueOf(resultTrip.getDestination()) 
+                	+ " " + resultTrip.getDriver() 
+                	+ " " + resultTrip.getStatus()
+                	+ " " + resultTrip.getTotalPrice()
+                	+ " " + resultTrip.getMaxTravelers();
+                	
+                return super.getListCellRendererComponent(list, 
+                		line, 
+                		index, isSelected, cellHasFocus);
+            }
+        });
 		
-		JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Trip no1");
-		checkBoxMenuItem.setForeground(new Color(204, 51, 102));
-		checkBoxMenuItem.setBounds(247, 132, 167, 22);
-		add(checkBoxMenuItem);
-	}
+		resultJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		btnAdd = new JButton("Add Trip to my Trip List");
+		btnAdd.setForeground(new Color(0, 0, 102));
+		btnAdd.setBackground(new Color(153, 0, 255));
+		btnAdd.setBounds(249, 406, 187, 20);
+        btnAdd.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		//TODO na kanoume add to Trip sti lista
+        		//presenter.addTrip();
+        	}
+        });
+        
+        resultJList.add("aaa",null);
+        add(resultJList);
+        add(btnAdd);
+    }
+        
 }
