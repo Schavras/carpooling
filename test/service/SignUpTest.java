@@ -29,10 +29,9 @@ public class SignUpTest {
 	public void setUp() throws Exception {
 		mem = new UserMemoryDAOStub();
 		su = new SignUpServiceImp(mem);
-		
 		name = "name";
 		surname = "surname";
-		email = "some@email.com";
+		email = "new@email";
 		password = "password";
 		age = 20;
 		ccNumber = "123";

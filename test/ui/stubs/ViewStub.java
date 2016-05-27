@@ -1,4 +1,4 @@
-package ui;
+package ui.stubs;
 
 import ui.views.View;
 

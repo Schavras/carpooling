@@ -1,9 +1,9 @@
-package ui;
+package ui.stubs;
 
 import ui.presenters.SearchPresenter;
 import ui.views.SearchView;
 
-public class SearchUIStub implements SearchView {
+public class SearchUIStub extends ViewStub implements SearchView {
 
 
 
@@ -34,13 +34,5 @@ public class SearchUIStub implements SearchView {
 	@Override
 	public void setSeachPresenter(SearchPresenter searchPresenter) {}
 
-	@Override
-	public void open() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void close() {}
 
 }

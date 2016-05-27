@@ -16,6 +16,8 @@ import domain.Car;
 import domain.Place;
 import domain.Trip;
 import service.interfaces.SearchService;
+import types.Email;
+import types.Password;
 import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
 import domain.User;
@@ -41,11 +43,12 @@ public class SearchTest {
 		results =search.searchByPlace("country1", "region1", "town1");
 		
 		Trip testTrip = results.get(0);
-		Trip expectedTrip = new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("country1", "region1","town1"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,);
+		@SuppressWarnings("deprecation")
+		Trip expectedTrip = new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("country1", "region1","town1"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,new User(0, "first", "user", new Email("first@email"), new Password() , true));
 		Assert.assertEquals(3, results.size());
 		Assert.assertEquals("first", results.get(0).getDriver().getName());
 		Assert.assertEquals("forth", results.get(2).getDriver().getName());
-		Assert.assertEquals(
+		Assert.assertEquals(expectedTrip,testTrip);
 	}
 	
 	

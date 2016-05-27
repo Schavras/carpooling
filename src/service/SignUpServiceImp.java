@@ -16,13 +16,13 @@ public class SignUpServiceImp implements SignUpService {
 	
 	public SignUpServiceImp(UserDAO dao){
 		userDao = dao;
-		emailProvider = new FakeEmailProvider();
+		emailProvider = new FakeEmailProvider(userDao);
 	}
 	
 	 
 	public SignUpServiceImp(){
 		userDao = new UserMemoryDAO();
-		emailProvider = new FakeEmailProvider();
+		emailProvider = new FakeEmailProvider(userDao);
 	}
 	
 	
