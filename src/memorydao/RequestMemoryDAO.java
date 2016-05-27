@@ -6,7 +6,7 @@ import dao.RequestDAO;
 import domain.Request;
 import domain.Trip;
 import domain.User;
- 
+  
 public class RequestMemoryDAO implements RequestDAO {
 
 	protected static ArrayList<Request> requests = new ArrayList<Request>();

@@ -17,7 +17,7 @@ public class RatingsSummary {
 		average = 0.0 ;
 		size=0;
 	}
-	
+	 
 	
 	
 	public void add(Rating rating){

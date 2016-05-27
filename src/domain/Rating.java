@@ -5,7 +5,7 @@ package domain;
  * The class for rating, with a number, and text comment
  */
 public class Rating {
-	
+	 
 	/**
 	 * The number of rating
 	 */
@@ -17,12 +17,23 @@ public class Rating {
 	private String comment;
 	
 	/**
+	 * The user who does the rating
+	 */
+	private User from;
+	
+	/**
+	 * The user who receives the rating
+	 */
+	private User to;
+	/**
 	 * @param number
 	 * @param comment
 	 */
-	public Rating(int number, String comment) {
+	public Rating(int number, String comment,User from,User to) {
 		this.number = number;
 		this.comment = comment;
+		this.setFrom(from);
+		this.setTo(to);
 	}
 
 	/**
@@ -31,9 +42,33 @@ public class Rating {
 	public Rating() {
 		number=0;
 		comment="";
+		setFrom(null);
+		setTo(null);
 	}
 	
 	
+
+	public User getFrom() {
+		return from;
+	}
+
+	public void setFrom(User from) {
+		this.from = from;
+	}
+
+	/**
+	 * @return the to
+	 */
+	public User getTo() {
+		return to;
+	}
+
+	/**
+	 * @param to the to to set
+	 */
+	public void setTo(User to) {
+		this.to = to;
+	}
 
 	/**
 	 * @return the number

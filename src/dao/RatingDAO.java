@@ -1,6 +1,6 @@
 package dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import domain.Rating;
 import domain.User;
@@ -18,5 +18,5 @@ public interface RatingDAO {
 	 * @param user: The user to search for his ratings.
 	 * @return A {@link List} of {@link Rating Ratings}
 	 */
-	List<Rating> getSummary(User user);
+	ArrayList<Rating> getSummary(User user);
 }
