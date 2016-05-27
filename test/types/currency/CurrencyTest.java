@@ -54,4 +54,12 @@ public class CurrencyTest {
 		c.getConversionRate();
 		c.getSign();
 	}
+	
+	@Test
+	public void printTest(){
+		 Currency testObj = new Currency(2.0f ,CurrencyNamesEnum.EURO);
+		 String actual = testObj.print();
+		 String expected = "2.0 \u20ac";
+		 Assert.assertEquals(expected, actual);
+	}
 }

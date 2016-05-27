@@ -32,12 +32,18 @@ public class LoginStub extends ViewStub implements LoginView{
 
 	@Override
 	public void setPassword(String password) {
-		return;
+		return; 
 		
 	}
 
 	@Override
 	public void setLoginError(String error) {
+		return;
+		
+	}
+
+	@Override
+	public void back() {
 		return;
 		
 	}
