@@ -85,7 +85,7 @@ public class User {
 		requests = new ArrayList<Request>();
 
 	}
-
+ 
 	/**
 	 * Default
 	 */

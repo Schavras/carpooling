@@ -182,7 +182,7 @@ public class Trip {
 	public void setDestination(Place destination) {
 		this.destination = destination;
 	}
-
+ 
 	public Date getDateOfDeparture() {
 		return dateOfDeparture;
 	}

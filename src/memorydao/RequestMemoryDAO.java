@@ -6,7 +6,7 @@ import dao.RequestDAO;
 import domain.Request;
 import domain.Trip;
 import domain.User;
-
+ 
 public class RequestMemoryDAO implements RequestDAO {
 
 	protected static ArrayList<Request> requests = new ArrayList<Request>();
@@ -23,16 +23,23 @@ public class RequestMemoryDAO implements RequestDAO {
 
 	@Override
 	public ArrayList<Request> getRequestsByTrip(Trip trip) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i<TripMemoryDAO.trips.size(); i++){
+			if(TripMemoryDAO.trips.get(i).equals(trip)){
+				return trip.getPendingRequest();
+			}
+		} 
 		return null;
 	}
-
 	@Override
 	public ArrayList<Request> getRequestsByUser(User user) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
+			if(UserMemoryDAO.users.get(i).equals(user)){
+				return user.getRequests();
+			}
+		}
 		return null;
 	}
 
 	
-	
+	 
 }

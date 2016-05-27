@@ -23,7 +23,7 @@ public class TripMemoryDAO implements TripDAO {
 		 } 
 		return the_trips;
 	}
-	
+	 
 	
 	public User findByDriver(String mail){
 		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
@@ -34,11 +34,23 @@ public class TripMemoryDAO implements TripDAO {
 		return null;
 	} 
 	
-	
+	 
 	public boolean addNewTrip(Trip new_trip){ 
 		return trips.add(new_trip); 
 	}
 
+
+	@Override
+	public ArrayList<Trip> findByDestination(Place place) {
+		
+		ArrayList<Trip> the_trips = new ArrayList<Trip>(); 
+		for (int i = 0; i<trips.size(); i++){
+			if(trips.get(i).getDestination().equals(place)){ 
+				the_trips.add(trips.get(i));
+			} 
+		 } 
+		return the_trips;
+	}
 	 
 }
 	

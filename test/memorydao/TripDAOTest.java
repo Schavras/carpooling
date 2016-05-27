@@ -15,7 +15,7 @@ import types.Password;
 import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
 
-
+ 
 public class TripDAOTest {
 
 	private TripMemoryDAO sample;
@@ -27,14 +27,18 @@ public class TripDAOTest {
 	        sample = new TripMemoryDAO();  
 	        
 	    }
-	   
+	    
 	 @Test
 	 public void findDestinationTest(){
 		 User fresh=new User(12,"Nikos","Papas", new Email("nikospapass@"), new Password("123321"), 21, new CreditCard(123456789, "Pireus"),true);
 		 @SuppressWarnings("deprecation")
-		Trip destin=new Trip(0000,new Place("Greece", "Attiki", "athens"),new Place("Greece","Makedonia","Thessaloniki"),new Date(2016, 6, 17),new Currency(444.5f, CurrencyNamesEnum.EURO),3,fresh);
+		 Place place=new Place("Greece","Makedonia","Thessaloniki");
+		 Place _place=new Place ("Greece","Makedonia","Thessaoniki");
+		 Trip destin=new Trip(0000,new Place("Greece", "Attiki", "athens"),new Place("Greece","Makedonia","Thessaloniki"),new Date(2016, 6, 17),new Currency(444.5f, CurrencyNamesEnum.EURO),3,fresh);
 		 sample.findByDestination("Greece","Makedonia","Thessaloniki");
 		 sample.findByDestination("Greece","Makedonia","Thessaoniki");
+		 sample.findByDestination(place);
+		 sample.findByDestination(_place);
 		 Assert.assertEquals(new Place("Greece","Makedonia","Thessaloniki"), destin.getDestination());
 		 
 	 }  
