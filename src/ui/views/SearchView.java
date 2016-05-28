@@ -12,6 +12,8 @@ public interface SearchView extends View{
 	
 	String getTown();
 	
+	String getComment();
+	
 	void updateList(/* TODO tha doume ti thelei san orisma*/);
 	
 	void sentRequest(/* TODO tha doume ti thelei san orisma*/);

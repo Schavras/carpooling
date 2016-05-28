@@ -60,6 +60,9 @@ public class User {
 	 
 	 ArrayList<Request> requests;
 
+	 RatingsSummary ratings;
+	 
+	 
 	/**
 	 * Full Constractor
 	 * @param id
@@ -83,7 +86,7 @@ public class User {
 		this.isValid = isValid;
 		ownedTrips = new ArrayList<Trip>();
 		requests = new ArrayList<Request>();
-
+		ratings = new RatingsSummary();
 	}
  
 	/**
@@ -100,6 +103,15 @@ public class User {
 		this.isValid = false;
 		ownedTrips = new ArrayList<Trip>();
 		requests = new ArrayList<Request>();
+		ratings = new RatingsSummary();
+	}
+
+	public RatingsSummary getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(RatingsSummary ratings) {
+		this.ratings = ratings;
 	}
 
 	public ArrayList<Trip> getOwnedTrips() {

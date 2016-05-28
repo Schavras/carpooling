@@ -224,6 +224,13 @@ public class Trip {
 		this.maxTravelers = maxTravelers;
 	}
 
+	public Currency getCostPerTraveller(){
+		float cost = totalPrice.getValue() / maxTravelers ;
+		Currency perTraveller = new Currency(cost, totalPrice.getcName());
+		return perTraveller;
+		
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

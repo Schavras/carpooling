@@ -34,7 +34,10 @@ public class Request {
 		
 	}
 	
-	
+	public Request(String comment, User user){
+		this.comment = comment;
+		this.user = user;
+	}
 
 	public Request(){
 		comment="";

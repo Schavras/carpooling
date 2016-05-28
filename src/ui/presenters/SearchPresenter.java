@@ -1,10 +1,10 @@
 package ui.presenters;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import dao.TripDAO;
+import domain.Request;
 import domain.Trip;
+import service.LoginServiceImp;
 import service.SearchServiceImpl;
 import service.interfaces.SearchService;
 import ui.views.SearchView;
@@ -59,24 +59,41 @@ public class SearchPresenter {
 	}
 	
 	
-	
+	/**
+	 * Generate a string with the information about the trip.
+	 * The format is : {index}. {name} {surname} {cost}
+	 * @param trip
+	 * @param index
+	 * @return
+	 */
 	private String StringCreator(Trip trip, int index){
-		if (trip==null){
-			return "" ;
-		}
+		//TODO add rating
 		String str = ""	;
-		
+		if (trip==null){
+			return str ;
+		}
 		//Index of result
 		str+=index + ". ";
-		
 		//Name and surname of driver
-		str+= trip.getDriver().getName()+ " " + trip.getDriver().getSurname() + " ";
-		
+		str+=  "by "+trip.getDriver().getName()+ " " + trip.getDriver().getSurname() + " ";
+		//RatingSummary
+		str+= "Average Rating: " + 	trip.getDriver().getRatings().getAverage() + " ";
 		//total cost
-		str+= trip.getTotalPrice().print();
-		
-		
-		
+		str+= "Cost per Traveller: "+ trip.getCostPerTraveller().print();
+			
 		return str;
 	}
+	
+	
+	
+
+	public void sentRequest(int index, String comment){
+		
+		Request req= new Request(comment, LoginServiceImp.ACTIVE_USER);
+		tripResults.get(index).addRequest(req);
+		
+	}
+	
+	
+	
 }

@@ -1,6 +1,8 @@
 package dao;
 
 import java.util.List;
+
+import domain.EnumStatus;
 import domain.Request;
 import domain.Trip;
 import domain.User;
@@ -40,5 +42,22 @@ public interface RequestDAO {
 	 * @return
 	 */
 	List<Request> getRequestsByUser(User user);
+	
+	/**
+	 * Get only the {@link Request} with status
+	 * {@link EnumStatus#PENDING} based on trip
+	 * @param trip
+	 * @return
+	 */
+	List<Request> getPendingRequestsByTrip(Trip trip);
+	
+	/**
+	 *  Get only the {@link Request} with status
+	 * {@link EnumStatus#PENDING} based on user
+	 * 
+	 * @param user
+	 * @return
+	 */
+	List<Request> getPendingRequestByUser(User user);
 	
 }

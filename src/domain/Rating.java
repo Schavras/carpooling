@@ -54,6 +54,7 @@ public class Rating {
 
 	public void setFrom(User from) {
 		this.from = from;
+		
 	}
 
 	/**
@@ -68,6 +69,7 @@ public class Rating {
 	 */
 	public void setTo(User to) {
 		this.to = to;
+		to.getRatings().add(this);
 	}
 
 	/**
