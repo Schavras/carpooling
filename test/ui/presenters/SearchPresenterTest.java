@@ -26,6 +26,7 @@ public class SearchPresenterTest{
 		mem = new TripMemoryDAOStub();
 		search = new SearchUIStub();
 		presenter = new SearchPresenter(search,mem);
+		
 	}
 	
 	@Test
@@ -55,7 +56,7 @@ public class SearchPresenterTest{
 		region = search.getRegion();
 		town = search.getTown();
 		list = presenter.updateList(country, region, town);
-		String str = "0. first user 425.5 " + CurrencyNamesEnum.EURO.getSign();
+		String str = "0. by first user Cost per Traveller: 100.0 €";
 		Assert.assertEquals(str, list[0]);
 	}
 	

@@ -23,6 +23,7 @@ public class SearchPresenter {
 	public SearchPresenter(SearchView view) {
 		tripResults = new ArrayList<Trip>();
 		setSearch(new SearchServiceImpl());
+		this.view = view;
 	} 
 	
 	protected SearchPresenter(SearchView view, TripDAO dao){
@@ -77,7 +78,7 @@ public class SearchPresenter {
 		//Name and surname of driver
 		str+=  "by "+trip.getDriver().getName()+ " " + trip.getDriver().getSurname() + " ";
 		//RatingSummary
-		str+= "Average Rating: " + 	trip.getDriver().getRatings().getAverage() + " ";
+//		str+= "Average Rating: " + 	trip.getDriver().getRatings().getAverage() + " ";
 		//total cost
 		str+= "Cost per Traveller: "+ trip.getCostPerTraveller().print();
 			

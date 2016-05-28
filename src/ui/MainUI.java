@@ -5,8 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import domain.User;
 import memorydao.MemoryInitializer;
+import service.LoginServiceImp;
 import ui.presenters.LoginPresenter;
+import ui.presenters.SearchPresenter;
 
 import java.awt.CardLayout;
 
@@ -16,6 +19,7 @@ public class MainUI {
  	static JPanel scenes = new JPanel();
   	static CardLayout cl = new CardLayout();
   	LoginPresenter lgpresenter;
+  	SearchUI srch ;
   	
 	/**
 	 * Launch the application.
@@ -51,20 +55,19 @@ public class MainUI {
 		frmCarpooling.setBounds(100, 100, 567, 431);
 		frmCarpooling.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		scenes.setLayout(cl);
-		/*		
-		JPanel login = new LoginUI();
-		
-		
-		scenes.add(login,"login");
-		
-		cl.show(scenes, "login");
-		
-		frmCarpooling.getContentPane().add(scenes);
-		*/
-		
+	
+	/*	
 		LoginUI login = new LoginUI();
 		lgpresenter = new LoginPresenter(login);
 		lgpresenter.start();
+		MainUI.frmCarpooling.getContentPane().add(MainUI.scenes);
+	*/
+		
+		LoginServiceImp.ACTIVE_USER = new User();
+		
+		 srch = new SearchUI();
+		SearchPresenter pr = new SearchPresenter(srch);
+		pr.start();
 		MainUI.frmCarpooling.getContentPane().add(MainUI.scenes);
 	}
 

@@ -5,6 +5,7 @@ import java.awt.Component;
 
 import memorydao.MemoryInitializer;
 import ui.presenters.SearchPresenter;
+import ui.views.SearchView;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -18,6 +19,7 @@ import domain.Trip;
 
 import java.awt.SystemColor;
 import java.awt.Font;
+
 import javax.swing.JCheckBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JLayeredPane;
@@ -32,10 +34,12 @@ import javax.swing.JProgressBar;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
+
 import java.awt.ScrollPane;
 import java.awt.Canvas;
 import java.awt.TextArea;
 import java.awt.Point;
+
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
@@ -45,17 +49,22 @@ import javax.swing.ListSelectionModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+
 import javax.swing.SwingConstants;
 
-public class SearchUI extends DefaultJPanel{
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class SearchUI extends DefaultJPanel implements SearchView{
 	private JTextField txtCountry;
 	private JTextField txtRegion;
 	private JTextField txtTown;
-	private JList<Trip> resultJList;
-	private DefaultListModel resultModel;
+	private JList<String> resultJList;
+	private DefaultListModel<String> resultModel;
 	private JButton btnAdd;
 	private SearchPresenter presenter;
 	private JPanel contentPane;
+	private String[] results;
 	
 	public SearchUI() {
 		setLayout(null);
@@ -82,9 +91,16 @@ public class SearchUI extends DefaultJPanel{
 		txtTown.setBounds(10, 73, 129, 20);
 		add(txtTown);
 		
-		JButton btnNewButton = new JButton("Search Trip");
-		btnNewButton.setBounds(32, 149, 96, 23);
-		add(btnNewButton);
+		JButton searchBtn = new JButton("Search Trip");
+		searchBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				updateList();
+			}
+		});
+		
+		searchBtn.setBounds(32, 149, 96, 23);
+		add(searchBtn);
 		
 		JSpinner spinner = new JSpinner();
 		spinner.setModel(new SpinnerNumberModel(1, 1, 31, 1));
@@ -119,42 +135,74 @@ public class SearchUI extends DefaultJPanel{
 		lblSearchResults.setBounds(277, 35, 137, 29);
 		add(lblSearchResults);
 		
-		resultJList = new <Trip> JList();
-		resultJList.setBounds(239, 75, 200, 313);
-		resultJList.setModel(resultModel);
-		resultJList.setCellRenderer(new DefaultListCellRenderer() {
-			
-            public Component getListCellRendererComponent(JList list,
-                    Object value, int index, boolean isSelected, boolean cellHasFocus) {
-               
-                Trip resultTrip = (Trip) value;
-                String line = String.valueOf(resultTrip.getDestination()) 
-                	+ " " + resultTrip.getDriver() 
-                	+ " " + resultTrip.getStatus()
-                	+ " " + resultTrip.getTotalPrice()
-                	+ " " + resultTrip.getMaxTravelers();
-                	
-                return super.getListCellRendererComponent(list, 
-                		line, 
-                		index, isSelected, cellHasFocus);
-            }
-        });
+
+		resultModel = new DefaultListModel<String>();
 		
+		
+		resultJList = new JList<String>();
+		resultJList.setBounds(195, 75, 345, 313);
+		resultJList.setModel(resultModel);
 		resultJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		add(resultJList);
+		
 		btnAdd = new JButton("Add Trip to my Trip List");
 		btnAdd.setForeground(new Color(0, 0, 102));
 		btnAdd.setBackground(new Color(153, 0, 255));
 		btnAdd.setBounds(249, 406, 187, 20);
         btnAdd.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		//TODO na kanoume add to Trip sti lista
-        		//presenter.addTrip();
+        		sentRequest();
         	}
         });
         
-        resultJList.add("aaa",null);
-        add(resultJList);
+     
         add(btnAdd);
     }
+
+	@Override
+	public String getCountry() {
+		return txtCountry.getText();
+	}
+
+	@Override
+	public String getRegion() {
+		return txtRegion.getText();
+	}
+
+	@Override
+	public String getTown() {
+		return txtTown.getText();
+	}
+
+	@Override
+	public String getComment() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateList() {
+		results = presenter.updateList(getCountry(), getRegion(), getTown());
+		resultModel.clear();
+		
+		for (int i = 0 ; i <  results.length ; i++){
+			resultModel.addElement(results[i]);
+		}
+		 
+		
+	}
+
+	@Override
+	public void sentRequest() {
+		//TODO add comment
+		presenter.sentRequest(resultJList.getSelectedIndex(), "as");
+		
+	}
+
+	@Override
+	public void setSeachPresenter(SearchPresenter searchPresenter) {
+		this.presenter = searchPresenter;
+		
+	}
         
 }

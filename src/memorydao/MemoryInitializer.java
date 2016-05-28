@@ -62,6 +62,8 @@ public class MemoryInitializer implements InitializerDAO {
 		TripMemoryDAO.trips.add(new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,UserMemoryDAO.users.get(1)));
 		TripMemoryDAO.trips.add(new Trip(0200,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 21),new Currency(425.5f, CurrencyNamesEnum.EURO),4,UserMemoryDAO.users.get(2)));
 		TripMemoryDAO.trips.add(new Trip(0300,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
+		TripMemoryDAO.trips.add(new Trip(0400,new Place("Greece", "Attiki", "athens"),new Place("aa", "aa","aa"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
+		TripMemoryDAO.trips.add(new Trip(0400,new Place("Greece", "Attiki", "athens"),new Place("aa", "aa","aa"),new Date(2016, 4, 22),new Currency(800.0f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(2)));
 	}
 	
 

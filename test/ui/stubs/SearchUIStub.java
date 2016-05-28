@@ -34,5 +34,11 @@ public class SearchUIStub extends ViewStub implements SearchView {
 	@Override
 	public void setSeachPresenter(SearchPresenter searchPresenter) {}
 
+	@Override
+	public String getComment() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
