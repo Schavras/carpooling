@@ -1,26 +1,45 @@
 package ui;
 
 import java.awt.Color;
+
+import javax.swing.JPopupMenu;
+
+import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JSlider;
+import javax.swing.JPanel;
+import javax.swing.JInternalFrame;
+import javax.swing.JLayeredPane;
+import javax.swing.JSplitPane;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.Box;
+import javax.swing.JPasswordField;
+import javax.swing.JMenu;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 import service.LoginServiceImp;
+import ui.presenters.SignUpPresenter;
 import ui.presenters.UserProfilePresenter;
 import ui.views.ProfileView;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JComboBox;
+import javax.swing.JTextPane;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JDesktopPane;
 
 
 public class UserProfileUI extends DefaultJPanel implements ProfileView{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -72892101291699734L;
-	
-	@SuppressWarnings("unused")
 	private UserProfilePresenter presenter;
 	 
 	public UserProfileUI(){
@@ -28,8 +47,9 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		setBackground(new Color(204, 255, 255));
 		
 		JLabel lblNewLabel = new JLabel(LoginServiceImp.ACTIVE_USER.getName());
-		lblNewLabel.setBounds(38, 168, 131, 14);
+		lblNewLabel.setBounds(59, 54, 131, 14);
 		add(lblNewLabel);
+
 		
 
 	
@@ -54,6 +74,11 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		JButton btnManageMyTrips = new JButton("Manage my Trips");
 		btnManageMyTrips.setBounds(28, 227, 122, 23);
 		add(btnManageMyTrips);
+		
+		//TODO vale to email!!!!!!!
+		JLabel label = new JLabel();
+		label.setBounds(59, 79, 131, 14);
+		add(label);
 		
 	}
 	
