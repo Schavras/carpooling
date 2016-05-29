@@ -3,6 +3,8 @@ package domain;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.swing.Icon;
+
 import types.CreditCard;
 import types.Email;
 import types.Password;
