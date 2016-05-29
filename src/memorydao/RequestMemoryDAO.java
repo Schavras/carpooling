@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.RequestDAO;
+import domain.EnumTripStatus;
 import domain.Request;
 import domain.Trip;
 import domain.User;
@@ -42,14 +43,23 @@ public class RequestMemoryDAO implements RequestDAO {
 	}
 
 	@Override
-	public List<Request> getPendingRequestsByTrip(Trip trip) {
-		// TODO Auto-generated method stub
+	public ArrayList<Request> getPendingRequestsByTrip(Trip trip) {
+		
+		for (int i = 0; i<TripMemoryDAO.trips.size(); i++){
+			if(TripMemoryDAO.trips.get(i).equals(trip) && TripMemoryDAO.trips.get(i).getStatus()==EnumTripStatus.OPEN){
+				return trip.getPendingRequest();
+			}
+		} 
 		return null;
 	}
-
+	
 	@Override
-	public List<Request> getPendingRequestByUser(User user) {
-		// TODO Auto-generated method stub
+	public ArrayList<Request> getPendingRequestByUser(User user) {
+		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
+			if(UserMemoryDAO.users.get(i).equals(user) && TripMemoryDAO.trips.get(i).getStatus()==EnumTripStatus.OPEN){
+				return user.getRequests();
+			}
+		}
 		return null;
 	}
 
