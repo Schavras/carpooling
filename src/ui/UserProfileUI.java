@@ -46,9 +46,9 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		setLayout(null);
 		setBackground(new Color(204, 255, 255));
 		
-		JLabel lblNewLabel = new JLabel(LoginServiceImp.ACTIVE_USER.getName());
-		lblNewLabel.setBounds(59, 54, 131, 14);
-		add(lblNewLabel);
+		JLabel lblName = new JLabel(LoginServiceImp.ACTIVE_USER.getName());
+		lblName.setBounds(19, 54, 106, 14);
+		add(lblName);
 
 		
 
@@ -75,10 +75,13 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		btnManageMyTrips.setBounds(28, 227, 122, 23);
 		add(btnManageMyTrips);
 		
-		//TODO vale to email!!!!!!!
-		JLabel label = new JLabel();
-		label.setBounds(59, 79, 131, 14);
-		add(label);
+		JLabel lblEmail = new JLabel(LoginServiceImp.ACTIVE_USER.getEmail().getFullEmailAdress());
+		lblEmail.setBounds(59, 79, 131, 14);
+		add(lblEmail);
+		
+		JLabel lblLastName = new JLabel();
+		lblLastName.setBounds(135, 54, 122, 14);
+		add(lblLastName);
 		
 	}
 	
