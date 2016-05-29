@@ -54,11 +54,14 @@ import javax.swing.SwingConstants;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JTextPane;
+import javax.swing.JTable;
 
 public class SearchUI extends DefaultJPanel implements SearchView{
 	private JTextField txtCountry;
 	private JTextField txtRegion;
 	private JTextField txtTown;
+	private JTextArea txtrWriteAComment;
 	private JList<String> resultJList;
 	private DefaultListModel<String> resultModel;
 	private JButton btnAdd;
@@ -99,7 +102,7 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 			}
 		});
 		
-		searchBtn.setBounds(32, 149, 96, 23);
+		searchBtn.setBounds(32, 251, 96, 23);
 		add(searchBtn);
 		
 		JSpinner spinner = new JSpinner();
@@ -140,7 +143,7 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 		
 		
 		resultJList = new JList<String>();
-		resultJList.setBounds(195, 75, 345, 313);
+		resultJList.setBounds(195, 75, 345, 260);
 		resultJList.setModel(resultModel);
 		resultJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		add(resultJList);
@@ -148,7 +151,7 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 		btnAdd = new JButton("Add Trip to my Trip List");
 		btnAdd.setForeground(new Color(0, 0, 102));
 		btnAdd.setBackground(new Color(153, 0, 255));
-		btnAdd.setBounds(249, 406, 187, 20);
+		btnAdd.setBounds(251, 346, 187, 20);
         btnAdd.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		sentRequest();
@@ -157,6 +160,16 @@ public class SearchUI extends DefaultJPanel implements SearchView{
         
      
         add(btnAdd);
+        
+        JTextArea txtrWriteAComment = new JTextArea();
+        txtrWriteAComment.setText("Write a comment...");
+        txtrWriteAComment.setWrapStyleWord(true);
+        txtrWriteAComment.setToolTipText("Write a comment...");
+        txtrWriteAComment.setFont(new Font("Monospaced", Font.ITALIC, 12));
+        txtrWriteAComment.setForeground(Color.BLUE);
+        txtrWriteAComment.setLineWrap(true);
+        txtrWriteAComment.setBounds(10, 151, 175, 89);
+        add(txtrWriteAComment);
     }
 
 	@Override
@@ -176,8 +189,7 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 
 	@Override
 	public String getComment() {
-		// TODO Auto-generated method stub
-		return null;
+		return txtrWriteAComment.getText();
 	}
 
 	@Override
@@ -204,5 +216,4 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 		this.presenter = searchPresenter;
 		
 	}
-        
 }
