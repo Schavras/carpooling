@@ -50,14 +50,17 @@ public class RequestMemoryDAO implements RequestDAO {
 			if(TripMemoryDAO.trips.get(i).equals(trip)){
 				for(int k=0 ; k<TripMemoryDAO.trips.get(i).getPendingRequest().size();k++ ){
 					if(TripMemoryDAO.trips.get(i).getPendingRequest().get(k).getStatus()==EnumStatus.PENDING){
+						//TODO SE ALLI LISTA, OXI STA IPARXONTA REQUEST
 						requests.add(TripMemoryDAO.trips.get(i).getPendingRequest().get(k));
 					}
 				}
 			}
 		} 
+		// TODO EPISTREFEIS TI NEA LISTA
 		return requests;
 	}
 	
+	//TODO TO IDIO ME PANW
 	@Override
 	public ArrayList<Request> getPendingRequestByUser(User user) {
 		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
