@@ -54,6 +54,7 @@ public class MemoryInitializer implements InitializerDAO {
 		UserMemoryDAO.users.add(new User(3, "Dwra", "Dervi", new Email("dwra.dervi@gmail.com"), new Password("dwroul"), 4, new CreditCard(1239871, "alfabank"), true));
 		UserMemoryDAO.users.add(new User(4, "Dimitris", "Labouris", new Email("fuck.vodka@gmail.com"), new Password("poligono420"), 20, new CreditCard(1234, "ate"), true));
 		UserMemoryDAO.users.add(new User(5, "Dimitris", "Mpastas", new Email("mpastas@gmail.com"), new Password("oijasd23!"), 25, new CreditCard(9846, "pireos"), false));
+		UserMemoryDAO.users.add(new User(6, "name", "surname", new Email("aa"), new Password("aa"), 25, new CreditCard(9846, "pireos"), true));
 		
 	}
 	

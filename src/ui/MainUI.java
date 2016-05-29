@@ -56,18 +56,20 @@ public class MainUI {
 		frmCarpooling.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		scenes.setLayout(cl);
 	
-	/*	
+		
 		LoginUI login = new LoginUI();
 		lgpresenter = new LoginPresenter(login);
 		lgpresenter.start();
 		MainUI.frmCarpooling.getContentPane().add(MainUI.scenes);
-	*/
+	
 		
-		LoginServiceImp.ACTIVE_USER = new User();
+	/*	LoginServiceImp.ACTIVE_USER = new User();
 		
 		 srch = new SearchUI();
 		SearchPresenter pr = new SearchPresenter(srch);
-		pr.start();
+		pr.start();*/
+		
+		
 		MainUI.frmCarpooling.getContentPane().add(MainUI.scenes);
 	}
 

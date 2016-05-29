@@ -17,6 +17,8 @@ import ui.views.LoginView;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class LoginUI extends DefaultJPanel implements LoginView{
 	/**
@@ -35,6 +37,7 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 	 * Create the panel.
 	 */
 	public LoginUI() {
+		
 		setBackground(new Color(204, 255, 255));
 		
 		JButton btnLogin = new JButton("Login");
@@ -113,20 +116,13 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 	public String getEmail() {
 		return emailTF.getText();
 	}
-	@Override
-	public void setEmail(String email) {
-		emailTF.setText(email);
-		
-	}
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	public String getPassword() {
 		return passwordField.getText();
 	}
-	@Override
-	public void setPassword(String password) {
-		passwordField.setText(password);
-	}
+
 
 
 	@Override
