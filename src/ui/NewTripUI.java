@@ -182,6 +182,7 @@ public class NewTripUI extends DefaultJPanel{
 		monthspinner.setToolTipText("Trip's Month");
 		add(monthspinner);
 		
+		//TODO na to doume giati to emfanizei 2,016 <--
 		JSpinner yearspinner = new JSpinner();
 		yearspinner.setModel(new SpinnerNumberModel(new Integer(2016), new Integer(2016), null, new Integer(1)));
 		yearspinner.setBounds(223, 241, 50, 20);
