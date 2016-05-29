@@ -35,6 +35,7 @@ import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.JTextPane;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JDesktopPane;
 
 
 public class UserProfileUI extends DefaultJPanel implements ProfileView{
@@ -53,42 +54,6 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Athanasia\\Downloads\\rsz_5c34ddf69fa711e3b9ca1287e245a320_8.jpg"));
 		lblNewLabel_1.setBounds(10, 11, 159, 150);
 		add(lblNewLabel_1);
-		
-		JLabel lblSingle = new JLabel("Marital Status: ");
-		lblSingle.setBounds(10, 201, 119, 14);
-		add(lblSingle);
-		
-		JLabel lblLookingForMen = new JLabel("Looking for:");
-		lblLookingForMen.setBounds(10, 251, 100, 14);
-		add(lblLookingForMen);
-		
-		JLabel lblInterestedIn = new JLabel("Interested in: ");
-		lblInterestedIn.setBounds(10, 226, 100, 14);
-		add(lblInterestedIn);
-		
-		JLabel lblHobbies = new JLabel("Hobbies: ");
-		lblHobbies.setBounds(10, 275, 100, 14);
-		add(lblHobbies);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Single", "Engaged", "Married", "Widowed", "It's Complicated"}));
-		comboBox.setBounds(87, 197, 100, 22);
-		add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Men", "Women", "Both", "Trans", "Children", "Animals", "Dead People"}));
-		comboBox_1.setBounds(87, 221, 100, 22);
-		add(comboBox_1);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Marriage", "Sex", "Group Sex", "Solo Sex", "Money"}));
-		comboBox_2.setBounds(87, 244, 100, 22);
-		add(comboBox_2);
-		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Pole Dancing", "Street Walking", "Zumba"}));
-		comboBox_3.setBounds(87, 267, 100, 22);
-		add(comboBox_3);
 	
 		JButton btnBack = new JButton("Back");
 		btnBack.addMouseListener(new MouseAdapter() {
@@ -99,6 +64,18 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		});
 		btnBack.setBounds(351, 270, 89, 23);
 		add(btnBack);
+		
+		JButton btnSearchForA = new JButton("Search for a Trip");
+		btnSearchForA.setBounds(268, 111, 122, 23);
+		add(btnSearchForA);
+		
+		JButton btnMakeNewTrip = new JButton("Make new Trip");
+		btnMakeNewTrip.setBounds(268, 75, 122, 23);
+		add(btnMakeNewTrip);
+		
+		JButton btnManageMyTrips = new JButton("Manage my Trips");
+		btnManageMyTrips.setBounds(28, 227, 122, 23);
+		add(btnManageMyTrips);
 		
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
@@ -133,7 +110,4 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		// TODO ilipoiisi
 		
 	}
-	
-	
-	
 }
