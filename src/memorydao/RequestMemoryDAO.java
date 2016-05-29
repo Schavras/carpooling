@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.RequestDAO;
+import domain.EnumStatus;
 import domain.EnumTripStatus;
 import domain.Request;
 import domain.Trip;
@@ -46,21 +47,29 @@ public class RequestMemoryDAO implements RequestDAO {
 	public ArrayList<Request> getPendingRequestsByTrip(Trip trip) {
 		
 		for (int i = 0; i<TripMemoryDAO.trips.size(); i++){
-			if(TripMemoryDAO.trips.get(i).equals(trip) && TripMemoryDAO.trips.get(i).getStatus()==EnumTripStatus.OPEN){
-				return trip.getPendingRequest();
+			if(TripMemoryDAO.trips.get(i).equals(trip)){
+				for(int k=0 ; k<TripMemoryDAO.trips.get(i).getPendingRequest().size();k++ ){
+					if(TripMemoryDAO.trips.get(i).getPendingRequest().get(k).getStatus()==EnumStatus.PENDING){
+						requests.add(TripMemoryDAO.trips.get(i).getPendingRequest().get(k));
+					}
+				}
 			}
 		} 
-		return null;
+		return requests;
 	}
 	
 	@Override
 	public ArrayList<Request> getPendingRequestByUser(User user) {
 		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
-			if(UserMemoryDAO.users.get(i).equals(user) && TripMemoryDAO.trips.get(i).getStatus()==EnumTripStatus.OPEN){
-				return user.getRequests();
+			if(UserMemoryDAO.users.get(i).equals(user)){
+				for (int k = 0; k<UserMemoryDAO.users.get(i).getRequests().size(); k++){
+					if(UserMemoryDAO.users.get(i).getRequests().get(k).getStatus()==EnumStatus.PENDING){
+						requests.add(UserMemoryDAO.users.get(i).getRequests().get(k));
+					}
+				}
 			}
 		}
-		return null;
+		return requests;
 	}
 
 	
