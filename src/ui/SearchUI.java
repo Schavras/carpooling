@@ -1,63 +1,30 @@
 package ui;
 
 import java.awt.Color;
-import java.awt.Component;
-
-import memorydao.MemoryInitializer;
 import ui.presenters.SearchPresenter;
 import ui.views.SearchView;
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.LayoutStyle.ComponentPlacement;
-
-import domain.Trip;
-
 import java.awt.SystemColor;
 import java.awt.Font;
-
-import javax.swing.JCheckBox;
-import javax.swing.JInternalFrame;
-import javax.swing.JLayeredPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JEditorPane;
-import javax.swing.JFormattedTextField;
-import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JList;
-import javax.swing.JProgressBar;
-import javax.swing.AbstractListModel;
-import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
-
-import java.awt.ScrollPane;
-import java.awt.Canvas;
-import java.awt.TextArea;
-import java.awt.Point;
-
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.KeyStroke;
 import javax.swing.ListSelectionModel;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-
-import javax.swing.SwingConstants;
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JTextPane;
-import javax.swing.JTable;
 
 public class SearchUI extends DefaultJPanel implements SearchView{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private JTextField txtCountry;
 	private JTextField txtRegion;
 	private JTextField txtTown;
@@ -66,7 +33,6 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 	private DefaultListModel<String> resultModel;
 	private JButton btnAdd;
 	private SearchPresenter presenter;
-	private JPanel contentPane;
 	private String[] results;
 	
 	public SearchUI() {
