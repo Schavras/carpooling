@@ -130,4 +130,10 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 	public void setName(){
 		lblName.setText(presenter.getName());
 	}
+
+	@Override
+	public int setPendingRequestsNumberButton() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

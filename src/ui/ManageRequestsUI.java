@@ -33,8 +33,10 @@ public class ManageRequestsUI extends DefaultJPanel implements ManageRequestsVie
 	}
 
 	@Override
-	public int requestsNumber() {
+	public String[] getRequests() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
+
+	
 }
