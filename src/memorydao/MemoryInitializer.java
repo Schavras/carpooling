@@ -12,22 +12,6 @@ import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
 import domain.User;
 
-/*
- * 
- * 
- * 
- * 
- * 			---------------------
- *         //TODO TO BE DELETED //
- * 			----------------------
- * 		
- * 			
- * 
- * 
- * 
- * 
- */
-
 
 public class MemoryInitializer implements InitializerDAO {
 

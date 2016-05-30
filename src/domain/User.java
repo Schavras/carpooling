@@ -2,9 +2,6 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.Date;
-
-import javax.swing.Icon;
-
 import types.CreditCard;
 import types.Email;
 import types.Password;
@@ -108,6 +105,12 @@ public class User {
 		ratings = new RatingsSummary();
 	}
 
+	public double getAverageRate(){
+		return ratings.getAverage();
+		
+	}
+	
+	
 	public RatingsSummary getRatings() {
 		return ratings;
 	}

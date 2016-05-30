@@ -47,7 +47,7 @@ public class SignUpServiceImp implements SignUpService {
 		}
 		CreditCard cc = new CreditCard(tempCcNumber, ccBank);
 		
-		//TODO change status to false
+	
 		User new_user = new User(0, name, surname, tempEmail, tempPassword, age, cc, false);
 		userDao.newUser(new_user);	
 		
