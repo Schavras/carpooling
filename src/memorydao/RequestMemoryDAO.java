@@ -1,11 +1,8 @@
 package memorydao;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import dao.RequestDAO;
 import domain.EnumStatus;
-import domain.EnumTripStatus;
 import domain.Request;
 import domain.Trip;
 import domain.User;
@@ -46,33 +43,35 @@ public class RequestMemoryDAO implements RequestDAO {
 	@Override
 	public ArrayList<Request> getPendingRequestsByTrip(Trip trip) {
 		
+		ArrayList<Request> requests1 = new ArrayList<Request>();
+		
 		for (int i = 0; i<TripMemoryDAO.trips.size(); i++){
 			if(TripMemoryDAO.trips.get(i).equals(trip)){
 				for(int k=0 ; k<TripMemoryDAO.trips.get(i).getPendingRequest().size();k++ ){
 					if(TripMemoryDAO.trips.get(i).getPendingRequest().get(k).getStatus()==EnumStatus.PENDING){
-						//TODO SE ALLI LISTA, OXI STA IPARXONTA REQUEST
-						requests.add(TripMemoryDAO.trips.get(i).getPendingRequest().get(k));
+						requests1.add(TripMemoryDAO.trips.get(i).getPendingRequest().get(k));
 					}
 				}
 			}
 		} 
-		// TODO EPISTREFEIS TI NEA LISTA
-		return requests;
+		return requests1;
 	}
 	
-	//TODO TO IDIO ME PANW
 	@Override
 	public ArrayList<Request> getPendingRequestByUser(User user) {
+		
+		ArrayList<Request> requests1 = new ArrayList<Request>();
+		
 		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
 			if(UserMemoryDAO.users.get(i).equals(user)){
 				for (int k = 0; k<UserMemoryDAO.users.get(i).getRequests().size(); k++){
 					if(UserMemoryDAO.users.get(i).getRequests().get(k).getStatus()==EnumStatus.PENDING){
-						requests.add(UserMemoryDAO.users.get(i).getRequests().get(k));
+						requests1.add(UserMemoryDAO.users.get(i).getRequests().get(k));
 					}
 				}
 			}
 		}
-		return requests;
+		return requests1;
 	}
 
 	
