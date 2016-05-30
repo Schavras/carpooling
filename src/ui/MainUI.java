@@ -2,15 +2,12 @@ package ui;
 
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import domain.User;
 import memorydao.MemoryInitializer;
-import service.LoginServiceImp;
 import ui.presenters.LoginPresenter;
-import ui.presenters.SearchPresenter;
-
 import java.awt.CardLayout;
 
 public class MainUI {
@@ -56,6 +53,8 @@ public class MainUI {
 		frmCarpooling.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		scenes.setLayout(cl);
 	
+		ImageIcon img = new ImageIcon("icon.png");
+		frmCarpooling.setIconImage(img.getImage());
 		
 		LoginUI login = new LoginUI();
 		lgpresenter = new LoginPresenter(login);
