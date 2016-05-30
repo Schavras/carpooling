@@ -24,34 +24,43 @@ public class RatingMemoryDAO implements RatingDAO {
 
 	@Override
 	public void add(Rating rating) {
-		// TODO Auto-generated method stub
+		ratings.add(rating);
 		
 	}
 
 	@Override
 	public void remove(Rating rating) {
-		// TODO Auto-generated method stub
+		ratings.remove(rating);
 		
 	}
 
 	@Override
 	public void remove(int index) {
-		// TODO Auto-generated method stub
+		ratings.remove(ratings.get(index));
 		
 	}
 
 	@Override
 	public double getAverage(User user) {
-		// TODO Auto-generated method stub
-		return 0;
+		RatingsSummary ave=new  RatingsSummary();
+		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
+			if(UserMemoryDAO.users.get(i)==user){
+				ave.setRatings(UserMemoryDAO.users.get(i).getRatings().getRatings());
+				ave.setsize(UserMemoryDAO.users.get(i).getRatings().getRatings().size());
+				ave.updateAverage();
+			}
+		}
+		return ave.getAverage();
 	}
 
 	@Override
 	public RatingsSummary getRatingsSummary(User user) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
+			if(UserMemoryDAO.users.get(i)==user){
+				return UserMemoryDAO.users.get(i).getRatings();
+			}
+		}
 		return null;
 	}
-	
-	
 
 }

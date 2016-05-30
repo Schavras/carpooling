@@ -124,6 +124,13 @@ public class RatingsSummary {
 	public int getSize() {
 		return size;
 	}
+	
+	/**
+	 * @param size the size to set
+	 */
+	public void setsize(int size) {
+		this.size = size;
+	}
 
 
 	/* (non-Javadoc)
