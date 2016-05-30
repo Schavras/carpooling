@@ -1,7 +1,6 @@
 package ui.presenters;
 
 import memorydao.UserMemoryDAO;
-import memorydao.UserMemoryDAOStub;
 import service.SignUpServiceImp;
 import service.interfaces.SignUpService;
 import ui.views.SignUpView;

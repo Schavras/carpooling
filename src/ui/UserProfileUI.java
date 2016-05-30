@@ -1,44 +1,30 @@
 package ui;
 
 import java.awt.Color;
-
-import javax.swing.JPopupMenu;
-
-import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JSlider;
-import javax.swing.JPanel;
-import javax.swing.JInternalFrame;
-import javax.swing.JLayeredPane;
-import javax.swing.JSplitPane;
-
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
-
-import javax.swing.Box;
-import javax.swing.JPasswordField;
-import javax.swing.JMenu;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
 import service.LoginServiceImp;
-import ui.presenters.SignUpPresenter;
+import ui.presenters.NewTripPresenter;
+import ui.presenters.SearchPresenter;
 import ui.presenters.UserProfilePresenter;
 import ui.views.ProfileView;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JList;
-import javax.swing.JComboBox;
-import javax.swing.JTextPane;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JDesktopPane;
 
 
 public class UserProfileUI extends DefaultJPanel implements ProfileView{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -72892101291699734L;
+	
+	JLabel lblName;
+	JLabel lblLastName;
+	JLabel lblEmail;
 	
 	private UserProfilePresenter presenter;
 	 
@@ -46,10 +32,18 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		setLayout(null);
 		setBackground(new Color(204, 255, 255));
 		
-		JLabel lblName = new JLabel(LoginServiceImp.ACTIVE_USER.getName());
+		lblName = new JLabel();
 		lblName.setBounds(19, 54, 106, 14);
 		add(lblName);
 
+		lblLastName = new JLabel();
+		lblLastName.setBounds(135, 54, 122, 14);
+		add(lblLastName);
+		
+		lblEmail = new JLabel();
+		lblEmail.setBounds(59, 79, 131, 14);
+		add(lblEmail);
+		
 		
 
 	
@@ -64,10 +58,24 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		add(btnBack);
 		
 		JButton btnSearchForA = new JButton("Search for a Trip");
+		btnSearchForA.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				openSearch();
+			}
+
+		
+		});
 		btnSearchForA.setBounds(268, 111, 122, 23);
 		add(btnSearchForA);
 		
 		JButton btnMakeNewTrip = new JButton("Make new Trip");
+		btnMakeNewTrip.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				startTrip();
+			}
+		});
 		btnMakeNewTrip.setBounds(268, 75, 122, 23);
 		add(btnMakeNewTrip);
 		
@@ -75,29 +83,46 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		btnManageMyTrips.setBounds(28, 227, 122, 23);
 		add(btnManageMyTrips);
 		
-		JLabel lblEmail = new JLabel(LoginServiceImp.ACTIVE_USER.getEmail().getFullEmailAdress());
-		lblEmail.setBounds(59, 79, 131, 14);
-		add(lblEmail);
+	
+	}
+	
+	private void startTrip() {
+		NewTripUI newTrip = new NewTripUI();
+		NewTripPresenter presenter =  new NewTripPresenter(newTrip);
+		presenter.start();
 		
-		JLabel lblLastName = new JLabel();
-		lblLastName.setBounds(135, 54, 122, 14);
-		add(lblLastName);
+	}
+
+	void infoInit() {
+		setName();
+		setSurname();
+		setEmail();
 		
 	}
 	
+	private void openSearch() {
+		SearchUI search = new SearchUI();
+		SearchPresenter presenter = new SearchPresenter(search);
+		presenter.start();
+		
+	}
+
 	@Override
 	public void setUserProfilePresenter(UserProfilePresenter presenter) {
 		 this.presenter = presenter;
+	}
+	@Override
+	public void setSurname() {
+		lblLastName.setText(presenter.getSurname());
 		
 	}
 	@Override
-	public void setSurname(String surname) {
-		// TODO ilipoiisi
+	public void setEmail() {
+		lblEmail.setText(presenter.getEmail());
 		
 	}
-	@Override
-	public void setEmail(String email) {
-		// TODO ilipoiisi
-		
+	
+	public void setName(){
+		lblName.setText(presenter.getName());
 	}
 }

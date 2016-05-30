@@ -102,23 +102,23 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 			}
 		});
 		
-		searchBtn.setBounds(32, 251, 96, 23);
+		searchBtn.setBounds(43, 149, 96, 23);
 		add(searchBtn);
 		
-		JSpinner spinner = new JSpinner();
-		spinner.setModel(new SpinnerNumberModel(1, 1, 31, 1));
-		spinner.setBounds(10, 118, 42, 20);
-		add(spinner);
+		JSpinner daySelector = new JSpinner();
+		daySelector.setModel(new SpinnerNumberModel(1, 1, 31, 1));
+		daySelector.setBounds(10, 118, 42, 20);
+		add(daySelector);
 		
-		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setModel(new SpinnerNumberModel(1, 1, 12, 1));
-		spinner_1.setBounds(62, 118, 42, 20);
-		add(spinner_1);
+		JSpinner monthSelector = new JSpinner();
+		monthSelector.setModel(new SpinnerNumberModel(1, 1, 12, 1));
+		monthSelector.setBounds(62, 118, 42, 20);
+		add(monthSelector);
 		
-		JSpinner spinner_2 = new JSpinner();
-		spinner_2.setModel(new SpinnerNumberModel(new Integer(2016), new Integer(2016), null, new Integer(1)));
-		spinner_2.setBounds(114, 118, 52, 20);
-		add(spinner_2);
+		JSpinner yearSelector = new JSpinner();
+		yearSelector.setModel(new SpinnerNumberModel(new Integer(2016), new Integer(2016), null, new Integer(1)));
+		yearSelector.setBounds(114, 118, 52, 20);
+		add(yearSelector);
 		
 		JLabel lblDay = new JLabel("Day");
 		lblDay.setBounds(10, 104, 28, 14);
@@ -143,7 +143,7 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 		
 		
 		resultJList = new JList<String>();
-		resultJList.setBounds(195, 75, 345, 260);
+		resultJList.setBounds(195, 75, 345, 344);
 		resultJList.setModel(resultModel);
 		resultJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		add(resultJList);
@@ -151,7 +151,7 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 		btnAdd = new JButton("Add Trip to my Trip List");
 		btnAdd.setForeground(new Color(0, 0, 102));
 		btnAdd.setBackground(new Color(153, 0, 255));
-		btnAdd.setBounds(251, 346, 187, 20);
+		btnAdd.setBounds(10, 399, 175, 20);
         btnAdd.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		sentRequest();
@@ -161,14 +161,14 @@ public class SearchUI extends DefaultJPanel implements SearchView{
      
         add(btnAdd);
         
-        JTextArea txtrWriteAComment = new JTextArea();
+        txtrWriteAComment = new JTextArea();
         txtrWriteAComment.setText("Write a comment...");
         txtrWriteAComment.setWrapStyleWord(true);
         txtrWriteAComment.setToolTipText("Write a comment...");
         txtrWriteAComment.setFont(new Font("Monospaced", Font.ITALIC, 12));
         txtrWriteAComment.setForeground(Color.BLUE);
         txtrWriteAComment.setLineWrap(true);
-        txtrWriteAComment.setBounds(10, 151, 175, 89);
+        txtrWriteAComment.setBounds(10, 299, 175, 89);
         add(txtrWriteAComment);
     }
 
@@ -207,7 +207,8 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 	@Override
 	public void sentRequest() {
 		//TODO add comment
-		presenter.sentRequest(resultJList.getSelectedIndex(), "as");
+		presenter.sentRequest(resultJList.getSelectedIndex(), getComment());
+		back();
 		
 	}
 

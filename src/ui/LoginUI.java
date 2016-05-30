@@ -136,9 +136,10 @@ public class LoginUI extends DefaultJPanel implements LoginView{
 		if(!succededlogin){
 			setLoginError("Wrong email or password.");
 		}else{
-			UserProfileUI signup = new UserProfileUI();
-			UserProfilePresenter presenter = new UserProfilePresenter(signup);
+			UserProfileUI profile = new UserProfileUI();
+			UserProfilePresenter presenter = new UserProfilePresenter(profile);
 			presenter.start();
+			profile.infoInit();
 		}
 	}
 	

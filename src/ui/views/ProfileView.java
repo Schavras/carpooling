@@ -7,11 +7,11 @@ public interface ProfileView extends View {
 	
 	void setUserProfilePresenter(UserProfilePresenter presenter);
 	
-	void setName(String name);
+	void setName();
 	
-	void setSurname(String surname);
+	void setSurname();
 	
-	void setEmail(String email);
+	void setEmail();
 	
 	
 }

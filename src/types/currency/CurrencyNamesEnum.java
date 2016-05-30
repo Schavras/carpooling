@@ -1,5 +1,7 @@
 package types.currency;
 
+import java.util.spi.CurrencyNameProvider;
+
 /**
  * @author schavras
  *
@@ -47,6 +49,16 @@ public enum CurrencyNamesEnum {
 	 */
 	public char getSign() {
 		return sign;
+	}
+	
+	public static CurrencyNamesEnum searchSign(String sign){
+		if (sign.equals("Euros")){
+			return CurrencyNamesEnum.EURO;
+		}else if (sign.equals("Dollars")){
+			return CurrencyNamesEnum.DOLLAR;
+		}
+		
+		return null;
 	}
 	
 	

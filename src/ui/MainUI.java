@@ -70,7 +70,7 @@ public class MainUI {
 		pr.start();*/
 		
 		
-		MainUI.frmCarpooling.getContentPane().add(MainUI.scenes);
+		//MainUI.frmCarpooling.getContentPane().add(MainUI.scenes);
 	}
 
 }

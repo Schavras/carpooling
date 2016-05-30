@@ -4,24 +4,27 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JButton;
 
-public class NewTripUI extends DefaultJPanel{
+import ui.presenters.NewTripPresenter;
+import ui.views.NewTripView;
+
+public class NewTripUI extends DefaultJPanel implements NewTripView{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 145455645;
-	private JTextField Place;
-	private JTextField PlaceB;
+	
+	
+	
+	
 	private JTextField Country;
 	private JTextField CountryB;
 	private JTextField Region;
@@ -32,23 +35,25 @@ public class NewTripUI extends DefaultJPanel{
 	private JTextField CommentB;	
 	private JTextField price;
 	private final JSpinner spinner = new JSpinner();
+
+
+
+
+	private NewTripPresenter presenter;
 	
 	
 	/**
 	 * Create the panel.
 	 */
+	@SuppressWarnings("unchecked")
 	public NewTripUI(){
 		setLayout(null);
 		setBackground(new Color(204, 255, 255));
 		
 		
 		JLabel lblStartingPoint = new JLabel("Starting Point:");
-		lblStartingPoint.setBounds(10, 0, 120, 14);
+		lblStartingPoint.setBounds(10, 15, 120, 14);
 		add(lblStartingPoint);
-		
-		JLabel lblPlace = new JLabel("Place");
-		lblPlace.setBounds(50, 20 , 120, 14);
-		add(lblPlace);
 		
 		JLabel lblCountry = new JLabel("Country");
 		lblCountry.setBounds(50, 40, 120, 14);
@@ -67,12 +72,8 @@ public class NewTripUI extends DefaultJPanel{
 		add(lblComment);
 		
 		JLabel lblDestination = new JLabel("Destination");
-		lblDestination.setBounds(10, 120, 120, 14);
+		lblDestination.setBounds(10, 135, 120, 14);
 		add(lblDestination);
-		
-		JLabel lblPlaceB = new JLabel("Place");
-		lblPlaceB.setBounds(50, 140, 120, 14);
-		add(lblPlaceB);
 		
 		JLabel lblCountryB = new JLabel("Country");
 		lblCountryB.setBounds(50, 160, 120, 14);
@@ -102,14 +103,6 @@ public class NewTripUI extends DefaultJPanel{
 		lblTravellers.setBounds(10, 280, 120, 14);
 		add(lblTravellers);
 		
-		
-		
-		Place = new JTextField();
-		Place.setBounds(125, 20, 200, 20);
-		Place.setToolTipText("Insert PickUp Place");
-		add(Place);
-		Place.setColumns(20);
-		
 		Country = new JTextField();
 		Country.setBounds(125, 40, 200, 20);
 		Country.setToolTipText("Insert PickUp Country");
@@ -133,12 +126,6 @@ public class NewTripUI extends DefaultJPanel{
 		Comment.setToolTipText("Leave a comment");
 		add(Comment);
 		Comment.setColumns(20);
-		
-		PlaceB = new JTextField();
-		PlaceB.setBounds(125, 140, 200, 20);
-		PlaceB.setToolTipText("Insert Destination's Place");
-		add(PlaceB);
-		PlaceB.setColumns(20);
 		
 		CountryB = new JTextField();
 		CountryB.setBounds(125, 160, 200, 20);
@@ -189,8 +176,9 @@ public class NewTripUI extends DefaultJPanel{
 		yearspinner.setToolTipText("Trip's Year");
 		add(yearspinner);
 		
+		@SuppressWarnings("rawtypes")
 		JComboBox Currency = new JComboBox();
-		Currency.setModel(new DefaultComboBoxModel(new String[] {"Euros", "Dollars"}));
+		Currency.setModel(new DefaultComboBoxModel<String>(new String[] {"Euros", "Dollars"}));
 		Currency.setMaximumRowCount(2);
 		Currency.setBounds(174, 260, 67, 20);
 		add(Currency);
@@ -214,6 +202,13 @@ public class NewTripUI extends DefaultJPanel{
 		add(btnBack);
 		
 		
+		
+	}
+
+
+	@Override
+	public void setNewTripPresenter(NewTripPresenter presenter) {
+		this.presenter = presenter;
 		
 	}
 }

@@ -1,8 +1,5 @@
 package ui.views;
 
-import types.CreditCard;
-import types.Email;
-import types.Password;
 import ui.presenters.SignUpPresenter;
 
 public interface SignUpView extends View {

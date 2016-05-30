@@ -17,6 +17,7 @@ public class UserProfilePresenter {
 	}
 	
 	public void start(){
+	
 		view.setUserProfilePresenter(this);
 		view.open();
 	}
