@@ -49,7 +49,7 @@ public class MainUI {
 	private void initialize() {
 		frmCarpooling = new JFrame();
 		frmCarpooling.setTitle("CarPooling ");
-		frmCarpooling.setBounds(100, 100, 567, 431);
+		frmCarpooling.setBounds(100, 100, 550, 450);
 		frmCarpooling.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		scenes.setLayout(cl);
 	

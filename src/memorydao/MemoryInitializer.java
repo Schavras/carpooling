@@ -4,6 +4,7 @@ import java.util.Date;
 
 import dao.InitializerDAO;
 import domain.Place;
+import domain.Request;
 import domain.Trip;
 import types.CreditCard;
 import types.Email;
@@ -26,11 +27,15 @@ public class MemoryInitializer implements InitializerDAO {
 	public void load() {
 		loadUsers();
 		loadTrips();
+		loadRequests();
+		loadRatings();
 	}
    
 	  
 
-	public void loadUsers() {
+	
+
+	private void loadUsers() {
 		
 		UserMemoryDAO.users.add(new User(0, "Stavros", "Zarpas", new Email("stavros.z@hotmail.com"), new Password("klmr420"), 21, new CreditCard(420420420, "Eurobank"), true));
 		UserMemoryDAO.users.add(new User(1, "Nikos", "Papapastamatakis", new Email("nikos.papastamatakis@gmail.com"), new Password("vaggelis"), 20, new CreditCard(420420421, "pireos"), true));
@@ -43,13 +48,24 @@ public class MemoryInitializer implements InitializerDAO {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public void loadTrips() {
-		TripMemoryDAO.trips.add(new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,UserMemoryDAO.users.get(1)));
-		TripMemoryDAO.trips.add(new Trip(0200,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 21),new Currency(425.5f, CurrencyNamesEnum.EURO),4,UserMemoryDAO.users.get(2)));
-		TripMemoryDAO.trips.add(new Trip(0300,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
-		TripMemoryDAO.trips.add(new Trip(0400,new Place("Greece", "Attiki", "athens"),new Place("aa", "aa","aa"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
+	private void loadTrips() {
+		TripMemoryDAO.trips.add(new Trip(0000,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,UserMemoryDAO.users.get(1)));
+		TripMemoryDAO.trips.add(new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 21),new Currency(425.5f, CurrencyNamesEnum.EURO),4,UserMemoryDAO.users.get(2)));
+		TripMemoryDAO.trips.add(new Trip(0200,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
+		TripMemoryDAO.trips.add(new Trip(0300,new Place("Greece", "Attiki", "athens"),new Place("aa", "aa","aa"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
 		TripMemoryDAO.trips.add(new Trip(0400,new Place("Greece", "Attiki", "athens"),new Place("aa", "aa","aa"),new Date(2016, 4, 22),new Currency(800.0f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(2)));
+		TripMemoryDAO.trips.add(new Trip(0500,new Place("Greece", "Attiki", "athens"),new Place("country", "region","town"),new Date(2016, 4, 22),new Currency(800.0f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(6)));
 	}
 	
+	private void loadRequests() {
+		RequestMemoryDAO.requests.add(new Request("first request", UserMemoryDAO.users.get(0)));
+		TripMemoryDAO.trips.get(5).addRequest(RequestMemoryDAO.requests.get(0));
+		RequestMemoryDAO.requests.add(new Request("first request", UserMemoryDAO.users.get(1)));
+		TripMemoryDAO.trips.get(5).addRequest(RequestMemoryDAO.requests.get(1));
+	}
+	
+	private void loadRatings(){
+		
+	}
 
 }

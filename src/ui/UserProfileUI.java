@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 
 import service.LoginServiceImp;
+import ui.presenters.ManageRequestPresenter;
 import ui.presenters.NewTripPresenter;
 import ui.presenters.SearchPresenter;
 import ui.presenters.UserProfilePresenter;
@@ -81,6 +82,12 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		
 		//TODO get requests number
 		JButton btnRequests = new JButton("TRIP REQUESTS");
+		btnRequests.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				openTripRequest();
+			}
+		});
 		btnRequests.setBounds(28, 227, 122, 23);
 		add(btnRequests);
 		
@@ -91,6 +98,15 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 	
 	}
 	
+	protected void openTripRequest() {
+		ManageRequestsUI manage = new ManageRequestsUI();
+		ManageRequestPresenter presenter = new ManageRequestPresenter(manage);
+		presenter.start();
+		manage.init();
+		
+		
+	}
+
 	private void startTrip() {
 		NewTripUI newTrip = new NewTripUI();
 		NewTripPresenter presenter =  new NewTripPresenter(newTrip);

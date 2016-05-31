@@ -37,6 +37,7 @@ public class Request {
 	public Request(String comment, User user){
 		this.comment = comment;
 		this.user = user;
+		this.status = EnumStatus.PENDING;
 	}
 
 	public Request(){

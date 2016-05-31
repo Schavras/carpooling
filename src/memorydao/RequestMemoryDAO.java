@@ -59,18 +59,18 @@ public class RequestMemoryDAO implements RequestDAO {
 	
 	@Override
 	public ArrayList<Request> getPendingRequestByUser(User user) {
-		
 		ArrayList<Request> requests1 = new ArrayList<Request>();
 		
-		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
-			if(UserMemoryDAO.users.get(i).equals(user)){
+	//	for (int i = 0; i<UserMemoryDAO.users.size(); i++){
+	//		if(UserMemoryDAO.users.get(i).equals(user)){
 				for (int k = 0; k<UserMemoryDAO.users.get(i).getRequests().size(); k++){
-					if(UserMemoryDAO.users.get(i).getRequests().get(k).getStatus()==EnumStatus.PENDING){
+					if(UserMemoryDAO.users.get(i).getRequests().get(k).getStatus().equals(EnumStatus.PENDING)){
 						requests1.add(UserMemoryDAO.users.get(i).getRequests().get(k));
+						System.out.println(k);
 					}
 				}
-			}
-		}
+	//		}
+	//	}
 		return requests1;
 	}
 

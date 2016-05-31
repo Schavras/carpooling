@@ -78,9 +78,9 @@ public class SearchPresenter {
 		//Name and surname of driver
 		str+=  "by "+trip.getDriver().getName()+ " " + trip.getDriver().getSurname() + " ";
 		//RatingSummary
-//		str+= "Average Rating: " + 	trip.getDriver().getRatings().getAverage() + " ";
+		str+= "Rating: " + 	trip.getDriver().getAverageRate() + " ";
 		//total cost
-		str+= "Cost per Traveller: "+ trip.getCostPerTraveller().print();
+		str+= "Cost/Traveller: "+ trip.getCostPerTraveller().print();
 			
 		return str;
 	}

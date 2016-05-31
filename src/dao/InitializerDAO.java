@@ -7,8 +7,6 @@ public interface InitializerDAO {
 	
 	public void load();
 	
-	public void loadUsers();
-	
-	public void loadTrips();
+
 	
 }
