@@ -35,10 +35,10 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	private JTextField CommentB;	
 	private JTextField price;
 	private JSpinner spinner = new JSpinner();
-	private JSpinner dayspinner = new JSpinner();
-	private JSpinner monthspinner = new JSpinner();
-	private JSpinner yearspinner = new JSpinner();
-	private JComboBox Currency  = new JComboBox();
+	private JSpinner dayspinner; 
+	private JSpinner monthspinner;
+	private JSpinner yearspinner;
+	private JComboBox<String> currency;
 
 	//TODO vale oles tis metavlites apo ta JTextfield pou exoume
 	JLabel lblCountry ;
@@ -162,29 +162,33 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 		add(price);
 		price.setColumns(20);
 		
+		dayspinner = new JSpinner();
 		dayspinner.setModel(new SpinnerNumberModel(1, 1, 31, 1));
 		dayspinner.setBounds(125, 241, 50, 20);
 		dayspinner.setToolTipText("Trip's Day");
 		add(dayspinner);
 		
+		monthspinner = new JSpinner();
 		monthspinner.setModel(new SpinnerNumberModel(1, 1, 12, 1));
 		monthspinner.setBounds(174, 241, 50, 20);
 		monthspinner.setToolTipText("Trip's Month");
 		add(monthspinner);
 		
+		//TODO na to doume giati to emfanizei 2,016 <--
+		yearspinner = new JSpinner();
 		yearspinner.setModel(new SpinnerNumberModel(new Integer(2016), new Integer(2016), null, new Integer(1)));
 		yearspinner.setBounds(223, 241, 50, 20);
 		yearspinner.setToolTipText("Trip's Year");
 		add(yearspinner);
 		
-		@SuppressWarnings("rawtypes")
-		JComboBox Currency = new JComboBox();
-		Currency.setModel(new DefaultComboBoxModel<String>(new String[] {"Euros", "Dollars"}));
-		Currency.setMaximumRowCount(2);
-		Currency.setBounds(174, 260, 67, 20);
-		add(Currency);
+		
+		currency = new JComboBox<String>();
+		currency.setModel(new DefaultComboBoxModel<String>(new String[] {"Euros", "Dollars"}));
+		currency.setMaximumRowCount(2);
+		currency.setBounds(174, 260, 67, 20); 
+		add(currency);
 		spinner.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
-		spinner.setBounds(125, 280, 50, 20);
+		spinner.setBounds(125, 280, 50, 20); 
 		add(spinner);
 		
 		JButton btnCreate = new JButton("Create");
@@ -220,11 +224,11 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	}
 	
 	public String getNumberOfTravelers(){
-		return (String) spinner.getValue();
+		return String.valueOf(spinner.getValue());
 	}
 	
 	public String getCurrency(){
-		return Currency.getName();
+		return String.valueOf(currency.getSelectedItem());
 	}
 	
 	public String getPrice(){
@@ -232,15 +236,15 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	}
 	
 	public String getYear(){
-		return (String) yearspinner.getValue();
+		return String.valueOf(yearspinner.getValue());
 	}
 	
 	public String getMonth(){
-		return (String) monthspinner.getValue();
+		return String.valueOf(monthspinner.getValue());
 	}
 	
 	public String getDay(){
-		return (String) dayspinner.getValue();
+		return String.valueOf(dayspinner.getValue());
 	}
 	
 	public String getDComment(){
