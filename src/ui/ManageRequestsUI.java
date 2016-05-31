@@ -36,7 +36,7 @@ public class ManageRequestsUI extends DefaultJPanel implements ManageRequestsVie
 		
 		
 		resultJList = new JList<String>();
-		resultJList.setBounds(195, 75, 345, 344);
+		resultJList.setBounds(10, 75, 530, 170);
 		resultJList.setModel(resultModel);
 		resultJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
@@ -48,11 +48,11 @@ public class ManageRequestsUI extends DefaultJPanel implements ManageRequestsVie
 		add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Approve Selected");
-		btnNewButton.setBounds(106, 364, 135, 23);
+		btnNewButton.setBounds(101, 313, 135, 23);
 		add(btnNewButton);
 		
 		JButton btnRejectSelected = new JButton("Reject Selected");
-		btnRejectSelected.setBounds(269, 364, 135, 23);
+		btnRejectSelected.setBounds(277, 313, 135, 23);
 		add(btnRejectSelected);
 	}
 

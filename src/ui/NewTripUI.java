@@ -186,9 +186,15 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 		spinner.setBounds(125, 280, 50, 20);
 		add(spinner);
 		
-		JButton btnNext = new JButton("Next");
-		btnNext.setBounds(351, 243, 89, 23);
-		add(btnNext);
+		JButton btnCreate = new JButton("Create");
+		btnCreate.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				createTrip();
+			}
+		});
+		btnCreate.setBounds(351, 243, 89, 23);
+		add(btnCreate);
 		
 		
 		JButton btnBack = new JButton("Back");
@@ -205,10 +211,17 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 		
 	}
 
-
+	public void createTrip(){
+		presenter.newtrip(sCountry, sRegion, sTown, sComment, dCountry, dRegion, dTown, dComment, day, month, year, price, currency, numberOfTravelers);
+	}
+	
+	
+	
 	@Override
 	public void setNewTripPresenter(NewTripPresenter presenter) {
 		this.presenter = presenter;
 		
 	}
+	
+	
 }

@@ -22,6 +22,8 @@ public class MainUI {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		MemoryInitializer init = new MemoryInitializer();
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -40,7 +42,7 @@ public class MainUI {
 	 */
 	public MainUI() {
 		initialize();
-		MemoryInitializer init = new MemoryInitializer();
+		
 	}
 
 	/**
