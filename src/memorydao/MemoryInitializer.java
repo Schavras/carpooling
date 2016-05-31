@@ -4,6 +4,7 @@ import java.util.Date;
 
 import dao.InitializerDAO;
 import domain.Place;
+import domain.Rating;
 import domain.Request;
 import domain.Trip;
 import types.CreditCard;
@@ -60,11 +61,16 @@ public class MemoryInitializer implements InitializerDAO {
 	private void loadRequests() {
 		RequestMemoryDAO.requests.add(new Request("first request", UserMemoryDAO.users.get(0)));
 		TripMemoryDAO.trips.get(5).addRequest(RequestMemoryDAO.requests.get(0));
-		RequestMemoryDAO.requests.add(new Request("first request", UserMemoryDAO.users.get(1)));
+		RequestMemoryDAO.requests.add(new Request("first request123", UserMemoryDAO.users.get(1)));
 		TripMemoryDAO.trips.get(5).addRequest(RequestMemoryDAO.requests.get(1));
 	}
 	
 	private void loadRatings(){
+		RatingMemoryDAO.ratings.add(new Rating(1,"",UserMemoryDAO.users.get(0),UserMemoryDAO.users.get(1)));
+		RatingMemoryDAO.ratings.add(new Rating(2,"",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(0)));
+		RatingMemoryDAO.ratings.add(new Rating(3,"",UserMemoryDAO.users.get(2),UserMemoryDAO.users.get(1)));
+		RatingMemoryDAO.ratings.add(new Rating(4,"",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(2)));
+		RatingMemoryDAO.ratings.add(new Rating(5,"",UserMemoryDAO.users.get(4),UserMemoryDAO.users.get(3)));
 		
 	}
 
