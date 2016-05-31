@@ -66,11 +66,11 @@ public class MemoryInitializer implements InitializerDAO {
 	}
 	
 	private void loadRatings(){
-		RatingMemoryDAO.ratings.add(new Rating(1,"",UserMemoryDAO.users.get(0),UserMemoryDAO.users.get(1)));
-		RatingMemoryDAO.ratings.add(new Rating(2,"",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(0)));
-		RatingMemoryDAO.ratings.add(new Rating(3,"",UserMemoryDAO.users.get(2),UserMemoryDAO.users.get(1)));
-		RatingMemoryDAO.ratings.add(new Rating(4,"",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(2)));
-		RatingMemoryDAO.ratings.add(new Rating(5,"",UserMemoryDAO.users.get(4),UserMemoryDAO.users.get(3)));
+		RatingMemoryDAO.ratings.add(new Rating(1,"PRWTO",UserMemoryDAO.users.get(0),UserMemoryDAO.users.get(1)));
+		RatingMemoryDAO.ratings.add(new Rating(2,"DEUTERO",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(0)));
+		RatingMemoryDAO.ratings.add(new Rating(3,"TRITO",UserMemoryDAO.users.get(2),UserMemoryDAO.users.get(1)));
+		RatingMemoryDAO.ratings.add(new Rating(4,"TETARTO",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(2)));
+		RatingMemoryDAO.ratings.add(new Rating(5,"PEMPTO",UserMemoryDAO.users.get(4),UserMemoryDAO.users.get(3)));
 		
 	}
 
