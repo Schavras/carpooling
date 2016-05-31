@@ -9,6 +9,7 @@ import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
 import dao.TripDAO;
 import domain.Place;
+import domain.RatingsSummary;
 import domain.Trip;
 import domain.User;
 
@@ -23,6 +24,12 @@ public class TripMemoryDAOStub implements TripDAO{
 	
 	
 	public TripMemoryDAOStub(){
+		RatingsSummary rs = new RatingsSummary();
+		user1.setRatings(rs);
+		user2.setRatings(rs);
+		user3.setRatings(rs);
+		user4.setRatings(rs);
+		
 		trips.add(new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("country1", "region1","town1"),new Date(2016, 4, 20),new Currency(400.0f, CurrencyNamesEnum.EURO),4,user1));
 		trips.add(new Trip(0200,new Place("Greece", "Attiki", "athens"),new Place("country1", "region1","town1"),new Date(2016, 4, 21),new Currency(425.5f, CurrencyNamesEnum.EURO),4,user2));
 		trips.add(new Trip(0300,new Place("Greece", "Attiki", "athens"),new Place("country2", "region2","town2"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,user3));

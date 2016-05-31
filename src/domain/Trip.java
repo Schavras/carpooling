@@ -145,8 +145,10 @@ public class Trip {
 	 */
 	@Override
 	public String toString() {
-		return "Trip [id=" + id + ", destination=" + destination + ", driver="
-				+ driver + "]";
+		return "Trip [id=" + id + ", destination=" + destination
+				+ ", dateOfDeparture=" + dateOfDeparture + ", totalPrice="
+				+ totalPrice + ", status=" + status + ", maxTravelers="
+				+ maxTravelers + ", driver=" + driver + "]";
 	}
 
 	public ArrayList<PickUp> getPickups() {
@@ -240,6 +242,9 @@ public class Trip {
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -252,9 +257,6 @@ public class Trip {
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + maxTravelers;
 		result = prime * result
-				+ ((pendingRequest == null) ? 0 : pendingRequest.hashCode());
-		result = prime * result + ((pickups == null) ? 0 : pickups.hashCode());
-		result = prime * result
 				+ ((startingPoint == null) ? 0 : startingPoint.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result
@@ -264,6 +266,9 @@ public class Trip {
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -291,16 +296,6 @@ public class Trip {
 		if (id != other.id)
 			return false;
 		if (maxTravelers != other.maxTravelers)
-			return false;
-		if (pendingRequest == null) {
-			if (other.pendingRequest != null)
-				return false;
-		} else if (!pendingRequest.equals(other.pendingRequest))
-			return false;
-		if (pickups == null) {
-			if (other.pickups != null)
-				return false;
-		} else if (!pickups.equals(other.pickups))
 			return false;
 		if (startingPoint == null) {
 			if (other.startingPoint != null)

@@ -1,14 +1,12 @@
 package ui.presenters;
 
-import java.util.ArrayList;
-
 import org.junit.Assert;
+
 import memorydao.TripMemoryDAOStub;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import types.currency.CurrencyNamesEnum;
 import ui.stubs.SearchUIStub;
 
 public class SearchPresenterTest{
@@ -16,7 +14,6 @@ public class SearchPresenterTest{
 	private TripMemoryDAOStub mem;
 	private SearchPresenter presenter;
 	public SearchUIStub search;
-	
 	String country,region,town;
 	
 	String[] list;
@@ -56,7 +53,7 @@ public class SearchPresenterTest{
 		region = search.getRegion();
 		town = search.getTown();
 		list = presenter.updateList(country, region, town);
-		String str = "0. by first user Cost per Traveller: 100.0 €";
+		String str = "0. by first user Rating: 0.0 Cost/Traveller: 100.0 €";
 		Assert.assertEquals(str, list[0]);
 	}
 	

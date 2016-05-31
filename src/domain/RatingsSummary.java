@@ -104,6 +104,7 @@ public class RatingsSummary {
 	 * @return the average
 	 */
 	public double getAverage() {
+		updateAverage();
 		return average;
 	}
 
