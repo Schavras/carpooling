@@ -35,10 +35,10 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	private JTextField CommentB;	
 	private JTextField price;
 	private JSpinner spinner = new JSpinner();
-	private JSpinner dayspinner;
-	private JSpinner monthspinner;
-	private JSpinner yearspinner;
-	private JComboBox Currency;
+	private JSpinner dayspinner = new JSpinner();
+	private JSpinner monthspinner = new JSpinner();
+	private JSpinner yearspinner = new JSpinner();
+	private JComboBox Currency  = new JComboBox();
 
 	//TODO vale oles tis metavlites apo ta JTextfield pou exoume
 	JLabel lblCountry ;
@@ -162,20 +162,16 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 		add(price);
 		price.setColumns(20);
 		
-		JSpinner dayspinner = new JSpinner();
 		dayspinner.setModel(new SpinnerNumberModel(1, 1, 31, 1));
 		dayspinner.setBounds(125, 241, 50, 20);
 		dayspinner.setToolTipText("Trip's Day");
 		add(dayspinner);
 		
-		JSpinner monthspinner = new JSpinner();
 		monthspinner.setModel(new SpinnerNumberModel(1, 1, 12, 1));
 		monthspinner.setBounds(174, 241, 50, 20);
 		monthspinner.setToolTipText("Trip's Month");
 		add(monthspinner);
 		
-		//TODO na to doume giati to emfanizei 2,016 <--
-		JSpinner yearspinner = new JSpinner();
 		yearspinner.setModel(new SpinnerNumberModel(new Integer(2016), new Integer(2016), null, new Integer(1)));
 		yearspinner.setBounds(223, 241, 50, 20);
 		yearspinner.setToolTipText("Trip's Year");
