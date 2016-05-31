@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.Date;
+
 import types.CreditCard;
 import types.Email;
 import types.Password;
@@ -57,6 +58,7 @@ public class User {
 	
 	 ArrayList<Trip> ownedTrips;
 	 
+	 
 	 ArrayList<Request> requests;
 
 	 RatingsSummary ratings;
@@ -103,7 +105,7 @@ public class User {
 		ownedTrips = new ArrayList<Trip>();
 		requests = new ArrayList<Request>();
 		ratings = new RatingsSummary();
-	} 
+	}
 
 	public double getAverageRate(){
 		return ratings.getAverage();
@@ -128,7 +130,7 @@ public class User {
 	}
 
 	public ArrayList<Request> getRequests() {
-		return requests;
+			return requests;
 	}
 
 	public void setRequests(ArrayList<Request> requests) {
@@ -284,26 +286,26 @@ public class User {
 
 	
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + age;
-		result = prime * result + ((credit == null) ? 0 : credit.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + (isValid ? 1231 : 1237);
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result
-				+ ((ownedTrips == null) ? 0 : ownedTrips.hashCode());
-		result = prime * result
 				+ ((password == null) ? 0 : password.hashCode());
-		result = prime * result
-				+ ((requests == null) ? 0 : requests.hashCode());
 		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -315,17 +317,10 @@ public class User {
 		User other = (User) obj;
 		if (age != other.age)
 			return false;
-		if (credit == null) {
-			if (other.credit != null)
-				return false;
-		} else if (!credit.equals(other.credit))
-			return false;
 		if (email == null) {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
-			return false;
-		if (id != other.id)
 			return false;
 		if (isValid != other.isValid)
 			return false;
@@ -334,20 +329,10 @@ public class User {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (ownedTrips == null) {
-			if (other.ownedTrips != null)
-				return false;
-		} else if (!ownedTrips.equals(other.ownedTrips))
-			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
-			return false;
-		if (requests == null) {
-			if (other.requests != null)
-				return false;
-		} else if (!requests.equals(other.requests))
 			return false;
 		if (surname == null) {
 			if (other.surname != null)
