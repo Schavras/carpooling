@@ -36,7 +36,8 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	private JTextField price;
 	private final JSpinner spinner = new JSpinner();
 
-
+	//TODO vale oles tis metavlites apo ta JTextfield pou exoume
+	JLabel lblCountry ;
 
 
 	private NewTripPresenter presenter;
@@ -55,7 +56,7 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 		lblStartingPoint.setBounds(10, 15, 120, 14);
 		add(lblStartingPoint);
 		
-		JLabel lblCountry = new JLabel("Country");
+		lblCountry = new JLabel("Country");
 		lblCountry.setBounds(50, 40, 120, 14);
 		add(lblCountry);
 		
@@ -212,10 +213,16 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	}
 
 	public void createTrip(){
-		presenter.newtrip(sCountry, sRegion, sTown, sComment, dCountry, dRegion, dTown, dComment, day, month, year, price, currency, numberOfTravelers);
+		//TODO vale ta get pou eftiakses
+		presenter.newtrip(getSCountry(), sRegion, sTown, sComment, dCountry, dRegion, dTown, dComment, day, month, year, price, currency, numberOfTravelers);
+		back();
 	}
 	
-	
+	//TODO vale oles aftes tis methodous sto NewTripView
+	//TODO paromoia gia ola
+	public String getSCountry(){
+		return Country.getText();
+	}
 	
 	@Override
 	public void setNewTripPresenter(NewTripPresenter presenter) {

@@ -49,7 +49,7 @@ public class ManageRequestPresenter {
 		
 		str+=request.getUser().getName() + " " + request.getUser().getSurname();
 		
-		str+= "Rate: "+ request.getUser().getAverageRate();
+		str+= " Rate: "+ request.getUser().getAverageRate();
 		
 		str+= " \" " + request.getComment() + " \" ";
 		
