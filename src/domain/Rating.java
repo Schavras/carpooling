@@ -35,7 +35,7 @@ public class Rating {
 		this.setFrom(from);
 		this.setTo(to);
 	}
-
+ 
 	/**
 	 * 
 	 */

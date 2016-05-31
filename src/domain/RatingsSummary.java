@@ -42,7 +42,7 @@ public class RatingsSummary {
 			size--;
 			updateAverage();
 		}
-		
+		 
 	}
 	
 	

@@ -14,7 +14,7 @@ public class SearchServiceImpl implements SearchService {
 	TripDAO trips;
 	ArrayList<Trip> results;
 	
-	
+	 
 	/**
 	 * Constractor of search service.
 	 * @param trips Type of DAO object.
