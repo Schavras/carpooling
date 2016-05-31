@@ -25,7 +25,7 @@ public class SignUpServiceImp implements SignUpService {
 		emailProvider = new FakeEmailProvider(userDao);
 	}
 	
-	 
+	
 	
 	/* (non-Javadoc)
 	 * @see service.SignUpService#newUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, java.lang.String)

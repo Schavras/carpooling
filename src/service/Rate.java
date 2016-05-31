@@ -14,7 +14,7 @@ public class Rate {
 	}
 	
 	public void travellerRatesDriver(){
-		 
+		
 		
 	}
 	
