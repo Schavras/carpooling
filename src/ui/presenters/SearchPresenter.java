@@ -91,6 +91,7 @@ public class SearchPresenter {
 	public void sentRequest(int index, String comment){
 		
 		Request req= new Request(comment, LoginServiceImp.ACTIVE_USER);
+		if(tripResults==null || tripResults.isEmpty()) return ;
 		tripResults.get(index).addRequest(req);
 		
 	}

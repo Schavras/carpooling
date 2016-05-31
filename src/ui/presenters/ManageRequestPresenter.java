@@ -34,7 +34,6 @@ public class ManageRequestPresenter {
 		List<Request> tempRequest =  reqDao.getPendingRequestByUser(LoginServiceImp.ACTIVE_USER);
 		
 		int size = tempRequest.size();
-		System.out.println(size);
 		String[] result = new String[size];
 		for (int i = 0; i < size ; i ++){
 			result[i] = generateString(tempRequest.get(i));
@@ -57,6 +56,6 @@ public class ManageRequestPresenter {
 	}
 	
 	public void approve(int i){
-		reqDao.get
+	//	reqDao.get
 	}
 }

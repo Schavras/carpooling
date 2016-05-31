@@ -77,3 +77,4 @@ public class RequestMemoryDAO implements RequestDAO {
 		return result;
 	}
 }
+
