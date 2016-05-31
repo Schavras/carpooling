@@ -14,6 +14,8 @@ import ui.presenters.UserProfilePresenter;
 import ui.views.ProfileView;
 
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class UserProfileUI extends DefaultJPanel implements ProfileView{
@@ -45,7 +47,8 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		lblEmail.setBounds(59, 79, 131, 14);
 		add(lblEmail);
 		
-		
+		ManageRequestsUI manage = new ManageRequestsUI();
+		ManageRequestPresenter presenter = new ManageRequestPresenter(manage);
 
 	
 		JButton btnBack = new JButton("Back");
@@ -81,18 +84,18 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 		add(btnMakeNewTrip);
 		
 		//TODO get requests number
-		JButton btnRequests = new JButton("TRIP REQUESTS");
-		btnRequests.addMouseListener(new MouseAdapter() {
+		JButton btnRequests = new JButton("TRIP REQUESTS (" + presenter.getRequests().length + ")");
+	btnRequests.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				openTripRequest();
 			}
 		});
-		btnRequests.setBounds(28, 227, 122, 23);
+		btnRequests.setBounds(28, 227, 148, 23);
 		add(btnRequests);
 		
 		JButton btnManageMyTrips = new JButton("Manage my Trips");
-		btnManageMyTrips.setBounds(28, 270, 122, 23);
+		btnManageMyTrips.setBounds(28, 270, 148, 23);
 		add(btnManageMyTrips);
 		
 	

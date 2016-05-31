@@ -55,4 +55,8 @@ public class ManageRequestPresenter {
 		
 		return str;
 	}
+	
+	public void approve(int i){
+		reqDao.get
+	}
 }
