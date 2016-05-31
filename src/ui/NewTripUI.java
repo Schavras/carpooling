@@ -34,7 +34,11 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	private JTextField Comment;
 	private JTextField CommentB;	
 	private JTextField price;
-	private final JSpinner spinner = new JSpinner();
+	private JSpinner spinner = new JSpinner();
+	private JSpinner dayspinner;
+	private JSpinner monthspinner;
+	private JSpinner yearspinner;
+	private JComboBox Currency;
 
 	//TODO vale oles tis metavlites apo ta JTextfield pou exoume
 	JLabel lblCountry ;
@@ -213,16 +217,68 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	}
 
 	public void createTrip(){
-		//TODO vale ta get pou eftiakses
-		presenter.newtrip(getSCountry(), sRegion, sTown, sComment, dCountry, dRegion, dTown, dComment, day, month, year, price, currency, numberOfTravelers);
+		presenter.newtrip(getSCountry(), getSRegion(), getSTown(), getSComment(), getDCountry(), getDRegion(), 
+							getDTown(), getDComment(), getDay(), getMonth(), 
+							getYear(), getPrice(), getCurrency(), getNumberOfTravelers());
 		back();
 	}
 	
-	//TODO vale oles aftes tis methodous sto NewTripView
-	//TODO paromoia gia ola
+	public String getNumberOfTravelers(){
+		return (String) spinner.getValue();
+	}
+	
+	public String getCurrency(){
+		return Currency.getName();
+	}
+	
+	public String getPrice(){
+		return price.getText();
+	}
+	
+	public String getYear(){
+		return (String) yearspinner.getValue();
+	}
+	
+	public String getMonth(){
+		return (String) monthspinner.getValue();
+	}
+	
+	public String getDay(){
+		return (String) dayspinner.getValue();
+	}
+	
+	public String getDComment(){
+		return CommentB.getText();
+	}
+	
+	public String getDTown(){
+		return TownB.getText();
+	}
+	
+	public String getDRegion(){
+		return RegionB.getText();
+	}
+	
+	public String getDCountry(){
+		return CountryB.getText();
+	}
+	
+	public String getSComment(){
+		return Comment.getText();
+	}
+	
+	public String getSTown(){
+		return Town.getText();
+	}
+	
+	public String getSRegion(){
+		return Region.getText();
+	}
+	
 	public String getSCountry(){
 		return Country.getText();
 	}
+	
 	
 	@Override
 	public void setNewTripPresenter(NewTripPresenter presenter) {
