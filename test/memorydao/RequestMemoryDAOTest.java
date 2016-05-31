@@ -45,7 +45,9 @@ public class RequestMemoryDAOTest {
 		 sample.getRequestsByTrip(new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,UserMemoryDAO.users.get(1)));
 		 sample.getRequestsByTrip(destin);
 		 sample.getRequestsByUser(null);
-	 }
+		 sample.getPendingRequestByUser(new User(0, "Stavros", "Zarpas", new Email("stavros.z@hotmail.com"), new Password("klmr420"), 21, new CreditCard(420420420, "Eurobank"), true));
+		 sample.getPendingRequestsByTrip(new Trip(0000,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,UserMemoryDAO.users.get(1)));
+	 } 
 	 
 	 
 	 

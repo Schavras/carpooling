@@ -103,7 +103,7 @@ public class User {
 		ownedTrips = new ArrayList<Trip>();
 		requests = new ArrayList<Request>();
 		ratings = new RatingsSummary();
-	}
+	} 
 
 	public double getAverageRate(){
 		return ratings.getAverage();

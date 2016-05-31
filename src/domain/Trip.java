@@ -98,7 +98,7 @@ public class Trip {
 		pickups= new ArrayList<PickUp>();
 		
 	}
-
+ 
 	/**
 	 * 
 	 */
