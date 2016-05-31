@@ -73,7 +73,7 @@ public class ManageRequestsUI extends DefaultJPanel implements ManageRequestsVie
 		btnBack.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				back();
+				close();
 			}
 		});
 		btnBack.setBounds(210, 380, 89, 23);

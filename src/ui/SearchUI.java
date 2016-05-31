@@ -136,6 +136,16 @@ public class SearchUI extends DefaultJPanel implements SearchView{
         txtrWriteAComment.setLineWrap(true);
         txtrWriteAComment.setBounds(10, 299, 175, 89);
         add(txtrWriteAComment);
+        
+        JButton btnBack = new JButton("Back");
+        btnBack.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		close();
+        	}
+        });
+        btnBack.setBounds(50, 183, 89, 23);
+        add(btnBack);
     }
 
 	@Override
@@ -173,7 +183,7 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 	@Override
 	public void sentRequest() {
 		presenter.sentRequest(resultJList.getSelectedIndex(), getComment());
-		back();
+		close();
 		
 	}
 

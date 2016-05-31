@@ -220,7 +220,7 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 		presenter.newtrip(getSCountry(), getSRegion(), getSTown(), getSComment(), getDCountry(), getDRegion(), 
 							getDTown(), getDComment(), getDay(), getMonth(), 
 							getYear(), getPrice(), getCurrency(), getNumberOfTravelers());
-		back();
+		close();
 	}
 	
 	public String getNumberOfTravelers(){

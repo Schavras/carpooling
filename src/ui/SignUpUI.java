@@ -134,17 +134,6 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 		btnBack.setBounds(110, 218, 89, 23);
 		add(btnBack);
 		
-		
-		JButton btnProfile = new JButton("Profile");
-		btnProfile.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-			}
-		});
-		btnProfile.setBounds(10, 269, 117, 25);
-		add(btnProfile);
-		
 	}
 
 	@Override

@@ -3,19 +3,13 @@ package ui;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JLabel;
-
-import service.LoginServiceImp;
 import ui.presenters.ManageRequestPresenter;
 import ui.presenters.NewTripPresenter;
 import ui.presenters.SearchPresenter;
 import ui.presenters.UserProfilePresenter;
 import ui.views.ProfileView;
-
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 
 public class UserProfileUI extends DefaultJPanel implements ProfileView{

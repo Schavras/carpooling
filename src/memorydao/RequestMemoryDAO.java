@@ -83,7 +83,6 @@ public class RequestMemoryDAO implements RequestDAO {
 		for (int i = 0 ; i < TripMemoryDAO.trips.size() ; i++ ){
 			
 			for( int j = 0 ; j < TripMemoryDAO.trips.get(i).getPendingRequest().size(); j ++ ){
-				System.out.println(j);
 				if (TripMemoryDAO.trips.get(i).getPendingRequest().get(j).equals(request)){
 					return TripMemoryDAO.trips.get(i);
 				}
