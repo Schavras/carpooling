@@ -3,7 +3,6 @@ package ui;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -39,12 +38,10 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 	private JSpinner monthspinner;
 	private JSpinner yearspinner;
 	private JComboBox<String> currency;
-
-	//TODO vale oles tis metavlites apo ta JTextfield pou exoume
-	JLabel lblCountry ;
-
-
+	private JLabel lblCountry ;
 	private NewTripPresenter presenter;
+	
+	
 	
 	
 	/**
