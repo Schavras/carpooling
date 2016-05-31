@@ -60,4 +60,10 @@ public interface RequestDAO {
 	 */
 	List<Request> getPendingRequestByUser(User user);
 	
+	/**
+	 * Finds the trip of a spefific request
+	 * @param request
+	 * @return
+	 */
+	Trip getTripOfRequest(Request request);
 }

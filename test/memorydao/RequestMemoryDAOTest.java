@@ -22,13 +22,14 @@ import types.currency.CurrencyNamesEnum;
 public class RequestMemoryDAOTest {
 
 	private RequestMemoryDAO sample;  
+	private TripMemoryDAOStub stub;
 	
 	 @Before 
 	 public void loadBaseTest() {                
 	    	MemoryInitializer base = new MemoryInitializer();
 	    	base.initialize();
 	        sample = new RequestMemoryDAO();  
-	        
+	        stub = new TripMemoryDAOStub();
 	    }
 	   
 	 @Test
@@ -59,6 +60,14 @@ public class RequestMemoryDAOTest {
 	//	 sample.getPendingRequestsByTrip(new Trip(0000,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,UserMemoryDAO.users.get(1)));
 	 }  
 	  
+	 @Test
+	 public void getTripOfRequestTest(){
+		 Request testRequest = new Request("first request", UserMemoryDAO.users.get(0));
+		 Trip result = sample.getTripOfRequest(testRequest);
+		 Trip actual = TripMemoryDAO.trips.get(5);
+		 
+		 Assert.assertEquals(result, actual);
+	 }
 	  
 	  
 }

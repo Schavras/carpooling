@@ -13,6 +13,8 @@ import javax.swing.ListSelectionModel;
 import java.awt.Font;
 
 import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ManageRequestsUI extends DefaultJPanel implements ManageRequestsView{
 	
@@ -48,12 +50,34 @@ public class ManageRequestsUI extends DefaultJPanel implements ManageRequestsVie
 		add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Approve Selected");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				approve();
+			}
+		});
 		btnNewButton.setBounds(101, 313, 135, 23);
 		add(btnNewButton);
 		
 		JButton btnRejectSelected = new JButton("Reject Selected");
+		btnRejectSelected.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				reject();
+			}
+		});
 		btnRejectSelected.setBounds(277, 313, 135, 23);
 		add(btnRejectSelected);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				back();
+			}
+		});
+		btnBack.setBounds(210, 380, 89, 23);
+		add(btnBack);
 	}
 
 	@Override
@@ -64,8 +88,6 @@ public class ManageRequestsUI extends DefaultJPanel implements ManageRequestsVie
 		for (int i = 0 ; i <  results.length ; i++){
 			resultModel.addElement(results[i]);
 		}
-		
-
 	}
 
 	@Override
@@ -82,15 +104,13 @@ public class ManageRequestsUI extends DefaultJPanel implements ManageRequestsVie
 
 	@Override
 	public void approve() {
-		// TODO Auto-generated method stub
-		
+		presenter.approve(resultJList.getSelectedIndex());
+		 getRequests();
 	}
 
 	@Override
 	public void reject() {
-		// TODO Auto-generated method stub
-		
+		presenter.reject(resultJList.getSelectedIndex());
+		 getRequests();
 	}
-
-	
 }

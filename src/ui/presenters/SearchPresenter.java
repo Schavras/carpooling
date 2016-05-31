@@ -68,7 +68,6 @@ public class SearchPresenter {
 	 * @return
 	 */
 	private String StringCreator(Trip trip, int index){
-		//TODO add rating
 		String str = ""	;
 		if (trip==null){
 			return str ;
@@ -87,7 +86,11 @@ public class SearchPresenter {
 	
 	
 	
-
+	/**
+	 *  Take the index of the selected sea4rch result, and sent a request for that trip
+	 *  @param index the number of the search result
+	 *  @param comment The comment of the request
+	 */
 	public void sentRequest(int index, String comment){
 		
 		Request req= new Request(comment, LoginServiceImp.ACTIVE_USER);

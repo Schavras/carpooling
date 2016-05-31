@@ -172,7 +172,6 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 
 	@Override
 	public void sentRequest() {
-		//TODO add comment
 		presenter.sentRequest(resultJList.getSelectedIndex(), getComment());
 		back();
 		

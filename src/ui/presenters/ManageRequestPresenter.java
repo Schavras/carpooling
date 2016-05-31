@@ -15,6 +15,7 @@ public class ManageRequestPresenter {
 	TripDAO tripDao;
 	RequestDAO reqDao;
 	
+	List<Request> tempRequest;
 	public ManageRequestPresenter(ManageRequestsView view){
 		this.view = view;
 		tripDao = new TripMemoryDAO();
@@ -31,13 +32,12 @@ public class ManageRequestPresenter {
 	}
 	
 	public String[] getRequests(){
-		List<Request> tempRequest =  reqDao.getPendingRequestByUser(LoginServiceImp.ACTIVE_USER);
+		tempRequest =  reqDao.getPendingRequestByUser(LoginServiceImp.ACTIVE_USER);
 		
 		int size = tempRequest.size();
 		String[] result = new String[size];
 		for (int i = 0; i < size ; i ++){
 			result[i] = generateString(tempRequest.get(i));
-		
 		}
 		
 		return result;
@@ -55,7 +55,13 @@ public class ManageRequestPresenter {
 		return str;
 	}
 	
+	
 	public void approve(int i){
-	//	reqDao.get
+		System.out.println(reqDao.getTripOfRequest(tempRequest.get(i)));
+	//	reqDao.getTripOfRequest(tempRequest.get(i)).acceptRequest(tempRequest.get(i));
+	}
+	
+	public void reject(int i){
+		reqDao.getTripOfRequest(tempRequest.get(i)).rejectRequest(tempRequest.get(i));
 	}
 }
