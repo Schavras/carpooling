@@ -26,7 +26,7 @@ public class RequestMemoryDAO implements RequestDAO {
 		for (int i = 0; i<TripMemoryDAO.trips.size(); i++){
 			if(TripMemoryDAO.trips.get(i).equals(trip)){
 				return trip.getPendingRequest();
-			}
+			} 
 		} 
 		return null;
 	}
@@ -45,7 +45,7 @@ public class RequestMemoryDAO implements RequestDAO {
 		
 		ArrayList<Request> requests1 = new ArrayList<Request>();
 		
-		for (int i = 0; i<TripMemoryDAO.trips.size(); i++){ 
+		for (int i = 0; i<TripMemoryDAO.trips.size(); i++){
 			if(TripMemoryDAO.trips.get(i).equals(trip)){
 				for(int k=0 ; k<TripMemoryDAO.trips.get(i).getPendingRequest().size();k++ ){
 					if(TripMemoryDAO.trips.get(i).getPendingRequest().get(k).getStatus()==EnumStatus.PENDING){
@@ -55,22 +55,25 @@ public class RequestMemoryDAO implements RequestDAO {
 			}
 		} 
 		return requests1;
-	} 
-	
-	@Override
-	public ArrayList<Request> getPendingRequestByUser(User user) { 
-		ArrayList<Request> requests1 = new ArrayList<Request>();
- 
-				for (int k = 0; k<user.getRequests().size(); k++){
-					if(user.getRequests().get(k).getStatus().equals(EnumStatus.PENDING)){
-						requests1.add(user.getRequests().get(k));
-						System.out.println(k);
-					}
-				}
-
-		return requests1;
 	}
-
+	int count = 0;
+	@Override
+	public ArrayList<Request> getPendingRequestByUser(User user) {
+		ArrayList<Request> result = new ArrayList<Request>();
 	
-	 
+	
+		
+		for(int i = 0 ; i < TripMemoryDAO.trips.size(); i ++){
+
+			if(TripMemoryDAO.trips.get(i).getDriver().equals(user)){
+				
+				for(int j = 0 ; j < TripMemoryDAO.trips.get(i).getPendingRequest().size(); j++){
+					
+					result.add(TripMemoryDAO.trips.get(i).getPendingRequest().get(j));
+			
+				}
+			}
+		}
+		return result;
+	}
 }
