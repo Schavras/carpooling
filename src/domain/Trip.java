@@ -98,7 +98,7 @@ public class Trip {
 		pickups= new ArrayList<PickUp>();
 		
 	}
- 
+
 	/**
 	 * 
 	 */
@@ -138,6 +138,15 @@ public class Trip {
 
 	public void setPendingRequest(ArrayList<Request> pendingRequest) {
 		this.pendingRequest = pendingRequest;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Trip [id=" + id + ", destination=" + destination + ", driver="
+				+ driver + "]";
 	}
 
 	public ArrayList<PickUp> getPickups() {
