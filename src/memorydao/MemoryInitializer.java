@@ -22,7 +22,7 @@ public class MemoryInitializer implements InitializerDAO {
 	}
 	 
 	public void initialize(){
-		 load();
+		// load();
 	}
 	
 	public void load() {
@@ -46,31 +46,31 @@ public class MemoryInitializer implements InitializerDAO {
 		UserMemoryDAO.users.add(new User(5, "Dimitris", "Mpastas", new Email("mpastas@gmail.com"), new Password("oijasd23!"), 25, new CreditCard(9846, "pireos"), false));
 		UserMemoryDAO.users.add(new User(6, "name", "surname", new Email("aa"), new Password("aa"), 25, new CreditCard(9846, "pireos"), true));
 		
-	}  
+	}
 	
 	@SuppressWarnings("deprecation")
 	private void loadTrips() {
 		TripMemoryDAO.trips.add(new Trip(0000,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 20),new Currency(425.5f, CurrencyNamesEnum.EURO),3,UserMemoryDAO.users.get(1)));
 		TripMemoryDAO.trips.add(new Trip(0100,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 21),new Currency(425.5f, CurrencyNamesEnum.EURO),4,UserMemoryDAO.users.get(2)));
 		TripMemoryDAO.trips.add(new Trip(0200,new Place("Greece", "Attiki", "athens"),new Place("Greece", "Makedonia","Thessaoniki"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
-		TripMemoryDAO.trips.add(new Trip(0300,new Place("Greece", "Attiki", "athens"),new Place("aa", "aa","aa"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(3)));
+		TripMemoryDAO.trips.add(new Trip(0300,new Place("Greece", "Attiki", "athens"),new Place("aa", "aa","aa"),new Date(2016, 4, 22),new Currency(425.5f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(6)));
 		TripMemoryDAO.trips.add(new Trip(0400,new Place("Greece", "Attiki", "athens"),new Place("aa", "aa","aa"),new Date(2016, 4, 22),new Currency(800.0f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(2)));
 		TripMemoryDAO.trips.add(new Trip(0500,new Place("Greece", "Attiki", "athens"),new Place("country", "region","town"),new Date(2016, 4, 22),new Currency(800.0f, CurrencyNamesEnum.EURO),2,UserMemoryDAO.users.get(6)));
 	}
-	 
+	
 	private void loadRequests() {
 		RequestMemoryDAO.requests.add(new Request("first request", UserMemoryDAO.users.get(0)));
 		TripMemoryDAO.trips.get(5).addRequest(RequestMemoryDAO.requests.get(0));
 		RequestMemoryDAO.requests.add(new Request("first request123", UserMemoryDAO.users.get(1)));
 		TripMemoryDAO.trips.get(5).addRequest(RequestMemoryDAO.requests.get(1));
 	}
-	 
+	
 	private void loadRatings(){
-		RatingMemoryDAO.ratings.add(new Rating(1,"PRWTO",UserMemoryDAO.users.get(0),UserMemoryDAO.users.get(1)));
-		RatingMemoryDAO.ratings.add(new Rating(2,"DEUTERO",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(0)));
-		RatingMemoryDAO.ratings.add(new Rating(3,"TRITO",UserMemoryDAO.users.get(2),UserMemoryDAO.users.get(1)));
-		RatingMemoryDAO.ratings.add(new Rating(4,"TETARTO",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(2)));
-		RatingMemoryDAO.ratings.add(new Rating(5,"PEMPTO",UserMemoryDAO.users.get(4),UserMemoryDAO.users.get(3)));
+		RatingMemoryDAO.ratings.add(new Rating(1,"",UserMemoryDAO.users.get(0),UserMemoryDAO.users.get(1)));
+		RatingMemoryDAO.ratings.add(new Rating(2,"",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(0)));
+		RatingMemoryDAO.ratings.add(new Rating(3,"",UserMemoryDAO.users.get(2),UserMemoryDAO.users.get(1)));
+		RatingMemoryDAO.ratings.add(new Rating(4,"",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(2)));
+		RatingMemoryDAO.ratings.add(new Rating(5,"",UserMemoryDAO.users.get(4),UserMemoryDAO.users.get(3)));
 		
 	}
 
