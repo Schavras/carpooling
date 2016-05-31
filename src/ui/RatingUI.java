@@ -8,6 +8,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class RatingUI extends DefaultJPanel implements RatingView{
 	
@@ -41,31 +43,12 @@ public class RatingUI extends DefaultJPanel implements RatingView{
 		txtpnLeaveAComment.setBounds(100, 134, 335, 207);
 		add(txtpnLeaveAComment);
 		
-		JCheckBox chckbxGood = new JCheckBox("Terrible");
-		chckbxGood.setBackground(Color.CYAN);
-		chckbxGood.setBounds(70, 93, 67, 23);
-		add(chckbxGood);
-		
-		JCheckBox chckbxBad = new JCheckBox("Bad");
-		chckbxBad.setBackground(Color.CYAN);
-		chckbxBad.setBounds(166, 93, 49, 23);
-		add(chckbxBad);
-		
-		JCheckBox chckbxMedium = new JCheckBox("Medium");
-		chckbxMedium.setBackground(Color.CYAN);
-		chckbxMedium.setSelected(true);
-		chckbxMedium.setBounds(245, 93, 67, 23);
-		add(chckbxMedium);
-		
-		JCheckBox checkBox_2 = new JCheckBox("Good");
-		checkBox_2.setBackground(Color.CYAN);
-		checkBox_2.setBounds(335, 93, 58, 23);
-		add(checkBox_2);
-		
-		JCheckBox chckbxTheBest = new JCheckBox("The best");
-		chckbxTheBest.setBackground(Color.CYAN);
-		chckbxTheBest.setBounds(426, 93, 67, 23);
-		add(chckbxTheBest);
+		JComboBox comboBox = new JComboBox();
+		comboBox.setForeground(Color.MAGENTA);
+		comboBox.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {" *", " * *", "* * *", "* * * *", "* * * * *"}));
+		comboBox.setBounds(215, 97, 124, 20);
+		add(comboBox);
 		
 		
 	}
