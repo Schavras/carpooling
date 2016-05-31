@@ -19,7 +19,7 @@ public class UserMemoryDAO implements UserDAO  {
 	@Override
 	public User getByEmail(String email) {
 		
-
+		System.out.println(users.size());
 		 for (int i = 0; i<users.size(); i++){
 			 if(users.get(i).getEmail().getFullEmailAdress().equals(email)){
 				 return users.get(i);
