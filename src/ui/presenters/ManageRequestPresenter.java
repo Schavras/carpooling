@@ -1,8 +1,10 @@
 package ui.presenters;
 
 import java.util.List;
+
 import memorydao.RequestMemoryDAO;
 import memorydao.TripMemoryDAO;
+import memorydao.UserMemoryDAO;
 import dao.RequestDAO;
 import dao.TripDAO;
 import domain.Request;
@@ -54,11 +56,10 @@ public class ManageRequestPresenter {
 		
 		return str;
 	}
-	
+	 
 	
 	public void approve(int i){
-		System.out.println(reqDao.getTripOfRequest(tempRequest.get(i)));
-	//	reqDao.getTripOfRequest(tempRequest.get(i)).acceptRequest(tempRequest.get(i));
+		reqDao.getTripOfRequest(tempRequest.get(i)).acceptRequest(tempRequest.get(i));
 	}
 	
 	public void reject(int i){

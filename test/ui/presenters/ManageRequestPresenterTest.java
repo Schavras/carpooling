@@ -21,8 +21,8 @@ public class ManageRequestPresenterTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void approveTest() {
+		
 	}
 
 }
