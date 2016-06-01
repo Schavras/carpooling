@@ -64,7 +64,7 @@ public class MemoryInitializer implements InitializerDAO {
 		RequestMemoryDAO.requests.add(new Request("first request123", UserMemoryDAO.users.get(1)));
 		TripMemoryDAO.trips.get(5).addRequest(RequestMemoryDAO.requests.get(1));
 	}
-	
+	 
 	private void loadRatings(){
 		RatingMemoryDAO.ratings.add(new Rating(1,"",UserMemoryDAO.users.get(0),UserMemoryDAO.users.get(1)));
 		RatingMemoryDAO.ratings.add(new Rating(2,"",UserMemoryDAO.users.get(1),UserMemoryDAO.users.get(0)));

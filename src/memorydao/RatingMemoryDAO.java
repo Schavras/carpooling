@@ -27,7 +27,7 @@ public class RatingMemoryDAO implements RatingDAO {
 		ratings.add(rating);
 		
 	}
-
+ 
 	@Override
 	public void remove(Rating rating) {
 		ratings.remove(rating);
@@ -58,9 +58,9 @@ public class RatingMemoryDAO implements RatingDAO {
 		for (int i = 0; i<UserMemoryDAO.users.size(); i++){
 			if(UserMemoryDAO.users.get(i)==user){
 				return UserMemoryDAO.users.get(i).getRatings();
-			}
+			} 
 		}
 		return null;
 	}
-
+ 
 }
