@@ -16,10 +16,9 @@ public class PickUp {
 		
 		private RatingsSummary ratings;
 
-		public PickUp(AddressPlace place, Date pickUpDateAndTime, Date getOffDateAndTime, double cost , User traveler) {
+		public PickUp(AddressPlace place, Date pickUpDateAndTime, double cost , User traveler) {
 			this.place = place;
 			this.pickUpDateAndTime = pickUpDateAndTime;
-			disembarkDateAndTime = getOffDateAndTime;
 			this.cost = cost;
 			this.traveler = traveler;
 			RatingsSummary ratings=new RatingsSummary();
@@ -49,13 +48,6 @@ public class PickUp {
 			this.pickUpDateAndTime = pickUpDateAndTime;
 		}
 
-		public Date getDisembarkDateAndTime() {
-			return disembarkDateAndTime;
-		}
-
-		public void setDisembarkDateAndTime(Date disembarkDateAndTime) {
-			this.disembarkDateAndTime = disembarkDateAndTime;
-		}
 
 		public double getCost() {
 			return cost;

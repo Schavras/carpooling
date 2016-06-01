@@ -161,7 +161,7 @@ public class Trip {
 	}
 
 	private PickUp createPickup(Request req) {
-		PickUp temp = new PickUp(req.getPlace(), req.getPickUpDateAndTime(), dateOfDeparture, 0 , req.getUser());
+		PickUp temp = new PickUp(req.getPlace(), req.getPickUpDateAndTime(), 0 , req.getUser());
 		return temp;
 
 	}

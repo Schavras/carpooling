@@ -22,6 +22,7 @@ public class AddressPlace extends Place{
 	 * The post code of the adress
 	 */
 	private int postCode;
+	
 
 	public AddressPlace() {
 	
@@ -29,6 +30,13 @@ public class AddressPlace extends Place{
 
 	public AddressPlace(String country, String region, String town, String comment, String road, int number,int postCode) {
 		super(country, region, town, comment);
+		this.road=road;
+		this.number=number;
+		this.postCode=postCode;
+	}
+	
+	public AddressPlace(Trip trips, String road, int number,int postCode) {
+		super();
 		this.road=road;
 		this.number=number;
 		this.postCode=postCode;
