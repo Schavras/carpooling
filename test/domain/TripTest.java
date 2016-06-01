@@ -31,7 +31,7 @@ public class TripTest {
 		 traveler = new User(2,"abc","dfg", email , pass , 5 , cd , true  );
 		 user = new User();
 	}
-
+ 
 	@Test
 	public void DefaultConstractor(){
 		Trip trip = new Trip();

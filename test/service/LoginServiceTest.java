@@ -11,7 +11,7 @@ import org.junit.Test;
 
 /**
  * @author Σταύρος
- *
+ * 
  */
 public class LoginServiceTest {
 
@@ -67,13 +67,18 @@ public class LoginServiceTest {
 		Assert.assertFalse(result);
 	}
 
-	
+	 
 	@Test
 	public void SuccessLoginTest(){
 		email = "stavros.z@hotmail.com";
 		password = "klmr420";
 		result = lg.login(email, password );
 		Assert.assertTrue(result);
+	}
+	
+	@Test
+	public void activeUser(){
+		lg.getActiveUser();
 	}
 
 }

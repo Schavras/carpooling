@@ -24,7 +24,7 @@ public class SignUpServiceImp implements SignUpService {
 		userDao = new UserMemoryDAO();
 		emailProvider = new FakeEmailProvider(userDao);
 	}
-	
+	 
 	
 	
 	/* (non-Javadoc)

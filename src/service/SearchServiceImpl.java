@@ -22,12 +22,12 @@ public class SearchServiceImpl implements SearchService {
 	protected SearchServiceImpl(TripDAO trips) {
 		this.trips = trips;
 	}
-	
+	 
 	/**
 	 * Default Constractor.
 	 * Set DAO object to {@link TripMemoryDAO} .
 	 */
-	public SearchServiceImpl(){
+	public SearchServiceImpl(){ 
 		trips = new TripMemoryDAO();
 	}
 

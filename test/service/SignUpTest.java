@@ -12,6 +12,7 @@ public class SignUpTest {
 
 	UserMemoryDAOStub mem;
 	SignUpService su;
+	SignUpServiceImp sq;
 	
 	long id;
 	String name;
@@ -29,6 +30,7 @@ public class SignUpTest {
 	public void setUp() throws Exception {
 		mem = new UserMemoryDAOStub();
 		su = new SignUpServiceImp(mem);
+		sq=new SignUpServiceImp();
 		name = "name";
 		surname = "surname";
 		email = "new@email";
@@ -42,6 +44,7 @@ public class SignUpTest {
 	public void successSignUpTest() {
 		result = su.newUser(name, surname, email, password, age, ccNumber, ccBank);
 		Assert.assertTrue(result);
+				
 	}
 	
 	@Test
@@ -50,7 +53,7 @@ public class SignUpTest {
 		result = su.newUser(name, surname, email, password, age, ccNumber, ccBank);
 		Assert.assertFalse(result);
 	}
-	
+	 
 	@Test
 	public void ExceptionTest(){
 		ccNumber = "123a";

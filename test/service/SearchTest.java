@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import memorydao.TripMemoryDAOStub;
+import memorydao.UserMemoryDAO;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,16 +23,19 @@ import domain.User;
 
 //TODO to be fixed
 
-public class SearchTest {
+public class SearchTest { 
 	
 	TripDAO mem;
 	SearchService search;
+	SearchService search2;
+	SearchServiceImpl qwe;
 	ArrayList<Trip> results;
 	
 	@Before
 	public void setUp(){
 		mem =  new TripMemoryDAOStub();
 		search = new SearchServiceImpl(mem);
+		qwe = new SearchServiceImpl();
 		results = new ArrayList<Trip>();
 	}
 	
@@ -52,6 +56,11 @@ public class SearchTest {
 	public void searchByPlaceNoResults(){
 		results= search.searchByPlace("wrong", "wrong", "wrong");
 		Assert.assertEquals(0, results.size());
+	}
+	
+	@Test
+	public void setDao(){
+		qwe.setDAO(mem);
 	}
 	
 	
