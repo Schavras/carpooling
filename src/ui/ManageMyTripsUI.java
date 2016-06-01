@@ -59,7 +59,7 @@ public class ManageMyTripsUI extends DefaultJPanel implements ManageMyTripsView{
 		
 	}
 	
-	// SVN GAMIESAI!!!
+	
 	
 	
 	@Override

@@ -179,6 +179,7 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 		add(yearspinner);
 		
 		
+		
 		currency = new JComboBox<String>();
 		currency.setModel(new DefaultComboBoxModel<String>(new String[] {"Euros", "Dollars"}));
 		currency.setMaximumRowCount(2);
@@ -212,6 +213,7 @@ public class NewTripUI extends DefaultJPanel implements NewTripView{
 		
 		
 	}
+	
 
 	public void createTrip(){
 		presenter.newtrip(getSCountry(), getSRegion(), getSTown(), getSComment(), getDCountry(), getDRegion(), 

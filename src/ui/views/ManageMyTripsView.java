@@ -13,5 +13,5 @@ public interface ManageMyTripsView {
 
 	void setManageMyTripsPresenter(ManageMyTripsPresenter presenter);
 	
-	// SVN GAMIESAI!!!!!
+	
 }
