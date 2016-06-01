@@ -64,7 +64,7 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 
 		
 		});
-		btnSearchForA.setBounds(268, 111, 122, 23);
+		btnSearchForA.setBounds(268, 111, 140, 23);
 		add(btnSearchForA);
 		
 		JButton btnMakeNewTrip = new JButton("Make new Trip");
@@ -74,7 +74,7 @@ public class UserProfileUI extends DefaultJPanel implements ProfileView{
 				startTrip();
 			}
 		});
-		btnMakeNewTrip.setBounds(268, 75, 122, 23);
+		btnMakeNewTrip.setBounds(268, 75, 140, 23);
 		add(btnMakeNewTrip);
 		
 		//TODO get requests number

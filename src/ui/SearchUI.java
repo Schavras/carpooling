@@ -68,7 +68,7 @@ public class SearchUI extends DefaultJPanel implements SearchView{
 			}
 		});
 		
-		searchBtn.setBounds(43, 149, 96, 23);
+		searchBtn.setBounds(20, 149, 123, 23);
 		add(searchBtn);
 		
 		JSpinner daySelector = new JSpinner();

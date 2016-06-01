@@ -26,10 +26,14 @@ public class SearchUIStub extends ViewStub implements SearchView {
 	}
 
 	@Override
-	public void updateList() {}
+	public void updateList() {
+		
+	}
 
 	@Override
-	public void sentRequest() {	}
+	public void sentRequest() {	
+		
+	}
 
 	@Override
 	public void setSeachPresenter(SearchPresenter searchPresenter) {}
