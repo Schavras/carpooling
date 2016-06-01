@@ -14,7 +14,7 @@ import types.Email;
 import types.Password;
 import types.currency.Currency;
 import types.currency.CurrencyNamesEnum;
-
+ 
  
 public class TripDAOTest {
 
