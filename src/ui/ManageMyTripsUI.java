@@ -33,7 +33,7 @@ public class ManageMyTripsUI extends DefaultJPanel implements ManageMyTripsView{
 	private JList<String> list = new <String>JList();
 	private DefaultListModel<String> resultModel;
 	private ManageMyTripsPresenter presenter;
-	private JButton btnRemove = new JButton("Remove from list");
+	private JButton btnRemove = new JButton("Cancel Trip");
 	private String[] results;
 	
 	public ManageMyTripsUI(){
@@ -52,7 +52,7 @@ public class ManageMyTripsUI extends DefaultJPanel implements ManageMyTripsView{
 		btnRemove.setBounds(177, 334, 175, 20);
 		btnRemove.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		removeTrip();
+        		cancelTrip();
         	}
         });
 		add(btnRemove);
@@ -61,15 +61,14 @@ public class ManageMyTripsUI extends DefaultJPanel implements ManageMyTripsView{
 	
 	
 	
-	
-	@Override
-	public void removeTrip() {
-		presenter.removeTrip(list.getSelectedIndex());
+
+	public void cancelTrip() {
+		presenter.cancelTrip(list.getSelectedIndex());
 		 getRequests();
 		
 	}
 
-	@Override
+
 	public void getRequests() {
 		results = presenter.getRequests();
 		resultModel.clear();
@@ -80,10 +79,15 @@ public class ManageMyTripsUI extends DefaultJPanel implements ManageMyTripsView{
 	}
 
 
-	@Override
 	public void setManageMyTripsPresenter(ManageMyTripsPresenter presenter) {
-		// TODO Auto-generated method stub
+		this.presenter = presenter;
 		
 	}
+
+
+
+
+	
+	
 
 }

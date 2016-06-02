@@ -111,7 +111,7 @@ public class Trip {
 	}
 	
 	
-	
+	//TODO Ftiakse neo approval code
 	public boolean acceptRequest(Request req){
 		if(travelers.size() < maxTravelers){
 			travelers.add(req.getUser());

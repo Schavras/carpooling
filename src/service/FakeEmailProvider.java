@@ -1,6 +1,5 @@
 package service;
 
-import memorydao.UserMemoryDAO;
 import dao.UserDAO;
 import domain.User;
 import service.interfaces.EmailProvider;
@@ -22,7 +21,7 @@ public class FakeEmailProvider implements EmailProvider{
 	}
 	
 	private void activateProfile(User user){
-		dao.getByEmail(user.getEmail().getFullEmailAdress()).setValid(true);
+		user.setValid(true);
 		System.out.println("Profile activated");
 	}
 }

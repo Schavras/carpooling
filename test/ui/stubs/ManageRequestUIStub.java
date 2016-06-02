@@ -11,11 +11,9 @@ import ui.views.ManageRequestsView;
 public class ManageRequestUIStub extends ViewStub implements ManageRequestsView {
 
 	ManageRequestPresenter presenter;
-	@Override
-	public void back() {
-		// TODO Auto-generated method stub
-		
-	}
+	String[] results;
+	
+
 
 	@Override
 	public void setManageRequestPresenter(ManageRequestPresenter presenter) {
@@ -25,27 +23,25 @@ public class ManageRequestUIStub extends ViewStub implements ManageRequestsView 
 
 	@Override
 	public void getRequests() {
-		// TODO Auto-generated method stub
-		
+		results = new String[2];
+		results[0] = "First request";
+		results[1] = "Second request";
 	}
+	
+	@Override
+	public void back() {}
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
+		 getRequests();
 		
 	}
 
 	@Override
-	public void approve() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void approve() {}
 
 	@Override
-	public void reject() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void reject() {}
 
 	
 

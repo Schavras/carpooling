@@ -42,8 +42,8 @@ public class Rating {
 	public Rating() {
 		number=0;
 		comment="";
-		setFrom(null);
-		setTo(null);
+	//	setFrom(null);
+	//	setTo(null);
 	}
 	
 	

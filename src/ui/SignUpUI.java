@@ -1,6 +1,7 @@
 package ui;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -24,15 +25,15 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 	private JTextField age;
 	private JTextField ccnumber;
 	private JTextField ccbank;
-
+	JLabel errorMsg;
 	/**
 	 * Create the panel.
 	 */
 
 	NewTripUI nt;
 	
-	@SuppressWarnings("unused")
 	private SignUpPresenter presenter;
+	private boolean success;
 	
 	public SignUpUI() {
 		setLayout(null);
@@ -110,6 +111,12 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 		ccbank.setBounds(76, 169, 150, 20);
 		add(ccbank);
 		
+		errorMsg = new JLabel("");
+		errorMsg.setForeground(Color.RED);
+		errorMsg.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		errorMsg.setBounds(10, 271, 269, 32);
+		add(errorMsg);
+		
 		JButton btnSignUp = new JButton("Sign Up");
 		btnSignUp.addMouseListener(new MouseAdapter() {
 			@Override
@@ -142,7 +149,7 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 	}
 	
 	 public void signup(){
-		presenter.signup(
+		success = presenter.signup(
 				getName(),
 				getSurname(),
 				getEmail(),
@@ -151,9 +158,20 @@ public class SignUpUI extends DefaultJPanel implements SignUpView {
 				getCreditNumber(),
 				getCreditBank()
 				);
+		
+		showError();
 	}
 
-	 public String getName() {
+	 private void showError() {
+		if(success){
+			errorMsg.setText("Sign Up Completed!");
+		}else{
+			errorMsg.setText("Sign Up Failed!");
+		}
+		
+	}
+
+	public String getName() {
 		return name.getText();
 	}
 	 

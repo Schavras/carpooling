@@ -20,13 +20,13 @@ public class RatingsSummaryTest {
 	@Test
 	public void RatingTest(){
 		@SuppressWarnings("unused")
-		Rating temp = new Rating(5,"abc",null,null); 
+		Rating temp = new Rating(5,"abc",new User(),new User()); 
 	}
 	
 	@Test
 	public void testAdd() {
 		RatingsSummary test = new RatingsSummary() ;
-		Rating temp = new Rating(5,"abc",null,null);
+		Rating temp = new Rating(5,"abc",new User(),new User());
 		
 		test.add(temp);
 		
@@ -43,10 +43,10 @@ public class RatingsSummaryTest {
 		RatingsSummary test = new RatingsSummary();
 		test.isEmpty();
 		
-		Rating temp = new Rating(5,"abc",null,null);
+		Rating temp = new Rating(5,"abc",new User(),new User());
 		test.add(temp);
 		
-		Rating temp2 = new Rating(10,"dfg",null,null);
+		Rating temp2 = new Rating(10,"dfg",new User(),new User());
 		test.add(temp2);
 		
 		test.remove(1);
@@ -74,10 +74,10 @@ public class RatingsSummaryTest {
 		test.getByIndex(0);
 		test.getByRating(new Rating());
 		
-		Rating temp = new Rating(5,"abc",null,null);
+		Rating temp = new Rating(5,"abc",new User(),new User());
 		test.add(temp);
 		
-		Rating temp2 = new Rating(10,"dfg",null,null);
+		Rating temp2 = new Rating(10,"dfg",new User(),new User());
 		test.add(temp2);
 		
 		Rating rating = test.getByIndex(0);
@@ -90,14 +90,14 @@ public class RatingsSummaryTest {
 	@Test
 	public void testGetByRating() {
 		RatingsSummary test = new RatingsSummary() ;
-		Rating temp = new Rating(5,"abc",null,null);
+		Rating temp = new Rating(5, "abc",new User(),new User());
 		test.add(temp);
 		
-		Rating temp2 = new Rating(10,"dfg",null,null);
+		Rating temp2 = new Rating(10,"dfg",new User(),new User());
 		test.add(temp2);
 		
-		Rating test1 = new Rating(5,"abc",null,null);
-		Rating test2 = new Rating(10,"dfg",null,null);
+		Rating test1 = new Rating(5,"abc",new User(),new User());
+		Rating test2 = new Rating(10,"dfg",new User(),new User());
 		
 		
 		Rating rating = test.getByRating(test1);
@@ -114,17 +114,17 @@ public class RatingsSummaryTest {
 		Assert.assertEquals(Double.doubleToLongBits(0),Double
 				.doubleToLongBits(test.getAverage()));
 		
-		Rating temp = new Rating(5,"abc",null,null);
+		Rating temp = new Rating(5,"abc",new User(),new User());
 		test.add(temp);
 		Assert.assertEquals(Double.doubleToLongBits(5),Double
 				.doubleToLongBits(test.getAverage()));
 		
-		Rating temp2 = new Rating(11,"dfg",null,null);
+		Rating temp2 = new Rating(11,"dfg",new User(),new User());
 		test.add(temp2);
 		Assert.assertEquals(Double.doubleToLongBits(8),Double
 				.doubleToLongBits(test.getAverage()));
 		
-		Rating temp3 = new Rating(1,"dfg",null,null);
+		Rating temp3 = new Rating(1,"dfg",new User(),new User());
 		test.add(temp3);
 		Assert.assertEquals("5,6667", String.format("%.4f",test.getAverage()));
 		

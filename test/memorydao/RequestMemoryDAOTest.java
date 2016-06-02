@@ -52,7 +52,7 @@ public class RequestMemoryDAOTest {
 		 
 		 ArrayList<Request> results = sample.getPendingRequestByUser(UserMemoryDAO.users.get(6));
 	//	 System.out.println(UserMemoryDAO.users.get(6));
-		 Assert.assertEquals(2, results.size());
+		 Assert.assertEquals(12, results.size());
 		 
 		 
 	//	 Assert.assertEquals(new User(6, "name", "surname", new Email("aa"), new Password("aa"), 25, new CreditCard(9846, "pireos"), true).getRequests(), sample.getPendingRequestByUser(new User(6, "name", "surname", new Email("aa"), new Password("aa"), 25, new CreditCard(9846, "pireos"), true)));

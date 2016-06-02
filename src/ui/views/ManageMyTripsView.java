@@ -7,7 +7,7 @@ public interface ManageMyTripsView {
 	/**
 	 * tha diagrafei ena Trip apo tin lista me ta Trips tou user
 	 */
-	public void removeTrip();
+	public void cancelTrip();
 	
 	void getRequests();
 

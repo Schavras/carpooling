@@ -8,7 +8,6 @@ import java.awt.Font;
 
 import javax.swing.JPasswordField;
 
-import service.LoginServiceImp;
 import ui.presenters.LoginPresenter;
 import ui.presenters.SignUpPresenter;
 import ui.presenters.UserProfilePresenter;
@@ -17,14 +16,13 @@ import ui.views.LoginView;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 public class LoginUI extends DefaultJPanel implements LoginView{
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -7054777390854307971L;
+	private static final long serialVersionUID = 7660676501727089686L;
 	private JTextField emailTF;
 	private JPasswordField passwordField;
 	
